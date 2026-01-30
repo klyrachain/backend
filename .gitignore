@@ -34,3 +34,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+ens.md
+ens1.md
+
+.next
+/.next
+*.next
