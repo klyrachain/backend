@@ -3,6 +3,12 @@ import { mainnet, base } from "viem/chains";
 import { normalize } from "viem/ens";
 import type { EnsAddressResponse, EnsNameResponse } from "../lib/interfaces/ens.types.js";
 
+/** Type for native fetch() response so TS does not resolve to Express Response (e.g. on Vercel). */
+interface FetchResponse {
+  ok: boolean;
+  json(): Promise<unknown>;
+}
+
 const mainnetClient = createPublicClient({
   chain: mainnet,
   transport: http(),
@@ -43,9 +49,9 @@ function normalizeAddress(raw: string): `0x${string}` | null {
 
 async function resolveNameViaAPI(name: string): Promise<string | null> {
   try {
-    const res = await fetch(`https://api.ensdata.net/${encodeURIComponent(name)}`, {
+    const res = (await fetch(`https://api.ensdata.net/${encodeURIComponent(name)}`, {
       headers: { Accept: "application/json" },
-    });
+    })) as FetchResponse;
     if (!res.ok) return null;
     const data = (await res.json()) as { address?: string };
     return data?.address ?? null;
@@ -56,18 +62,18 @@ async function resolveNameViaAPI(name: string): Promise<string | null> {
 
 async function resolveAddressViaAPI(address: string): Promise<string | null> {
   try {
-    const res = await fetch(`https://api.ensdata.net/address/${encodeURIComponent(address)}`, {
+    const res = (await fetch(`https://api.ensdata.net/address/${encodeURIComponent(address)}`, {
       headers: { Accept: "application/json" },
-    });
+    })) as FetchResponse;
     if (!res.ok) return null;
     const data = (await res.json()) as { name?: string; ensName?: string; domain?: string };
     const name = data?.name ?? data?.ensName ?? data?.domain ?? null;
     if (name) return name;
   } catch {}
   try {
-    const res = await fetch(`https://api.alpha.ensnode.io/address/${encodeURIComponent(address)}`, {
+    const res = (await fetch(`https://api.alpha.ensnode.io/address/${encodeURIComponent(address)}`, {
       headers: { Accept: "application/json" },
-    });
+    })) as FetchResponse;
     if (!res.ok) return null;
     const data = (await res.json()) as { name?: string };
     return data?.name ?? null;
@@ -78,9 +84,9 @@ async function resolveAddressViaAPI(address: string): Promise<string | null> {
 
 async function getAvatarViaAPI(nameOrAddress: string): Promise<string | null> {
   try {
-    const res = await fetch(`https://api.ensdata.net/${encodeURIComponent(nameOrAddress)}`, {
+    const res = (await fetch(`https://api.ensdata.net/${encodeURIComponent(nameOrAddress)}`, {
       headers: { Accept: "application/json" },
-    });
+    })) as FetchResponse;
     if (!res.ok) return null;
     const data = (await res.json()) as { avatar_small?: string; avatar?: string };
     return data?.avatar_small ?? data?.avatar ?? null;
