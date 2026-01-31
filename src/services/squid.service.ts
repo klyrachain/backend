@@ -6,6 +6,14 @@ import type {
   TokenResponse,
 } from "../lib/interfaces/squid.types.js";
 
+/** Type for native fetch() response so TS does not resolve to Express Response (e.g. on Vercel). */
+interface FetchResponse {
+  ok: boolean;
+  status: number;
+  text(): Promise<string>;
+  json(): Promise<unknown>;
+}
+
 const SQUID_V2_MAINNET = "https://v2.api.squidrouter.com/v2";
 const SQUID_V1_TESTNET = "https://testnet.api.squidrouter.com/v1";
 
@@ -63,12 +71,12 @@ type TokensJson = SquidTokenRaw[] | { tokens?: SquidTokenRaw[]; data?: SquidToke
 export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
   const baseUrl = getSquidBaseUrl(testnet);
   const integratorId = getIntegratorId();
-  const response = await fetch(`${baseUrl}/chains`, {
+  const response = (await fetch(`${baseUrl}/chains`, {
     headers: {
       "x-integrator-id": integratorId,
       "Content-Type": "application/json",
     },
-  });
+  })) as FetchResponse;
 
   if (!response.ok) {
     const responseText = await response.text();
@@ -98,7 +106,7 @@ export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
 export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
   const baseUrl = getSquidBaseUrl(testnet);
   const integratorId = getIntegratorId();
-  const [chainsResponse, tokensResponse] = await Promise.all([
+  const [chainsResponse, tokensResponse] = (await Promise.all([
     fetch(`${baseUrl}/chains`, {
       headers: {
         "x-integrator-id": integratorId,
@@ -111,7 +119,7 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
         "Content-Type": "application/json",
       },
     }),
-  ]);
+  ])) as [FetchResponse, FetchResponse];
 
   if (!chainsResponse.ok || !tokensResponse.ok) {
     const failedResponse = chainsResponse.ok ? tokensResponse : chainsResponse;
