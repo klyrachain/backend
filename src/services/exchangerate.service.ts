@@ -1,5 +1,12 @@
 import type { FiatQuoteRequest, FiatQuoteResponse } from "../lib/interfaces/rates.types.js";
 
+/** Type for native fetch() response so TS does not resolve to Express Response (e.g. on Vercel). */
+interface FetchResponse {
+  ok: boolean;
+  statusText: string;
+  json(): Promise<unknown>;
+}
+
 const BASE_URL = "https://v6.exchangerate-api.com/v6";
 
 function getApiKey(): string {
@@ -34,9 +41,9 @@ export async function getFiatQuote(
     : `pair/${from}/${to}`;
   const url = `${BASE_URL}/${apiKey}/${path}`;
 
-  const httpResponse = await fetch(url, {
+  const httpResponse = (await fetch(url, {
     headers: { Accept: "application/json" },
-  });
+  })) as FetchResponse;
   const apiResponse = (await httpResponse.json()) as {
     result?: string;
     conversion_rate?: number;

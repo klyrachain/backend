@@ -1,6 +1,14 @@
 import crypto from "node:crypto";
 import type { FonbnkQuoteRequest, FonbnkQuoteResponse } from "../lib/interfaces/rates.types.js";
 
+/** Type for native fetch() response so TS does not resolve to Express Response (e.g. on Vercel). */
+interface FetchResponse {
+  ok: boolean;
+  statusText: string;
+  text(): Promise<string>;
+  json(): Promise<unknown>;
+}
+
 const COUNTRY_TO_CURRENCY: Record<string, string> = {
   GH: "GHS",
   NG: "NGN",
@@ -174,7 +182,7 @@ export async function getFonbnkQuote(
   const abortController = new AbortController();
   const timeoutId = setTimeout(() => abortController.abort(), timeout);
 
-  const httpResponse = await fetch(`${baseUrl}${endpoint}`, {
+  const httpResponse = (await fetch(`${baseUrl}${endpoint}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -184,7 +192,7 @@ export async function getFonbnkQuote(
     },
     body: JSON.stringify(requestBody),
     signal: abortController.signal,
-  });
+  })) as FetchResponse;
 
   clearTimeout(timeoutId);
 
