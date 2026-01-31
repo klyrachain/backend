@@ -7,6 +7,13 @@ import type {
   ValidateAccountResponse,
 } from "../lib/interfaces/moolre.types.js";
 
+/** Type for native fetch() response so TS does not resolve to Express Response (e.g. on Vercel). */
+interface FetchResponse {
+  ok: boolean;
+  status: number;
+  text(): Promise<string>;
+}
+
 function getEnv(...keys: (string | undefined)[]): string | undefined {
   for (const key of keys) {
     if (!key) continue;
@@ -118,7 +125,7 @@ export async function validateAccount(
     payload.sublistid = String(sublistId).trim();
   }
 
-  const res = await fetch(`${baseUrl}/open/transact/validate`, {
+  const res = (await fetch(`${baseUrl}/open/transact/validate`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -126,7 +133,7 @@ export async function validateAccount(
       "X-API-KEY": apiKey,
     },
     body: JSON.stringify(payload),
-  });
+  })) as FetchResponse;
 
   const text = await res.text();
   if (!res.ok) throw new Error(`Moolre validation failed with status ${res.status}: ${text}`);
@@ -154,14 +161,14 @@ export async function sendSms(
     })),
   };
 
-  const res = await fetch(`${baseUrl}/open/sms/send`, {
+  const res = (await fetch(`${baseUrl}/open/sms/send`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "X-API-VASKEY": smsApiKey,
     },
     body: JSON.stringify(payload),
-  });
+  })) as FetchResponse;
 
   const text = await res.text();
   if (!res.ok) throw new Error(`Moolre SMS failed with status ${res.status}: ${text}`);
@@ -177,7 +184,7 @@ export async function getBanks(
 ): Promise<GetBanksResponse> {
   const baseUrl = buildBaseUrl();
   const url = `${baseUrl}/open/transact/data?country=${country}&data=banks`;
-  const res = await fetch(url);
+  const res = (await fetch(url)) as FetchResponse;
   const text = await res.text();
   if (!res.ok) throw new Error(`Moolre get banks failed with status ${res.status}: ${text}`);
   return JSON.parse(text) as GetBanksResponse;
