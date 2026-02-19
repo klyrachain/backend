@@ -51,6 +51,9 @@ interface SquidChainRaw {
   networkName?: string;
   chainName?: string;
   chainIconURI?: string;
+  rpc?: string;
+  rpcUrls?: string | string[];
+  rpcs?: string[];
 }
 
 interface SquidTokenRaw {
@@ -86,21 +89,38 @@ export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
   const data = (await response.json()) as ChainsJson;
   const rawChains: SquidChainRaw[] = Array.isArray(data) ? data : (data.chains ?? data.data ?? []);
 
-  return rawChains
+  const mapped = rawChains
     .filter(
       (chain): chain is SquidChainRaw & { chainId: string } =>
         Boolean(chain?.chainId ?? chain?.id)
     )
-    .map((chain) => ({
-      chainId: String(chain.chainId ?? chain.id),
-      networkName:
-        chain.networkName ??
-        chain.chainName ??
-        chain.networkIdentifier ??
-        chain.chainId ??
-        "",
-      chainIconURI: chain.chainIconURI,
-    }));
+    .map((chain) => {
+      const chainId = String(chain.chainId ?? chain.id);
+      const fromSource = chain.rpcs ?? (chain.rpcUrls ? (Array.isArray(chain.rpcUrls) ? chain.rpcUrls : [chain.rpcUrls]) : []) ?? (chain.rpc ? [chain.rpc] : []);
+      const fallback = getRpcForChainId(chainId);
+      const allUrls = fromSource.length > 0 ? fromSource : fallback ? [fallback] : [];
+      const rpc = allUrls.length === 1 ? allUrls[0] : undefined;
+      const rpcs = allUrls.length > 1 ? allUrls : undefined;
+      return {
+        chainId,
+        networkName:
+          chain.networkName ??
+          chain.chainName ??
+          chain.networkIdentifier ??
+          chainId,
+        chainIconURI: chain.chainIconURI,
+        ...(rpc && { rpc }),
+        ...(rpcs && { rpcs }),
+      };
+    });
+
+  mapped.sort((a, b) => {
+    const idA = parseInt(a.chainId, 10);
+    const idB = parseInt(b.chainId, 10);
+    if (!Number.isNaN(idA) && !Number.isNaN(idB)) return idA - idB;
+    return a.chainId.localeCompare(b.chainId, undefined, { numeric: true });
+  });
+  return mapped;
 }
 
 export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
@@ -138,6 +158,8 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
 
   const chainIdToNetworkName = new Map<string, string>();
   const chainIdToIconUri = new Map<string, string>();
+  const chainIdToRpc = new Map<string, string | undefined>();
+  const chainIdToRpcs = new Map<string, string[] | undefined>();
   for (const chain of rawChains) {
     const chainId = String(chain.chainId ?? chain.id ?? "");
     if (chainId) {
@@ -151,24 +173,49 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
       if (chain.chainIconURI) {
         chainIdToIconUri.set(chainId, chain.chainIconURI);
       }
+      const fromSource = chain.rpcs ?? (chain.rpcUrls ? (Array.isArray(chain.rpcUrls) ? chain.rpcUrls : [chain.rpcUrls]) : []) ?? (chain.rpc ? [chain.rpc] : []);
+      const fallback = getRpcForChainId(chainId);
+      const allUrls = fromSource.length > 0 ? fromSource : fallback ? [fallback] : [];
+      if (allUrls.length === 1) {
+        chainIdToRpc.set(chainId, allUrls[0]);
+      } else if (allUrls.length > 1) {
+        chainIdToRpcs.set(chainId, allUrls);
+      } else if (fallback) {
+        chainIdToRpc.set(chainId, fallback);
+      }
     }
   }
 
-  return rawTokens
+  const mapped = rawTokens
     .filter(
       (token): token is SquidTokenRaw & { chainId: string; address: string } =>
         Boolean(token?.chainId && token?.address)
     )
-    .map((token) => ({
-      chainId: String(token.chainId),
-      networkName: chainIdToNetworkName.get(String(token.chainId)) ?? String(token.chainId),
-      chainIconURI: chainIdToIconUri.get(String(token.chainId)),
-      address: String(token.address),
-      symbol: token.symbol ?? "—",
-      decimals: Number(token.decimals) || 18,
-      name: token.name,
-      logoURI: token.logoURI,
-    }));
+    .map((token) => {
+      const cid = String(token.chainId);
+      const rpc = chainIdToRpc.get(cid);
+      const rpcs = chainIdToRpcs.get(cid);
+      return {
+        chainId: cid,
+        networkName: chainIdToNetworkName.get(cid) ?? cid,
+        chainIconURI: chainIdToIconUri.get(cid),
+        address: String(token.address),
+        symbol: token.symbol ?? "—",
+        decimals: Number(token.decimals) || 18,
+        name: token.name,
+        logoURI: token.logoURI,
+        ...(rpc && { rpc }),
+        ...(rpcs && { rpcs }),
+      };
+    });
+
+  mapped.sort((a, b) => {
+    const idCompare = parseInt(a.chainId, 10) - parseInt(b.chainId, 10);
+    if (!Number.isNaN(idCompare) && idCompare !== 0) return idCompare;
+    if (a.chainId !== b.chainId) return a.chainId.localeCompare(b.chainId, undefined, { numeric: true });
+    return a.symbol.localeCompare(b.symbol, undefined, { sensitivity: "base" });
+  });
+  return mapped;
 }
 
 export async function fetchBalancesMulticall(

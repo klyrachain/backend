@@ -8,6 +8,11 @@ function getEnv(key: string): string {
   return value;
 }
 
+function getEnvOptional(key: string): string | undefined {
+  const value = process.env[key];
+  return value === "" ? undefined : value;
+}
+
 export const env = {
   get port(): number {
     const raw = getEnv("PORT");
@@ -16,5 +21,17 @@ export const env = {
       throw new Error(`Invalid PORT: "${raw}". Must be a number between 1 and 65535.`);
     }
     return port;
+  },
+
+  get coreBaseUrl(): string | undefined {
+    return getEnvOptional("CORE_BASE_URL");
+  },
+
+  get coreApiKey(): string | undefined {
+    return getEnvOptional("CORE_API_KEY");
+  },
+
+  get isCoreConfigured(): boolean {
+    return Boolean(env.coreBaseUrl && env.coreApiKey);
   },
 } as const;

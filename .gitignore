@@ -42,3 +42,12 @@ ens1.md
 .next
 /.next
 *.next
+.next/*
+
+core-api.integration.md
+live-systems-liquidity-and-flows.md
+quote-api.md
+klyra-integration.md
+KLYRA-INTEGRATION.md
+FRONTEND-API.md
+USE-CASES.md

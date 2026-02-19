@@ -2,6 +2,7 @@ import { type IRouter, Router } from "express";
 import balancesRoutes from "./balances.routes.js";
 import ensRoutes from "./ens.routes.js";
 import healthRoutes from "./health.routes.js";
+import klyraRoutes from "./klyra.routes.js";
 import moolreRoutes from "./moolre.routes.js";
 import ratesRoutes from "./rates.routes.js";
 import squidRoutes from "./squid.routes.js";
@@ -14,6 +15,7 @@ router.get("/", (_req, res) => {
     message: "Klyra API",
     endpoints: {
       health: "/api/health",
+      klyra: "/api/klyra (Core proxy: quotes, orders, paystack, offramp, transactions, chains, tokens, countries, requests, claims)",
       moolre: "/api/moolre",
       ens: "/api/ens",
       rates: "/api/rates",
@@ -24,6 +26,7 @@ router.get("/", (_req, res) => {
 });
 
 router.use("/health", healthRoutes);
+router.use("/klyra", klyraRoutes);
 router.use("/moolre", moolreRoutes);
 router.use("/ens", ensRoutes);
 router.use("/rates", ratesRoutes);

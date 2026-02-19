@@ -670,3 +670,4 @@ Same as `/api/squid/balances` in behaviour and response shape: token balances vi
   "error": "Failed to fetch multicall balances."
 }
 ```
+

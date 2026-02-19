@@ -12,6 +12,7 @@ app.get("/", (_req, res) => {
     docs: "See API.md for full documentation.",
     endpoints: {
       health: "/api/health",
+      klyra: "/api/klyra (Core proxy)",
       moolre: "/api/moolre",
       ens: "/api/ens",
       rates: "/api/rates",
