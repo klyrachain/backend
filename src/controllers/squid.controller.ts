@@ -1,16 +1,26 @@
 import type { Request, Response } from "express";
 import {
   fetchChains,
+  fetchChainsAll,
   fetchTokens,
+  fetchTokensAll,
   fetchBalancesFromSquid,
 } from "../services/squid.service.js";
 
 /**
  * GET /api/squid/chains
- * Query: testnet (optional, "1" or "true" for testnet).
+ * Query: testnet (optional, "1" or "true" for testnet only).
+ *        all (optional, "1" or "true") = mainnet + testnet combined (Squid + data/chains).
  */
 export async function getChains(request: Request, response: Response): Promise<void> {
   try {
+    const all = request.query.all === "1" || request.query.all === "true";
+    if (all) {
+      const chains = await fetchChainsAll();
+      response.setHeader("x-squid-network", "all");
+      response.json(chains);
+      return;
+    }
     const testnet =
       request.query.testnet === "1" || request.query.testnet === "true";
     const chains = await fetchChains(testnet);
@@ -28,10 +38,18 @@ export async function getChains(request: Request, response: Response): Promise<v
 
 /**
  * GET /api/squid/tokens
- * Query: testnet (optional, "1" or "true" for testnet).
+ * Query: testnet (optional, "1" or "true" for testnet only).
+ *        all (optional, "1" or "true") = mainnet + testnet combined (Squid + Solana + data/tokens).
  */
 export async function getTokens(request: Request, response: Response): Promise<void> {
   try {
+    const all = request.query.all === "1" || request.query.all === "true";
+    if (all) {
+      const tokens = await fetchTokensAll();
+      response.setHeader("x-squid-network", "all");
+      response.json(tokens);
+      return;
+    }
     const testnet =
       request.query.testnet === "1" || request.query.testnet === "true";
     const tokens = await fetchTokens(testnet);

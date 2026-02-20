@@ -1,0 +1,1960 @@
+{
+  "name": "Solana Mainnet Tokens",
+  "logoURI": "https://pancakeswap.finance/logo.png",
+  "keywords": [
+    "solana",
+    "mainnet"
+  ],
+  "timestamp": "2026-02-20T11:33:48.428Z",
+  "tokens": [
+    {
+      "name": "$WOOD",
+      "symbol": "$WOOD",
+      "decimals": 9,
+      "address": "674PmuiDtgKx3uKuJ1B16f9m5L84eFvNwj3xDMvHcbo7",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/674PmuiDtgKx3uKuJ1B16f9m5L84eFvNwj3xDMvHcbo7.png"
+    },
+    {
+      "name": "1000x by Virtuals (Wormhole)",
+      "symbol": "1000X",
+      "decimals": 8,
+      "address": "4BVrtjWqPsn4oyWDsB8oCLiS5DJN8Wwhmy4RKEzpys4u",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4BVrtjWqPsn4oyWDsB8oCLiS5DJN8Wwhmy4RKEzpys4u.png"
+    },
+    {
+      "name": "ALL ART",
+      "symbol": "AART",
+      "decimals": 6,
+      "address": "F3nefJBcejYbtdREjui1T9DPh5dBgpkKq7u2GAAMXs5B",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/F3nefJBcejYbtdREjui1T9DPh5dBgpkKq7u2GAAMXs5B.png"
+    },
+    {
+      "name": "Allbridge",
+      "symbol": "ABR",
+      "decimals": 9,
+      "address": "a11bdAAuV8iB2fu7X6AxAvDTo1QZ8FXB3kk5eecdasp",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/a11bdAAuV8iB2fu7X6AxAvDTo1QZ8FXB3kk5eecdasp.png"
+    },
+    {
+      "name": "Nirvana ANA",
+      "symbol": "ANA",
+      "decimals": 6,
+      "address": "5DkzT65YJvCsZcot9L6qwkJnsBCPmKHjJz3QU7t7QeRW",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5DkzT65YJvCsZcot9L6qwkJnsBCPmKHjJz3QU7t7QeRW.png"
+    },
+    {
+      "name": "HeyAnon",
+      "symbol": "Anon",
+      "decimals": 9,
+      "address": "9McvH6w97oewLmPxqQEoHUAv3u5iYMyQ9AeZZhguYf1T",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9McvH6w97oewLmPxqQEoHUAv3u5iYMyQ9AeZZhguYf1T.png"
+    },
+    {
+      "name": "APEX",
+      "symbol": "APEX",
+      "decimals": 9,
+      "address": "51tMb3zBKDiQhNwGqpgwbavaGH54mk8fXFzxTc1xnasg",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/51tMb3zBKDiQhNwGqpgwbavaGH54mk8fXFzxTc1xnasg.png"
+    },
+    {
+      "name": "Apricot",
+      "symbol": "APT",
+      "decimals": 6,
+      "address": "APTtJyaRX5yGTsJU522N4VYWg3vCvSb65eam5GrPT5Rt",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/APTtJyaRX5yGTsJU522N4VYWg3vCvSb65eam5GrPT5Rt.png"
+    },
+    {
+      "name": "Star Atlas",
+      "symbol": "ATLAS",
+      "decimals": 8,
+      "address": "ATLASXmbPQxBUYbxPsV97usA3fPQYEqzQBUHgiFCUsXx",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/ATLASXmbPQxBUYbxPsV97usA3fPQYEqzQBUHgiFCUsXx.png"
+    },
+    {
+      "name": "Atlas Dex",
+      "symbol": "ATS",
+      "decimals": 9,
+      "address": "HJbNXx2YMRxgfUJ6K4qeWtjatMK5KYQT1QnsCdDWywNv",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/HJbNXx2YMRxgfUJ6K4qeWtjatMK5KYQT1QnsCdDWywNv.png"
+    },
+    {
+      "name": "Audius (Wormhole)",
+      "symbol": "AUDIO",
+      "decimals": 8,
+      "address": "9LzCMqDgTKYz9Drzqnpgee3SGa89up3a247ypMj2xrqM",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9LzCMqDgTKYz9Drzqnpgee3SGa89up3a247ypMj2xrqM.png"
+    },
+    {
+      "name": "Axie Infinity Shard (Wormhole)",
+      "symbol": "AXS",
+      "decimals": 8,
+      "address": "HysWcbHiYY9888pHbaqhwLYZQeZrcQMXKQWRqS7zcPK5",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/HysWcbHiYY9888pHbaqhwLYZQeZrcQMXKQWRqS7zcPK5.png"
+    },
+    {
+      "name": "basis",
+      "symbol": "BASIS",
+      "decimals": 6,
+      "address": "Basis9oJw9j8cw53oMV7iqsgo6ihi9ALw4QR31rcjUJa",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Basis9oJw9j8cw53oMV7iqsgo6ihi9ALw4QR31rcjUJa.png"
+    },
+    {
+      "name": "Blockasset",
+      "symbol": "BLOCK",
+      "decimals": 6,
+      "address": "NFTUkR4u7wKxy9QLaX2TGvd9oZSWoMo4jqSJqdMb7Nk",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/NFTUkR4u7wKxy9QLaX2TGvd9oZSWoMo4jqSJqdMb7Nk.png"
+    },
+    {
+      "name": "BOKU",
+      "symbol": "BOKU",
+      "decimals": 9,
+      "address": "CN7qFa5iYkHz99PTctvT4xXUHnxwjQ5MHxCuTJtPN5uS",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CN7qFa5iYkHz99PTctvT4xXUHnxwjQ5MHxCuTJtPN5uS.png"
+    },
+    {
+      "name": "BONES Token",
+      "symbol": "BONES",
+      "decimals": 2,
+      "address": "bonegFPgrpZ4bfVn3kQK1aMbGYddWtfMAywNt5LsuVE",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/bonegFPgrpZ4bfVn3kQK1aMbGYddWtfMAywNt5LsuVE.png"
+    },
+    {
+      "name": "Starbots Token",
+      "symbol": "BOT",
+      "decimals": 8,
+      "address": "AkhdZGVbJXPuQZ53u2LrimCjkRP6ZyxG1SoM85T98eE1",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/AkhdZGVbJXPuQZ53u2LrimCjkRP6ZyxG1SoM85T98eE1.png"
+    },
+    {
+      "name": "Wrapped Bitcoin (Sollet)",
+      "symbol": "BTC",
+      "decimals": 6,
+      "address": "9n4nbM75f5Ui33ZbPYXn59EwSgE8CGsHtAeTH5YFeJ9E",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9n4nbM75f5Ui33ZbPYXn59EwSgE8CGsHtAeTH5YFeJ9E.png"
+    },
+    {
+      "name": "Simon's Cat",
+      "symbol": "CAT",
+      "decimals": 6,
+      "address": "3joMReCCSESngJEpFLoKR2dNcChjSRCDtybQet5uSpse",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3joMReCCSESngJEpFLoKR2dNcChjSRCDtybQet5uSpse.png"
+    },
+    {
+      "name": "Crypto Cavemen",
+      "symbol": "CAVE",
+      "decimals": 6,
+      "address": "4SZjjNABoqhbd4hnapbvoEPEqT8mnNkfbEoAwALf1V8t",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4SZjjNABoqhbd4hnapbvoEPEqT8mnNkfbEoAwALf1V8t.png"
+    },
+    {
+      "name": "Cheems",
+      "symbol": "CHEEMS",
+      "decimals": 4,
+      "address": "3FoUAsGDbvTD6YZ4wVKJgTB76onJUKz7GPEBNiR5b8wc",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3FoUAsGDbvTD6YZ4wVKJgTB76onJUKz7GPEBNiR5b8wc.png"
+    },
+    {
+      "name": "SolChicks",
+      "symbol": "CHICKS",
+      "decimals": 9,
+      "address": "cxxShYRVcepDudXhe7U62QHvw8uBJoKFifmzggGKVC2",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/cxxShYRVcepDudXhe7U62QHvw8uBJoKFifmzggGKVC2.png"
+    },
+    {
+      "name": "Chillchat",
+      "symbol": "CHILL",
+      "decimals": 9,
+      "address": "CH1LLLLUjZBai91qiKhVrTtzKqLxF4FtVAommraUQ66o",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CH1LLLLUjZBai91qiKhVrTtzKqLxF4FtVAommraUQ66o.png"
+    },
+    {
+      "name": "Compendium",
+      "symbol": "CMFI",
+      "decimals": 6,
+      "address": "5Wsd311hY8NXQhkt9cWHwTnqafk7BGEbLu8Py3DSnPAr",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5Wsd311hY8NXQhkt9cWHwTnqafk7BGEbLu8Py3DSnPAr.png"
+    },
+    {
+      "name": "COPE",
+      "symbol": "COPE",
+      "decimals": 6,
+      "address": "8HGyAAB1yoM1ttS7pXjHMa3dukTFGQggnFFH3hJZgzQh",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/8HGyAAB1yoM1ttS7pXjHMa3dukTFGQggnFFH3hJZgzQh.png"
+    },
+    {
+      "name": "CropperFinance",
+      "symbol": "CRP",
+      "decimals": 9,
+      "address": "DubwWZNWiNGMMeeQHPnMATNj77YZPZSAz2WVR5WjLJqz",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/DubwWZNWiNGMMeeQHPnMATNj77YZPZSAz2WVR5WjLJqz.png"
+    },
+    {
+      "name": "Cyclos",
+      "symbol": "CYS",
+      "decimals": 6,
+      "address": "BRLsMczKuaR5w9vSubF4j8HwEGGprVAyyVgS4EX7DKEg",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/BRLsMczKuaR5w9vSubF4j8HwEGGprVAyyVgS4EX7DKEg.png"
+    },
+    {
+      "name": "SolDate(DATE) Token",
+      "symbol": "DATE",
+      "decimals": 9,
+      "address": "Ce3PSQfkxT5ua4r2JqCoWYrMwKWC5hEzwsrT9Hb7mAz9",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Ce3PSQfkxT5ua4r2JqCoWYrMwKWC5hEzwsrT9Hb7mAz9.png"
+    },
+    {
+      "name": "DeFi Land",
+      "symbol": "DFL",
+      "decimals": 9,
+      "address": "DFL1zNkaGPWm1BqAVqRjCZvHmwTFrEaJtbzJWgseoNJh",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/DFL1zNkaGPWm1BqAVqRjCZvHmwTFrEaJtbzJWgseoNJh.png"
+    },
+    {
+      "name": "DarleyGo Essence",
+      "symbol": "DGE",
+      "decimals": 9,
+      "address": "AAXng5czWLNtTXHdWEn9Ef7kXMXEaraHj2JQKo7ZoLux",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/AAXng5czWLNtTXHdWEn9Ef7kXMXEaraHj2JQKo7ZoLux.png"
+    },
+    {
+      "name": "Dogemon",
+      "symbol": "DOGO",
+      "decimals": 6,
+      "address": "5LSFpvLDkcdV2a3Kiyzmg5YmJsj2XDLySaXvnfP1cgLT",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5LSFpvLDkcdV2a3Kiyzmg5YmJsj2XDLySaXvnfP1cgLT.png"
+    },
+    {
+      "name": "Deprecated SPL",
+      "symbol": "DPC",
+      "decimals": 2,
+      "address": "FLWRna1gxehQ9pSyZMzxfp4UhewvLPwuKfdUTgdZuMBY",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/FLWRna1gxehQ9pSyZMzxfp4UhewvLPwuKfdUTgdZuMBY.png"
+    },
+    {
+      "name": "Dexlab Classic",
+      "symbol": "DXLC",
+      "decimals": 6,
+      "address": "GsNzxJfFn6zQdJGeYsupJWzUAm57Ba7335mfhWvFiE9Z",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/GsNzxJfFn6zQdJGeYsupJWzUAm57Ba7335mfhWvFiE9Z.png"
+    },
+    {
+      "name": "dYdX (Wormhole)",
+      "symbol": "DYDX",
+      "decimals": 8,
+      "address": "4Hx6Bj56eGyw8EJrrheM6LBQAvVYRikYCWsALeTrwyRU",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4Hx6Bj56eGyw8EJrrheM6LBQAvVYRikYCWsALeTrwyRU.png"
+    },
+    {
+      "name": "Effect AI",
+      "symbol": "EFFECT",
+      "decimals": 6,
+      "address": "EFFECT1A1R3Dz8Hg4q5SXKjkiPc6KDRUWQ7Czjvy4H7E",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/EFFECT1A1R3Dz8Hg4q5SXKjkiPc6KDRUWQ7Czjvy4H7E.png"
+    },
+    {
+      "name": "Wrapped Ethereum (Sollet)",
+      "symbol": "ETH",
+      "decimals": 6,
+      "address": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk.png"
+    },
+    {
+      "name": "FABRIC",
+      "symbol": "FAB",
+      "decimals": 9,
+      "address": "EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/EdAhkbj5nF9sRM7XN7ewuW8C9XEUMs8P7cnoQ57SYE96.png"
+    },
+    {
+      "name": "Bonfida",
+      "symbol": "FIDA",
+      "decimals": 6,
+      "address": "EchesyfXePKdLtoiZSL8pBe8Myagyy8ZRqsACNCFGnvp",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/EchesyfXePKdLtoiZSL8pBe8Myagyy8ZRqsACNCFGnvp.png"
+    },
+    {
+      "name": "FRAKT Token",
+      "symbol": "FRKT",
+      "decimals": 8,
+      "address": "ErGB9xa24Szxbk1M28u2Tx8rKPqzL6BroNkkzk5rG4zj",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/ErGB9xa24Szxbk1M28u2Tx8rKPqzL6BroNkkzk5rG4zj.png"
+    },
+    {
+      "name": "Wrapped FTT (Sollet)",
+      "symbol": "FTT",
+      "decimals": 6,
+      "address": "AGFEad2et2ZJif9jaGpdMixQqvW5i81aBdvKe7PHNfz3",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/AGFEad2et2ZJif9jaGpdMixQqvW5i81aBdvKe7PHNfz3.png"
+    },
+    {
+      "name": "FUJI",
+      "symbol": "FUJI",
+      "decimals": 3,
+      "address": "fujiCeCeP9AFDVCv27P5JRcKLoH7wfs2C9xmDECs24m",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/fujiCeCeP9AFDVCv27P5JRcKLoH7wfs2C9xmDECs24m.png"
+    },
+    {
+      "name": "Gari",
+      "symbol": "GARI",
+      "decimals": 9,
+      "address": "CKaKtYvz6dKPyMvYq9Rh3UBrnNqYZAyd7iF4hJtjUvks",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CKaKtYvz6dKPyMvYq9Rh3UBrnNqYZAyd7iF4hJtjUvks.png"
+    },
+    {
+      "name": "Genopets",
+      "symbol": "GENE",
+      "decimals": 9,
+      "address": "GENEtH5amGSi8kHAtQoezp1XEXwZJ8vcuePYnXdKrMYz",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/GENEtH5amGSi8kHAtQoezp1XEXwZJ8vcuePYnXdKrMYz.png"
+    },
+    {
+      "name": "GooseFX",
+      "symbol": "GOFX",
+      "decimals": 9,
+      "address": "GFX1ZjR2P15tmrSwow6FjyDYcEkoFb4p4gJCpLBjaxHD",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/GFX1ZjR2P15tmrSwow6FjyDYcEkoFb4p4gJCpLBjaxHD.png"
+    },
+    {
+      "name": "Grape",
+      "symbol": "GRAPE",
+      "decimals": 6,
+      "address": "8upjSpvjcdpuzhfR1zriwg5NXkwDruejqNE9WNbPRtyA",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/8upjSpvjcdpuzhfR1zriwg5NXkwDruejqNE9WNbPRtyA.png"
+    },
+    {
+      "name": "GST",
+      "symbol": "GST",
+      "decimals": 9,
+      "address": "AFbX8oGjGpmVFywbVouvhQSRmiW2aR1mohfahi4Y2AdB",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/AFbX8oGjGpmVFywbVouvhQSRmiW2aR1mohfahi4Y2AdB.png"
+    },
+    {
+      "name": "Hawksight",
+      "symbol": "HAWK",
+      "decimals": 6,
+      "address": "BKipkearSqAUdNKa1WDstvcMjoPsSKBuNyvKDQDDu9WE",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/BKipkearSqAUdNKa1WDstvcMjoPsSKBuNyvKDQDDu9WE.png"
+    },
+    {
+      "name": "Hivello",
+      "symbol": "HVLO",
+      "decimals": 8,
+      "address": "Gdck9KXSSiMMhNyjUjo4sVT1GDzeZnZP2yse9jhax3GR",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Gdck9KXSSiMMhNyjUjo4sVT1GDzeZnZP2yse9jhax3GR.png"
+    },
+    {
+      "name": "Sol Invictus",
+      "symbol": "IN",
+      "decimals": 9,
+      "address": "inL8PMVd6iiW3RCBJnr5AsrRN6nqr4BTrcNuQWQSkvY",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/inL8PMVd6iiW3RCBJnr5AsrRN6nqr4BTrcNuQWQSkvY.png"
+    },
+    {
+      "name": "ISLAND",
+      "symbol": "ISLAND",
+      "decimals": 6,
+      "address": "HX6zNkjJ7zy653VoDWzbaYpSg7BrgLfq4i4RA7D5nkkz",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/HX6zNkjJ7zy653VoDWzbaYpSg7BrgLfq4i4RA7D5nkkz.png"
+    },
+    {
+      "name": "Intersola",
+      "symbol": "ISOLA",
+      "decimals": 6,
+      "address": "333iHoRM2Awhf9uVZtSyTfU8AekdGrgQePZsKMFPgKmS",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/333iHoRM2Awhf9uVZtSyTfU8AekdGrgQePZsKMFPgKmS.png"
+    },
+    {
+      "name": "Investin Protocol",
+      "symbol": "IVN",
+      "decimals": 6,
+      "address": "iVNcrNE9BRZBC9Aqf753iZiZfbszeAVUoikgT9yvr2a",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/iVNcrNE9BRZBC9Aqf753iZiZfbszeAVUoikgT9yvr2a.png"
+    },
+    {
+      "name": "JPool Staked SOL",
+      "symbol": "JSOL",
+      "decimals": 9,
+      "address": "7Q2afV64in6N6SeZsAAB81TJzwDoD6zpqmHkzi9Dcavn",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/7Q2afV64in6N6SeZsAAB81TJzwDoD6zpqmHkzi9Dcavn.png"
+    },
+    {
+      "name": "KIN",
+      "symbol": "KIN",
+      "decimals": 5,
+      "address": "kinXdEcpDQeHPEuQnqmUgtYykqKGVFq6CeVX5iAHJq6",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/kinXdEcpDQeHPEuQnqmUgtYykqKGVFq6CeVX5iAHJq6.png"
+    },
+    {
+      "name": "KKO Protocol",
+      "symbol": "KKO",
+      "decimals": 9,
+      "address": "kiNeKo77w1WBEzFFCXrTDRWGRWGP8yHvKC9rX6dqjQh",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/kiNeKo77w1WBEzFFCXrTDRWGRWGP8yHvKC9rX6dqjQh.png"
+    },
+    {
+      "name": "Lido DAO Token (Wormhole)",
+      "symbol": "LDO",
+      "decimals": 8,
+      "address": "HZRCwxP2Vq9PCpPXooayhJ2bxTpo5xfpQrwB1svh332p",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/HZRCwxP2Vq9PCpPXooayhJ2bxTpo5xfpQrwB1svh332p.png"
+    },
+    {
+      "name": "LIKE",
+      "symbol": "LIKE",
+      "decimals": 9,
+      "address": "3bRTivrVsitbmCTGtqwp7hxXPsybkjn4XLNtPsHqa3zR",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3bRTivrVsitbmCTGtqwp7hxXPsybkjn4XLNtPsHqa3zR.png"
+    },
+    {
+      "name": "Wrapped Chainlink (Sollet)",
+      "symbol": "LINK",
+      "decimals": 6,
+      "address": "CWE8jPTUYhdCTZYWPTe1o5DFqfdjzWKc9WKz6rSjQUdG",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CWE8jPTUYhdCTZYWPTe1o5DFqfdjzWKc9WKz6rSjQUdG.png"
+    },
+    {
+      "name": "LIQ Protocol",
+      "symbol": "LIQ",
+      "decimals": 6,
+      "address": "4wjPQJ6PrkC4dHhYghwJzGBVP78DkBzA2U3kHoFNBuhj",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4wjPQJ6PrkC4dHhYghwJzGBVP78DkBzA2U3kHoFNBuhj.png"
+    },
+    {
+      "name": "Decentraland MANA (Wormhole)",
+      "symbol": "MANA",
+      "decimals": 8,
+      "address": "7dgHoN8wBZCc5wbnQ2C47TDnBMAxG4Q5L3KjP67z8kNi",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/7dgHoN8wBZCc5wbnQ2C47TDnBMAxG4Q5L3KjP67z8kNi.png"
+    },
+    {
+      "name": "MAPS",
+      "symbol": "MAPS",
+      "decimals": 6,
+      "address": "MAPS41MDahZ9QdKXhVa4dWB9RuyfV4XqhyAZ8XcYepb",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/MAPS41MDahZ9QdKXhVa4dWB9RuyfV4XqhyAZ8XcYepb.png"
+    },
+    {
+      "name": "Magic Eden",
+      "symbol": "ME",
+      "decimals": 6,
+      "address": "MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u.png"
+    },
+    {
+      "name": "MEAN",
+      "symbol": "MEAN",
+      "decimals": 6,
+      "address": "MEANeD3XDdUmNMsRGjASkSWdC8prLYsoRJ61pPeHctD",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/MEANeD3XDdUmNMsRGjASkSWdC8prLYsoRJ61pPeHctD.png"
+    },
+    {
+      "name": "Media Network",
+      "symbol": "MEDIA",
+      "decimals": 6,
+      "address": "ETAtLmCmsoiEEKfNrHKJ2kYy3MoABhU6NQvpSfij5tDs",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/ETAtLmCmsoiEEKfNrHKJ2kYy3MoABhU6NQvpSfij5tDs.png"
+    },
+    {
+      "name": "Mercurial",
+      "symbol": "MER",
+      "decimals": 6,
+      "address": "MERt85fc5boKw3BW1eYdxonEuJNvXbiMbs6hvheau5K",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/MERt85fc5boKw3BW1eYdxonEuJNvXbiMbs6hvheau5K.png"
+    },
+    {
+      "name": "Mintify",
+      "symbol": "MINT",
+      "decimals": 9,
+      "address": "AvoecWraqX969kfXUF5XCCDz59sjRjiDa1KUDyj225t8",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/AvoecWraqX969kfXUF5XCCDz59sjRjiDa1KUDyj225t8.png"
+    },
+    {
+      "name": "Marinade",
+      "symbol": "MNDE",
+      "decimals": 9,
+      "address": "MNDEFzGvMt87ueuHvVU9VcTqsAP5b3fTGPsHuuPA5ey",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/MNDEFzGvMt87ueuHvVU9VcTqsAP5b3fTGPsHuuPA5ey.png"
+    },
+    {
+      "name": "Mango",
+      "symbol": "MNGO",
+      "decimals": 6,
+      "address": "MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac.png"
+    },
+    {
+      "name": "Modul",
+      "symbol": "MODUL",
+      "decimals": 9,
+      "address": "A98UDy7z8MfmWnTQt6cKjje7UfqV3pTLf4yEbuwL2HrH",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/A98UDy7z8MfmWnTQt6cKjje7UfqV3pTLf4yEbuwL2HrH.png"
+    },
+    {
+      "name": "Marinade staked SOL (mSOL)",
+      "symbol": "mSOL",
+      "decimals": 9,
+      "address": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So.png"
+    },
+    {
+      "name": "Nest Arcade",
+      "symbol": "NESTA",
+      "decimals": 9,
+      "address": "Czt7Fc4dz6BpLh2vKiSYyotNK2uPPDhvbWrrLeD9QxhV",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Czt7Fc4dz6BpLh2vKiSYyotNK2uPPDhvbWrrLeD9QxhV.png"
+    },
+    {
+      "name": "Nirvana NIRV",
+      "symbol": "NIRV",
+      "decimals": 6,
+      "address": "3eamaYJ7yicyRd3mYz4YeNyNPGVo6zMmKUp5UP25AxRM",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3eamaYJ7yicyRd3mYz4YeNyNPGVo6zMmKUp5UP25AxRM.png"
+    },
+    {
+      "name": "Nosana",
+      "symbol": "NOS",
+      "decimals": 6,
+      "address": "nosXBVoaCTtYdLvKY6Csb4AC8JCdQKKAaWYtx2ZMoo7",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/nosXBVoaCTtYdLvKY6Csb4AC8JCdQKKAaWYtx2ZMoo7.png"
+    },
+    {
+      "name": "OOGI",
+      "symbol": "OOGI",
+      "decimals": 9,
+      "address": "H7Qc9APCWWGDVxGD5fJHmLTmdEgT9GFatAKFNg6sHh8A",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/H7Qc9APCWWGDVxGD5fJHmLTmdEgT9GFatAKFNg6sHh8A.png"
+    },
+    {
+      "name": "Orca",
+      "symbol": "ORCA",
+      "decimals": 6,
+      "address": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE.png"
+    },
+    {
+      "name": "Oxbull Sol",
+      "symbol": "OXS",
+      "decimals": 9,
+      "address": "4TGxgCSJQx2GQk9oHZ8dC5m3JNXTYZHjXumKAW3vLnNx",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4TGxgCSJQx2GQk9oHZ8dC5m3JNXTYZHjXumKAW3vLnNx.png"
+    },
+    {
+      "name": "Oxygen Protocol",
+      "symbol": "OXY",
+      "decimals": 6,
+      "address": "z3dn17yLaGMKffVogeFHQ9zWVcXgqgf3PQnDsNs2g6M",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/z3dn17yLaGMKffVogeFHQ9zWVcXgqgf3PQnDsNs2g6M.png"
+    },
+    {
+      "name": "PAI (Parrot USD)",
+      "symbol": "PAI",
+      "decimals": 6,
+      "address": "Ea5SjE2Y6yvCeW5dYTn7PYMuW5ikXkvbGdcmSnXeaLjS",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Ea5SjE2Y6yvCeW5dYTn7PYMuW5ikXkvbGdcmSnXeaLjS.png"
+    },
+    {
+      "name": "Pudgy Penguins",
+      "symbol": "PENGU",
+      "decimals": 6,
+      "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv.png"
+    },
+    {
+      "name": "ConstitutionDAO (Wormhole)",
+      "symbol": "PEOPLE",
+      "decimals": 8,
+      "address": "CobcsUrt3p91FwvULYKorQejgsm5HoQdv5T8RUZ6PnLA",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CobcsUrt3p91FwvULYKorQejgsm5HoQdv5T8RUZ6PnLA.png"
+    },
+    {
+      "name": "Star Atlas DAO",
+      "symbol": "POLIS",
+      "decimals": 8,
+      "address": "poLisWXnNRwC6oBu1vHiuKQzFjGL4XDSu4g9qjz9qVk",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/poLisWXnNRwC6oBu1vHiuKQzFjGL4XDSu4g9qjz9qVk.png"
+    },
+    {
+      "name": "PONKE",
+      "symbol": "PONKE",
+      "decimals": 9,
+      "address": "5z3EqYQo9HiCEs3R84RCDMu2n7anpDMxRhdK8PSWmrRC",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5z3EqYQo9HiCEs3R84RCDMu2n7anpDMxRhdK8PSWmrRC.png"
+    },
+    {
+      "name": "Port Finance Token",
+      "symbol": "PORT",
+      "decimals": 6,
+      "address": "PoRTjZMPXb9T7dyU7tpLEZRQj7e6ssfAE62j2oQuc6y",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/PoRTjZMPXb9T7dyU7tpLEZRQj7e6ssfAE62j2oQuc6y.png"
+    },
+    {
+      "name": "Nirvana prANA",
+      "symbol": "prANA",
+      "decimals": 6,
+      "address": "CLr7G2af9VSfH1PFZ5fYvB8WK1DTgE85qrVjpa8Xkg4N",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CLr7G2af9VSfH1PFZ5fYvB8WK1DTgE85qrVjpa8Xkg4N.png"
+    },
+    {
+      "name": "prANA",
+      "symbol": "PRANA",
+      "decimals": 6,
+      "address": "PRAxfbouRoJ9yZqhyejEAH6RvjJ86Y82vfiZTBSM3xG",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/PRAxfbouRoJ9yZqhyejEAH6RvjJ86Y82vfiZTBSM3xG.png"
+    },
+    {
+      "name": "PRISM",
+      "symbol": "PRISM",
+      "decimals": 6,
+      "address": "PRSMNsEPqhGVCH1TtWiJqPjJyh2cKrLostPZTNy1o5x",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/PRSMNsEPqhGVCH1TtWiJqPjJyh2cKrLostPZTNy1o5x.png"
+    },
+    {
+      "name": "PRT (Parrot Protocol)",
+      "symbol": "PRT",
+      "decimals": 6,
+      "address": "PRT88RkA4Kg5z7pKnezeNH4mafTvtQdfFgpQTGRjz44",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/PRT88RkA4Kg5z7pKnezeNH4mafTvtQdfFgpQTGRjz44.png"
+    },
+    {
+      "name": "PsyOptions",
+      "symbol": "PSY",
+      "decimals": 6,
+      "address": "PsyFiqqjiv41G7o5SMRzDJCu4psptThNR2GtfeGHfSq",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/PsyFiqqjiv41G7o5SMRzDJCu4psptThNR2GtfeGHfSq.png"
+    },
+    {
+      "name": "PUFF",
+      "symbol": "PUFF",
+      "decimals": 9,
+      "address": "G9tt98aYSznRk7jWsfuz9FnTdokxS6Brohdo9hSmjTRB",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/G9tt98aYSznRk7jWsfuz9FnTdokxS6Brohdo9hSmjTRB.png"
+    },
+    {
+      "name": "Raydium",
+      "symbol": "RAY",
+      "decimals": 6,
+      "address": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R.png"
+    },
+    {
+      "name": "Realy Token",
+      "symbol": "REAL",
+      "decimals": 9,
+      "address": "AD27ov5fVU2XzwsbvnFvb1JpCBaCB5dRXrczV9CqSVGb",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/AD27ov5fVU2XzwsbvnFvb1JpCBaCB5dRXrczV9CqSVGb.png"
+    },
+    {
+      "name": "Aldrin",
+      "symbol": "RIN",
+      "decimals": 9,
+      "address": "E5ndSkaB17Dm7CsD22dvcjfrYSDLCxFcMd6z8ddCk5wp",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/E5ndSkaB17Dm7CsD22dvcjfrYSDLCxFcMd6z8ddCk5wp.png"
+    },
+    {
+      "name": "HRHC Token",
+      "symbol": "ROLL",
+      "decimals": 6,
+      "address": "76aYNHbDfHemxSS7vmh6eJGfjodK8m7srCxiYCrKxzY1",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/76aYNHbDfHemxSS7vmh6eJGfjodK8m7srCxiYCrKxzY1.png"
+    },
+    {
+      "name": "Rope Token",
+      "symbol": "ROPE",
+      "decimals": 9,
+      "address": "8PMHT4swUMtBzgHnh5U564N5sjPSiUz2cjEQzFnnP1Fo",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/8PMHT4swUMtBzgHnh5U564N5sjPSiUz2cjEQzFnnP1Fo.png"
+    },
+    {
+      "name": "Run Token",
+      "symbol": "RUN",
+      "decimals": 9,
+      "address": "6F9XriABHfWhit6zmMUYAQBSy6XK5VF1cHXuW5LDpRtC",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/6F9XriABHfWhit6zmMUYAQBSy6XK5VF1cHXuW5LDpRtC.png"
+    },
+    {
+      "name": "Samoyed Coin",
+      "symbol": "SAMO",
+      "decimals": 9,
+      "address": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU.png"
+    },
+    {
+      "name": "SAND (Wormhole)",
+      "symbol": "SAND",
+      "decimals": 8,
+      "address": "49c7WuCZkQgc3M4qH8WuEUNXfgwupZf1xqWkDQ7gjRGt",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/49c7WuCZkQgc3M4qH8WuEUNXfgwupZf1xqWkDQ7gjRGt.png"
+    },
+    {
+      "name": "SB",
+      "symbol": "SB",
+      "decimals": 6,
+      "address": "SuperbZyz7TsSdSoFAZ6RYHfAWe9NmjXBLVQpS8hqdx",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/SuperbZyz7TsSdSoFAZ6RYHfAWe9NmjXBLVQpS8hqdx.png"
+    },
+    {
+      "name": "Saber Protocol Token",
+      "symbol": "SBR",
+      "decimals": 6,
+      "address": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1.png"
+    },
+    {
+      "name": "Synchrony",
+      "symbol": "SCY",
+      "decimals": 9,
+      "address": "SCYfrGCw8aDiqdgcpdGjV6jp4UVVQLuphxTDLNWu36f",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/SCYfrGCw8aDiqdgcpdGjV6jp4UVVQLuphxTDLNWu36f.png"
+    },
+    {
+      "name": "Seeded Network",
+      "symbol": "SEEDED",
+      "decimals": 9,
+      "address": "seedEDBqu63tJ7PFqvcbwvThrYUkQeqT6NLf81kLibs",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/seedEDBqu63tJ7PFqvcbwvThrYUkQeqT6NLf81kLibs.png"
+    },
+    {
+      "name": "Shadow Token",
+      "symbol": "SHDW",
+      "decimals": 9,
+      "address": "SHDWyBxihqiCj6YekG2GUr7wqKLeLAMK1gHZck9pL6y",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/SHDWyBxihqiCj6YekG2GUr7wqKLeLAMK1gHZck9pL6y.png"
+    },
+    {
+      "name": "SHIBA INU (Wormhole)",
+      "symbol": "SHIB",
+      "decimals": 8,
+      "address": "CiKu4eHsVrc1eueVQeHn7qhXTcVu95gSQmBpX4utjL9z",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CiKu4eHsVrc1eueVQeHn7qhXTcVu95gSQmBpX4utjL9z.png"
+    },
+    {
+      "name": "Solice",
+      "symbol": "SLC",
+      "decimals": 6,
+      "address": "METAmTMXwdb8gYzyCPfXXFmZZw4rUsXX58PNsDg7zjL",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/METAmTMXwdb8gYzyCPfXXFmZZw4rUsXX58PNsDg7zjL.png"
+    },
+    {
+      "name": "Solanium",
+      "symbol": "SLIM",
+      "decimals": 6,
+      "address": "xxxxa1sKNGwFtw2kFn8XauW9xq8hBZ5kVtcSesTT9fW",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/xxxxa1sKNGwFtw2kFn8XauW9xq8hBZ5kVtcSesTT9fW.png"
+    },
+    {
+      "name": "Solend",
+      "symbol": "SLND",
+      "decimals": 6,
+      "address": "SLNDpmoWTVADgEdndyvWzroNL7zSi1dF9PC3xHGtPwp",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/SLNDpmoWTVADgEdndyvWzroNL7zSi1dF9PC3xHGtPwp.png"
+    },
+    {
+      "name": "SynesisOne",
+      "symbol": "SNS",
+      "decimals": 9,
+      "address": "SNSNkV9zfG5ZKWQs6x4hxvBRV6s8SqMfSGCtECDvdMd",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/SNSNkV9zfG5ZKWQs6x4hxvBRV6s8SqMfSGCtECDvdMd.png"
+    },
+    {
+      "name": "Synthetify",
+      "symbol": "SNY",
+      "decimals": 6,
+      "address": "4dmKkXNHdgYsXqBHCuMikNQWwVomZURhYvkkX5c4pQ7y",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4dmKkXNHdgYsXqBHCuMikNQWwVomZURhYvkkX5c4pQ7y.png"
+    },
+    {
+      "name": "Solcubator",
+      "symbol": "SOLC",
+      "decimals": 9,
+      "address": "Bx1fDtvTN6NvE4kjdPHQXtmGSg582bZx9fGy4DQNMmAT",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Bx1fDtvTN6NvE4kjdPHQXtmGSg582bZx9fGy4DQNMmAT.png"
+    },
+    {
+      "name": "Soldex",
+      "symbol": "SOLX",
+      "decimals": 9,
+      "address": "CH74tuRLTYcxG7qNJCsV9rghfLXJCQJbsu7i52a8F1Gn",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CH74tuRLTYcxG7qNJCsV9rghfLXJCQJbsu7i52a8F1Gn.png"
+    },
+    {
+      "name": "Sonar Watch",
+      "symbol": "SONAR",
+      "decimals": 9,
+      "address": "sonarX4VtVkQemriJeLm6CKeW3GDMyiBnnAEMw1MRAE",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/sonarX4VtVkQemriJeLm6CKeW3GDMyiBnnAEMw1MRAE.png"
+    },
+    {
+      "name": "Bitspawn Token",
+      "symbol": "SPWN",
+      "decimals": 9,
+      "address": "5U9QqCPhqXAJcEv9uyzFJd5zhN93vuPk1aNNkXnUfPnt",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5U9QqCPhqXAJcEv9uyzFJd5zhN93vuPk1aNNkXnUfPnt.png"
+    },
+    {
+      "name": "Serum",
+      "symbol": "SRM",
+      "decimals": 6,
+      "address": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt.png"
+    },
+    {
+      "name": "StarLaunch",
+      "symbol": "STARS",
+      "decimals": 6,
+      "address": "HCgybxq5Upy8Mccihrp7EsmwwFqYZtrHrsmsKwtGXLgW",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/HCgybxq5Upy8Mccihrp7EsmwwFqYZtrHrsmsKwtGXLgW.png"
+    },
+    {
+      "name": "Step",
+      "symbol": "STEP",
+      "decimals": 9,
+      "address": "StepAscQoEioFxxWGnh2sLBDFp9d8rvKz2Yp39iDpyT",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/StepAscQoEioFxxWGnh2sLBDFp9d8rvKz2Yp39iDpyT.png"
+    },
+    {
+      "name": "Solster",
+      "symbol": "STR",
+      "decimals": 9,
+      "address": "9zoqdwEBKWEi9G5Ze8BSkdmppxGgVv1Kw4LuigDiNr9m",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9zoqdwEBKWEi9G5Ze8BSkdmppxGgVv1Kw4LuigDiNr9m.png"
+    },
+    {
+      "name": "Lido Staked SOL",
+      "symbol": "stSOL",
+      "decimals": 9,
+      "address": "7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj.png"
+    },
+    {
+      "name": "Wrapped SUSHI (Sollet)",
+      "symbol": "SUSHI",
+      "decimals": 6,
+      "address": "AR1Mtgh7zAtxuxGd2XPovXPVjcSdY3i4rQYisNadjfKy",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/AR1Mtgh7zAtxuxGd2XPovXPVjcSdY3i4rQYisNadjfKy.png"
+    },
+    {
+      "name": "SushiToken (Wormhole)",
+      "symbol": "SUSHI",
+      "decimals": 8,
+      "address": "ChVzxWRmrTeSgwd3Ui3UumcN8KX7VK3WaD4KGeSKpypj",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/ChVzxWRmrTeSgwd3Ui3UumcN8KX7VK3WaD4KGeSKpypj.png"
+    },
+    {
+      "name": "Solvent",
+      "symbol": "SVT",
+      "decimals": 6,
+      "address": "svtMpL5eQzdmB3uqK9NXaQkq8prGZoKQFNVJghdWCkV",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/svtMpL5eQzdmB3uqK9NXaQkq8prGZoKQFNVJghdWCkV.png"
+    },
+    {
+      "name": "Sypool",
+      "symbol": "SYP",
+      "decimals": 9,
+      "address": "FnKE9n6aGjQoNWRBZXy4RW6LZVao7qwBonUbiD7edUmZ",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/FnKE9n6aGjQoNWRBZXy4RW6LZVao7qwBonUbiD7edUmZ.png"
+    },
+    {
+      "name": "Tiny Colony",
+      "symbol": "TINY",
+      "decimals": 6,
+      "address": "HKfs24UEDQpHS5hUyKYkHd9q7GY5UQ679q2bokeL2whu",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/HKfs24UEDQpHS5hUyKYkHd9q7GY5UQ679q2bokeL2whu.png"
+    },
+    {
+      "name": "Tulip",
+      "symbol": "TULIP",
+      "decimals": 6,
+      "address": "TuLipcqtGVXP9XR62wM8WWCm6a9vhLs7T1uoWBk6FDs",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/TuLipcqtGVXP9XR62wM8WWCm6a9vhLs7T1uoWBk6FDs.png"
+    },
+    {
+      "name": "UncleMine",
+      "symbol": "UM",
+      "decimals": 6,
+      "address": "DMCUFm2ZAnSU7UgsdVq23gRogMU3MEBjPgQF1gK53rEn",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/DMCUFm2ZAnSU7UgsdVq23gRogMU3MEBjPgQF1gK53rEn.png"
+    },
+    {
+      "name": "Uniswap (Wormhole)",
+      "symbol": "UNI",
+      "decimals": 8,
+      "address": "8FU95xFJhUUkyyCLU13HSzDLs7oC4QZdXQHL6SCeab36",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/8FU95xFJhUUkyyCLU13HSzDLs7oC4QZdXQHL6SCeab36.png"
+    },
+    {
+      "name": "UPS token (UPFI Network)",
+      "symbol": "UPS",
+      "decimals": 6,
+      "address": "EwJN2GqUGXXzYmoAciwuABtorHczTA5LqbukKXV1viH7",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/EwJN2GqUGXXzYmoAciwuABtorHczTA5LqbukKXV1viH7.png"
+    },
+    {
+      "name": "Ratio stable Token",
+      "symbol": "USDr",
+      "decimals": 6,
+      "address": "USDrbBQwQbQ2oWHUPfA8QBHcyVxKUq1xHyXsSLKdUq2",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/USDrbBQwQbQ2oWHUPfA8QBHcyVxKUq1xHyXsSLKdUq2.png"
+    },
+    {
+      "name": "UXP Governance Token",
+      "symbol": "UXP",
+      "decimals": 9,
+      "address": "UXPhBoR3qG4UCiGNJfV7MqhHyFqKN68g45GoYvAeL2M",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/UXPhBoR3qG4UCiGNJfV7MqhHyFqKN68g45GoYvAeL2M.png"
+    },
+    {
+      "name": "vSOL",
+      "symbol": "vSOL",
+      "decimals": 9,
+      "address": "vSoLxydx6akxyMD9XEcPvGYNGq6Nn66oqVb3UkGkei7",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/vSoLxydx6akxyMD9XEcPvGYNGq6Nn66oqVb3UkGkei7.png"
+    },
+    {
+      "name": "Waggle Network",
+      "symbol": "WAG",
+      "decimals": 9,
+      "address": "5tN42n9vMi6ubp67Uy4NnmM5DMZYN8aS8GeB3bEDHr6E",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5tN42n9vMi6ubp67Uy4NnmM5DMZYN8aS8GeB3bEDHr6E.png"
+    },
+    {
+      "name": "Wrapped BNB (Wormhole)",
+      "symbol": "WBNB",
+      "decimals": 8,
+      "address": "9gP2kCy3wA1ctvYWQk75guqXuHfrEomqydHLtcTCqiLa",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9gP2kCy3wA1ctvYWQk75guqXuHfrEomqydHLtcTCqiLa.png"
+    },
+    {
+      "name": "Wrapped Ether (Wormhole)",
+      "symbol": "WETH",
+      "decimals": 8,
+      "address": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs.png"
+    },
+    {
+      "name": "Wilder World",
+      "symbol": "WILD",
+      "decimals": 9,
+      "address": "FVvd3s9dZYzsgitkJyWbmycSc8MkYZjyF7oqAEvmSxTZ",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/FVvd3s9dZYzsgitkJyWbmycSc8MkYZjyF7oqAEvmSxTZ.png"
+    },
+    {
+      "name": "WOOFENOMICS",
+      "symbol": "WOOF",
+      "decimals": 6,
+      "address": "9nEqaUcb16sQ3Tn1psbkWqyhPdLmfHWjKGymREjsAgTE",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9nEqaUcb16sQ3Tn1psbkWqyhPdLmfHWjKGymREjsAgTE.png"
+    },
+    {
+      "name": "Wrapped SOL",
+      "symbol": "WSOL",
+      "decimals": 9,
+      "address": "So11111111111111111111111111111111111111112",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/So11111111111111111111111111111111111111112.png"
+    },
+    {
+      "name": "XCOPE",
+      "symbol": "XCOPE",
+      "decimals": 0,
+      "address": "3K6rftdAaQYMPunrtNRHgnK2UAtjm2JwyT2oCiTDouYE",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3K6rftdAaQYMPunrtNRHgnK2UAtjm2JwyT2oCiTDouYE.png"
+    },
+    {
+      "name": "xHashtag Token",
+      "symbol": "XTAG",
+      "decimals": 6,
+      "address": "5gs8nf4wojB5EXgDUWNLwXpknzgV2YWDhveAeBZpVLbp",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5gs8nf4wojB5EXgDUWNLwXpknzgV2YWDhveAeBZpVLbp.png"
+    },
+    {
+      "name": "Wrapped YFI (Sollet)",
+      "symbol": "YFI",
+      "decimals": 6,
+      "address": "3JSf5tPeuscJGtaCp5giEiDhv51gQ4v3zWg8DGgyLfAB",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3JSf5tPeuscJGtaCp5giEiDhv51gQ4v3zWg8DGgyLfAB.png"
+    },
+    {
+      "name": "ZEBEC",
+      "symbol": "ZBC",
+      "decimals": 9,
+      "address": "zebeczgi5fSEtbpfQKVZKCJ3WgYXxjkMUkNNx7fLKAF",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/zebeczgi5fSEtbpfQKVZKCJ3WgYXxjkMUkNNx7fLKAF.png"
+    },
+    {
+      "name": "zBTC",
+      "symbol": "zBTC",
+      "decimals": 8,
+      "address": "zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/zBTCug3er3tLyffELcvDNrKkCymbPWysGcWihESYfLg.png"
+    },
+    {
+      "name": "Zeta",
+      "symbol": "ZEX",
+      "decimals": 6,
+      "address": "ZEXy1pqteRu3n13kdyh4LwPQknkFk3GzmMYMuNadWPo",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/ZEXy1pqteRu3n13kdyh4LwPQknkFk3GzmMYMuNadWPo.png"
+    },
+    {
+      "name": "Fartcoin ",
+      "symbol": "Fartcoin ",
+      "decimals": 6,
+      "address": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump.png"
+    },
+    {
+      "name": "USDS",
+      "symbol": "USDS",
+      "decimals": 6,
+      "address": "USDSwr9ApdHk5bvJKMjzff41FfuX8bSxdKcR81vTwcA",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmTW9HWfb2wsQqEVJiixkQ73Nsfp2Rx4ESaDSiQ7ThwnFM"
+    },
+    {
+      "name": "Aethir Token",
+      "symbol": "ATH",
+      "decimals": 9,
+      "address": "Dm5BxyMetG3Aq5PaG1BrG7rBYqEMtnkjvPNMExfacVk7",
+      "chainId": 101,
+      "logoURI": "https://static.aethir.com/logo.png"
+    },
+    {
+      "name": "Skate",
+      "symbol": "SKATE",
+      "decimals": 9,
+      "address": "9v6BKHg8WWKBPTGqLFQz87RxyaHHDygx8SnZEbBFmns2",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/9v6BKHg8WWKBPTGqLFQz87RxyaHHDygx8SnZEbBFmns2.png"
+    },
+    {
+      "name": "ChainGPT",
+      "symbol": "CGPT",
+      "decimals": 9,
+      "address": "CCDfDXZxzZtkZLuhY48gyKdXc5KywqpR8xEVHHh8ck1G",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CCDfDXZxzZtkZLuhY48gyKdXc5KywqpR8xEVHHh8ck1G.png"
+    },
+    {
+      "name": "Roam Token",
+      "symbol": "ROAM",
+      "decimals": 6,
+      "address": "RoamA1USA8xjvpTJZ6RvvxyDRzNh6GCA1zVGKSiMVkn",
+      "chainId": 101,
+      "logoURI": "https://gateway.pinata.cloud/ipfs/bafkreiechz2it363d4xsalz3u6heyxe6hlx7u53j7skc4xcw2t5qg7emiy"
+    },
+    {
+      "name": "Pocket Network (Wormhole)",
+      "symbol": "POKT",
+      "decimals": 6,
+      "address": "6CAsXfiCXZfP8APCG6Vma2DFMindopxiqYQN4LSQfhoC",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/6CAsXfiCXZfP8APCG6Vma2DFMindopxiqYQN4LSQfhoC.png"
+    },
+    {
+      "name": "Bubblemaps",
+      "symbol": "BMT",
+      "decimals": 9,
+      "address": "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY",
+      "chainId": 101,
+      "logoURI": "https://storage.googleapis.com/bubblemaps-metadata/bmt/logo.png"
+    },
+    {
+      "name": "Osaka Protocol",
+      "symbol": "OSAK",
+      "decimals": 4,
+      "address": "NKaTB5vC3srLog8W7jzdjnejig2iH8eDpkDM31Dosak",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmNRBk6Stj1u81iGcPF1F7BCVbNSJRTD3GWWeMFA2W9Hgn"
+    },
+    {
+      "name": "Baby Doge Coin",
+      "symbol": "BabyDoge",
+      "decimals": 1,
+      "address": "7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann",
+      "chainId": 101,
+      "logoURI": "https://i.degencdn.com/ipfs/bafkreia5kf3bjo2x7t6aen4z44nrfgsxly4dofhyjvsu75mkx2vsxbl4hi"
+    },
+    {
+      "name": "JITO",
+      "symbol": "JTO",
+      "decimals": 9,
+      "address": "jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL",
+      "chainId": 101,
+      "logoURI": "https://metadata.jito.network/token/jto/image"
+    },
+    {
+      "name": "Infinity",
+      "symbol": "INF",
+      "decimals": 9,
+      "address": "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm.png"
+    },
+    {
+      "name": "Kamino",
+      "symbol": "KMNO",
+      "decimals": 6,
+      "address": "KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS",
+      "chainId": 101,
+      "logoURI": "https://cdn.kamino.finance/kamino.svg"
+    },
+    {
+      "name": "EURC",
+      "symbol": "EURC",
+      "decimals": 6,
+      "address": "HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr",
+      "chainId": 101,
+      "logoURI": "https://www.circle.com/eurc-icon"
+    },
+    {
+      "name": "SPX6900 (Wormhole)",
+      "symbol": "SPX",
+      "decimals": 8,
+      "address": "J3NKxxXZcnNiMjKw9hYb2K4LUxgwB6t1FtPtQVsv3KFr",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/J3NKxxXZcnNiMjKw9hYb2K4LUxgwB6t1FtPtQVsv3KFr.png"
+    },
+    {
+      "name": "Jupiter Staked SOL",
+      "symbol": "JupSOL",
+      "decimals": 9,
+      "address": "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",
+      "chainId": 101,
+      "logoURI": "https://static.jup.ag/jupSOL/icon.png"
+    },
+    {
+      "name": "Jupiter Perps LP",
+      "symbol": "JLP",
+      "decimals": 6,
+      "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+      "chainId": 101,
+      "logoURI": "https://static.jup.ag/jlp/icon.png"
+    },
+    {
+      "name": "dogwifhat",
+      "symbol": "$WIF",
+      "decimals": 6,
+      "address": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm.png"
+    },
+    {
+      "name": "Bonk",
+      "symbol": "Bonk",
+      "decimals": 5,
+      "address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/hQiPZOsRZXGXBJd_82PhVdlM_hACsT_q6wqwf5cSY7I"
+    },
+    {
+      "name": "PayPal USD",
+      "symbol": "PYUSD",
+      "decimals": 6,
+      "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+      "chainId": 101,
+      "logoURI": "https://424565.fs1.hubspotusercontent-na1.net/hubfs/424565/PYUSDLOGO.png"
+    },
+    {
+      "name": "Jito Staked SOL",
+      "symbol": "JitoSOL",
+      "decimals": 9,
+      "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+      "chainId": 101,
+      "logoURI": "https://storage.googleapis.com/token-metadata/JitoSOL-256.png"
+    },
+    {
+      "name": "Binance Staked SOL",
+      "symbol": "BNSOL",
+      "decimals": 9,
+      "address": "BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/LepI-hea-JrbLMb4L_HpMzaq9k0aHY2-lVSGiBtwvFM?ext=png"
+    },
+    {
+      "name": "Coinbase Wrapped BTC",
+      "symbol": "cbBTC",
+      "decimals": 8,
+      "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmZ7L8yd5j36oXXydUiYFiFsRHbi3EdgC4RuFwvM7dcqge"
+    },
+    {
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "chainId": 101,
+      "logoURI": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/logo.png"
+    },
+    {
+      "name": "USDT",
+      "symbol": "USDT",
+      "decimals": 6,
+      "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB.png"
+    },
+    {
+      "name": "deBridge",
+      "symbol": "DBR",
+      "decimals": 6,
+      "address": "DBRiDgJAMsM95moTzJs7M9LnkGErpbv9v6CUR1DXnUu5",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/DBRiDgJAMsM95moTzJs7M9LnkGErpbv9v6CUR1DXnUu5.png"
+    },
+    {
+      "name": "Pyth Network",
+      "symbol": "PYTH",
+      "decimals": 6,
+      "address": "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3",
+      "chainId": 101,
+      "logoURI": "https://pyth.network/token.svg"
+    },
+    {
+      "name": "Grass",
+      "symbol": "GRASS",
+      "decimals": 9,
+      "address": "Grass7B4RdKfBCjTKgSqnXkqjwiGvQyFbuSCUJr3XXjs",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Grass7B4RdKfBCjTKgSqnXkqjwiGvQyFbuSCUJr3XXjs.png"
+    },
+    {
+      "name": "SwissBorg Token",
+      "symbol": "BORG",
+      "decimals": 9,
+      "address": "3dQTr7ror2QPKQ3GbBCokJUmjErGg8kTJzdnYjNfvi3Z",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3dQTr7ror2QPKQ3GbBCokJUmjErGg8kTJzdnYjNfvi3Z.png"
+    },
+    {
+      "name": "PancakeSwap Token",
+      "symbol": "Cake",
+      "decimals": 9,
+      "address": "4qQeZ5LwSz6HuupUu8jCtgXyW1mYQcNbFAW1sWZp89HL",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/4qQeZ5LwSz6HuupUu8jCtgXyW1mYQcNbFAW1sWZp89HL.png"
+    },
+    {
+      "name": "Pump",
+      "symbol": "PUMP",
+      "decimals": 6,
+      "address": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreibyb3hcn7gglvdqpmklfev3fut3eqv3kje54l3to3xzxxbgpt5wjm"
+    },
+    {
+      "name": "Ani Grok Companion",
+      "symbol": "Ani",
+      "decimals": 6,
+      "address": "9tqjeRS1swj36Ee5C1iGiwAxjQJNGAVCzaTLwFY8bonk",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreib5kogx5jxnw6zzyyxxv66pokswuj32z2y34ut53druz2qwzdvs7u"
+    },
+    {
+      "name": "CHAD",
+      "symbol": "CHAD",
+      "decimals": 6,
+      "address": "Akd634sRBJQWKgosKCYDKQdxNuZr5J7r2VZ2Fwxmv6Zx",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/Qme7dy7Hd4JQhuadUAcEhtr4BALpX8ofSEkpnFRxGXnJZK"
+    },
+    {
+      "name": "rudi",
+      "symbol": "rudi",
+      "decimals": 6,
+      "address": "2rVgh6tcU1Hhk58XwD631E2D6iqLV28prSdpBXaLbonk",
+      "chainId": 101,
+      "logoURI": "https://metadata.pumployer.fun/media/u8ktbvFVaFtD"
+    },
+    {
+      "name": "Liquid Staked SOL",
+      "symbol": "LsSOL",
+      "decimals": 9,
+      "address": "3sfANVyJiq5uZCZvyizaDzBtHQQTNBr6RBGdXVmFcN5p",
+      "chainId": 101,
+      "logoURI": "https://liquid-collective.github.io/liquid-collective-solana-metadata/LsSOL.png"
+    },
+    {
+      "name": "Vine Coin",
+      "symbol": "VINE",
+      "decimals": 6,
+      "address": "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmRtFJu3ZospaS4EAk17iNXZGAJp7gMxzvsZckZxbqZa5r"
+    },
+    {
+      "name": "Valentine Grok Companion",
+      "symbol": "Valentine",
+      "decimals": 6,
+      "address": "9GtvcnDUvGsuibktxiMjLQ2yyBq5akUahuBs8yANbonk",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreic5b3no6gqfwz6us4jyllvrvfpvgxihzsq5dcrlyrth7ewu2imvvq"
+    },
+    {
+      "name": "GGUSD",
+      "symbol": "GGUSD",
+      "decimals": 6,
+      "address": "GGUSDyBUPFg5RrgWwqEqhXoha85iYGs6cL57SyK4G2Y7",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/GGUSDyBUPFg5RrgWwqEqhXoha85iYGs6cL57SyK4G2Y7.png"
+    },
+    {
+      "name": "Uranus",
+      "symbol": "URANUS",
+      "decimals": 6,
+      "address": "BFgdzMkTPdKKJeTipv2njtDEwhKxkgFueJQfJGt1jups",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/BFgdzMkTPdKKJeTipv2njtDEwhKxkgFueJQfJGt1jups.png"
+    },
+    {
+      "name": "DefiTuna",
+      "symbol": "TUNA",
+      "decimals": 6,
+      "address": "TUNAfXDZEdQizTMTh3uEvNvYqJmqFHZbEJt8joP4cyx",
+      "chainId": 101,
+      "logoURI": "https://metadata.defituna.com/tuna.png"
+    },
+    {
+      "name": "MarsMi",
+      "symbol": "MarsMi",
+      "decimals": 6,
+      "address": "GqXX9MfkURBZ5cFym9HDzqTL7uZkjtCSqLkUSe2xpump",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/GqXX9MfkURBZ5cFym9HDzqTL7uZkjtCSqLkUSe2xpump.png"
+    },
+    {
+      "name": "GMT",
+      "symbol": "GMT",
+      "decimals": 9,
+      "address": "7i5KKsX2weiTkry7jA4ZwSuXGhs5eJBEjY8vVxR4pfRx",
+      "chainId": 101,
+      "logoURI": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/7i5KKsX2weiTkry7jA4ZwSuXGhs5eJBEjY8vVxR4pfRx/logo.png"
+    },
+    {
+      "name": "YZY",
+      "symbol": "YZY",
+      "decimals": 6,
+      "address": "DrZ26cKJDksVRWib3DVVsjo9eeXccc7hKhDJviiYEEZY",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/8AKeunEmIMk-UfVUnSR1SK0LKL2pGzlpQdDMBkbu5HM"
+    },
+    {
+      "name": "World Liberty Financial",
+      "symbol": "WLFI",
+      "decimals": 6,
+      "address": "WLFinEv6ypjkczcS83FZqFpgFZYwQXutRbxGe7oC16g",
+      "chainId": 101,
+      "logoURI": "https://raw.githubusercontent.com/worldliberty/usd1-metadata/refs/heads/main/wlfi-logo.png"
+    },
+    {
+      "name": "Collector Crypt",
+      "symbol": "CARDS",
+      "decimals": 6,
+      "address": "CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
+      "chainId": 101,
+      "logoURI": "https://gateway.irys.xyz/2wrjAk4pYAACF3siDHAxt7yJY7kHgt57TZAkbgecKHMR"
+    },
+    {
+      "name": "unstable coin",
+      "symbol": "USDUC",
+      "decimals": 6,
+      "address": "CB9dDufT3ZuQXqqSfa1c5kY935TEreyBw9XJXxHKpump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmQw4DQjdWp3G8TuMCykG8SVSwtFwkxvTyxEWNMuAVYU4q"
+    },
+    {
+      "name": "Volt",
+      "symbol": "XVM",
+      "decimals": 6,
+      "address": "FRsV3m924aGpLMuEekoo3JkkMt1oopaM4JY9ki5YLXrp",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/FRsV3m924aGpLMuEekoo3JkkMt1oopaM4JY9ki5YLXrp.png"
+    },
+    {
+      "name": "Wrapped BTC (Wormhole)",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh.png"
+    },
+    {
+      "name": "TROLL",
+      "symbol": "TROLL",
+      "decimals": 6,
+      "address": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmWV8QgmH1gSw41yapzsFwkC8yPbzoSreAcJbzqfvo2sVq"
+    },
+    {
+      "name": "cat in a dogs world",
+      "symbol": "MEW",
+      "decimals": 5,
+      "address": "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5.png"
+    },
+    {
+      "name": "Launch Coin on Believe",
+      "symbol": "LAUNCHCOIN",
+      "decimals": 9,
+      "address": "Ey59PH7Z4BFU4HjyKnyMdWt5GGN76KazTAwQihoUXRnk",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreibeqt7fvgn2ubl4tha6sljnici2eus42dauxgtrdvfjf6m3vkdkoi"
+    },
+    {
+      "name": "Jupiter",
+      "symbol": "JUP",
+      "decimals": 6,
+      "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "chainId": 101,
+      "logoURI": "https://static.jup.ag/jup/icon.png"
+    },
+    {
+      "name": "Render Token",
+      "symbol": "RENDER",
+      "decimals": 8,
+      "address": "rndrizKT3MK1iimdxRdWabcF7Zg7AR5T4nud4EkHBof",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/rndrizKT3MK1iimdxRdWabcF7Zg7AR5T4nud4EkHBof.png"
+    },
+    {
+      "name": "DoubleZero",
+      "symbol": "2Z",
+      "decimals": 8,
+      "address": "J6pQQ3FAcJQeWPPGppWRb4nM8jU3wLyYbRrLh7feMfvd",
+      "chainId": 101,
+      "logoURI": "https://doublezero.xyz/2Z/icon.png"
+    },
+    {
+      "name": "Tesla xStock",
+      "symbol": "TSLAx",
+      "decimals": 8,
+      "address": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB",
+      "chainId": 101,
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/TSLAx.png"
+    },
+    {
+      "name": "POPCAT",
+      "symbol": "POPCAT",
+      "decimals": 9,
+      "address": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/A1etRNMKxhlNGTf-gNBtJ75QJJ4NJtbKh_UXQTlLXzI"
+    },
+    {
+      "name": "Cloud",
+      "symbol": "CLOUD",
+      "decimals": 9,
+      "address": "CLoUDKc4Ane7HeQcPpE3YHnznRxhMimJ4MyaUqyHFzAu",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/N7vCgQdgQ-fab28zEB4m8QRLMwI91_KcXI-Gtr151gg"
+    },
+    {
+      "name": "Helium Network Token",
+      "symbol": "HNT",
+      "decimals": 8,
+      "address": "hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux",
+      "chainId": 101,
+      "logoURI": "https://entities.nft.helium.io/v2/assets/hnt.png"
+    },
+    {
+      "name": "Wormhole Token",
+      "symbol": "W",
+      "decimals": 6,
+      "address": "85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ",
+      "chainId": 101,
+      "logoURI": "https://wormhole.com/token.png"
+    },
+    {
+      "name": "Believe",
+      "symbol": "BELIEVE",
+      "decimals": 9,
+      "address": "BLVxek8YMXUQhcKmMvrFTrzh5FXg8ec88Crp6otEaCMf",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/BLVxek8YMXUQhcKmMvrFTrzh5FXg8ec88Crp6otEaCMf.png"
+    },
+    {
+      "name": "OFFICIAL TRUMP",
+      "symbol": "TRUMP",
+      "decimals": 6,
+      "address": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/VQrPjACwnQRmxdKBTqNwPiyo65x7LAT773t8Kd7YBzw"
+    },
+    {
+      "name": "Tether Gold",
+      "symbol": "XAUt0",
+      "decimals": 6,
+      "address": "AymATz4TCL9sWNEEV9Kvyz45CHVhDZ6kUgjTJPzLpU9P",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreibth2yh4jlehmf5nmfgy763z4yvwxlz7zmuohmhp53un6wrho5t2q"
+    },
+    {
+      "name": "Meteora",
+      "symbol": "MET",
+      "decimals": 6,
+      "address": "METvsvVRapdj9cFLzq4Tr43xK4tAjQfwX76z3n6mWQL",
+      "chainId": 101,
+      "logoURI": "https://assets.meteora.ag/met-token.svg"
+    },
+    {
+      "name": "PayAI Network",
+      "symbol": "PAYAI",
+      "decimals": 6,
+      "address": "E7NgL19JbN8BhUDgWjkH8MtnbhJoaGaWJqosxZZepump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmSd4swW6fkA3N92cUckYj1ar29mqpAaMzfwhrhgiFSonD"
+    },
+    {
+      "name": "Chill House",
+      "symbol": "CHILLHOUSE",
+      "decimals": 6,
+      "address": "GkyPYa7NnCFbduLknCfBfP7p8564X1VZhwZYJ6CZpump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmU5D2LBjkriYD4wqL5cEVwv1x1xqj2LCQAPKC79cVGd34"
+    },
+    {
+      "name": "Ace Data Cloud",
+      "symbol": "ACE",
+      "decimals": 6,
+      "address": "GEuuznWpn6iuQAJxLKQDVGXPtrqXHNWTk3gZqqvJpump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmSSu7Mgyo4Ua8Gb6jAMwyMFE97aM8gZhAUH5wZ2ZS7nfS"
+    },
+    {
+      "name": "jelly-my-jelly",
+      "symbol": "jellyjelly",
+      "decimals": 6,
+      "address": "FeR8VBqNRSUD5NtXAj2n3j1dAHkZHfyDktKuLXD4pump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmWT4jA2ipuevUfBi1a2LW2gfnPJyvHn1JayAe2qz5kRQJ"
+    },
+    {
+      "name": "ORE",
+      "symbol": "ORE",
+      "decimals": 11,
+      "address": "oreoU2P8bN6jkk3jbaiVxYnG1dCXcYxwhwyK9jSybcp",
+      "chainId": 101,
+      "logoURI": "https://ore.supply/assets/icon.png"
+    },
+    {
+      "name": "Autonomous Virtual Beings ",
+      "symbol": "AVB",
+      "decimals": 6,
+      "address": "6d5zHW5B8RkGKd51Lpb9RqFQSqDudr9GJgZ1SgQZpump",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/6d5zHW5B8RkGKd51Lpb9RqFQSqDudr9GJgZ1SgQZpump.png"
+    },
+    {
+      "name": "Codec Flow",
+      "symbol": "CODEC",
+      "decimals": 6,
+      "address": "69LjZUUzxj3Cb3Fxeo1X4QpYEQTboApkhXTysPpbpump",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/69LjZUUzxj3Cb3Fxeo1X4QpYEQTboApkhXTysPpbpump.png"
+    },
+    {
+      "name": "HYPE",
+      "symbol": "HYPE",
+      "decimals": 9,
+      "address": "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/QBRdRop8wI4PpScSRTKyibv-fQuYBua-WOvC7tuJyJo"
+    },
+    {
+      "name": "xSOL",
+      "symbol": "xSOL",
+      "decimals": 6,
+      "address": "4sWNB8zGWHkh6UnmwiEtzNxL4XrN7uK9tosbESbJFfVs",
+      "chainId": 101,
+      "logoURI": "https://hylo-token-metadata.s3.us-east-2.amazonaws.com/xSOL/icon.png"
+    },
+    {
+      "name": "hyUSD",
+      "symbol": "hyUSD",
+      "decimals": 6,
+      "address": "5YMkXAYccHSGnHn9nob9xEvv6Pvka9DZWH7nTbotTu9E",
+      "chainId": 101,
+      "logoURI": "https://hylo-token-metadata.s3.us-east-2.amazonaws.com/hyUSD/icon.png"
+    },
+    {
+      "name": "MetaDAO",
+      "symbol": "META",
+      "decimals": 6,
+      "address": "METAwkXcqyXKy1AtsSgJ8JiUHwGCafnZL38n3vYmeta",
+      "chainId": 101,
+      "logoURI": "https://raw.githubusercontent.com/metaDAOproject/futarchy/refs/heads/develop/scripts/assets/META/META.png"
+    },
+    {
+      "name": "CASH",
+      "symbol": "CASH",
+      "decimals": 6,
+      "address": "CASHx9KJUStyftLFWGvEVf59SGeG9sh5FfcnZMVPCASH",
+      "chainId": 101,
+      "logoURI": "https://token-metadata.bridge.xyz/images/cash.png"
+    },
+    {
+      "name": "Hylo Staked SOL",
+      "symbol": "hyloSOL",
+      "decimals": 9,
+      "address": "hy1oXYgrBW6PVcJ4s6s2FKavRdwgWTXdfE69AxT7kPT",
+      "chainId": 101,
+      "logoURI": "https://i.ibb.co/bgScQbGF/hyloSOL.png"
+    },
+    {
+      "name": "Phantom Staked SOL",
+      "symbol": "PSOL",
+      "decimals": 9,
+      "address": "pSo1f9nQXWgXibFtKf7NWYxb5enAM4qfP6UJSiXRQfL",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/pSo1f9nQXWgXibFtKf7NWYxb5enAM4qfP6UJSiXRQfL.png"
+    },
+    {
+      "name": "BULK Staked SOL",
+      "symbol": "BulkSOL",
+      "decimals": 9,
+      "address": "BULKoNSGzxtCqzwTvg5hFJg8fx6dqZRScyXe5LYMfxrn",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/tBlyAYsdhdXFdAUO7OeEZdcZ-KYXYgR8DAEPjx7akig"
+    },
+    {
+      "name": "Dogelon (Wormhole)",
+      "symbol": "ELON",
+      "decimals": 4,
+      "address": "7ZCm8WBN9aLa3o47SoYctU6iLdj7wkGG5SV2hE5CgtD5",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/7ZCm8WBN9aLa3o47SoYctU6iLdj7wkGG5SV2hE5CgtD5.png"
+    },
+    {
+      "name": "Avici",
+      "symbol": "AVICI",
+      "decimals": 6,
+      "address": "BANKJmvhT8tiJRsBSS1n2HryMBPvT5Ze4HU95DUAmeta",
+      "chainId": 101,
+      "logoURI": "https://raw.githubusercontent.com/metaDAOproject/futarchy/refs/heads/develop/scripts/assets/AVICI/AVICI.png"
+    },
+    {
+      "name": "Zcash",
+      "symbol": "ZEC",
+      "decimals": 8,
+      "address": "A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/QSYqnmB7NYlB7n1R6rz935Y07dlRK0tIuKe2mof5Sho"
+    },
+    {
+      "name": "Monad",
+      "symbol": "MON",
+      "decimals": 8,
+      "address": "CrAr4RRJMBVwRsZtT62pEhfA9H5utymC2mVx8e7FreP2",
+      "chainId": 101,
+      "logoURI": "https://imagedelivery.net/cBNDGgkrsEA-b_ixIp9SkQ/I_t8rg_V_400x400.jpg/public"
+    },
+    {
+      "name": "Oobit",
+      "symbol": "OOB",
+      "decimals": 6,
+      "address": "oobQ3oX6ubRYMNMahG7VSCe8Z73uaQbAWFn6f22XTgo",
+      "chainId": 101,
+      "logoURI": "https://raw.githubusercontent.com/oob-token/token-metadata/main/logo.png"
+    },
+    {
+      "name": "Umbra",
+      "symbol": "UMBRA",
+      "decimals": 6,
+      "address": "PRVT6TB7uss3FrUd2D9xs2zqDBsa3GbMJMwCQsgmeta",
+      "chainId": 101,
+      "logoURI": "https://raw.githubusercontent.com/metaDAOproject/futarchy/refs/heads/develop/scripts/assets/UMBRA/UMBRA.png"
+    },
+    {
+      "name": "HumidiFi Token",
+      "symbol": "WET",
+      "decimals": 6,
+      "address": "WETZjtprkDMCcUxPi9PfWnowMRZkiGGHDb9rABuRZ2U",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/WETZjtprkDMCcUxPi9PfWnowMRZkiGGHDb9rABuRZ2U.png"
+    },
+    {
+      "name": "USELESS COIN",
+      "symbol": "USELESS",
+      "decimals": 6,
+      "address": "Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk.png"
+    },
+    {
+      "name": "PayAI",
+      "symbol": "PAYAI",
+      "decimals": 9,
+      "address": "PAYmo6moDF3Ro3X6bU2jwe2UdBnBhv8YjLgL1j4DxGu",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/PAYmo6moDF3Ro3X6bU2jwe2UdBnBhv8YjLgL1j4DxGu.png"
+    },
+    {
+      "name": "Nasdaq xStock",
+      "symbol": "QQQx",
+      "decimals": 8,
+      "address": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ",
+      "chainId": 101,
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/QQQx.png"
+    },
+    {
+      "name": "Robinhood xStock",
+      "symbol": "HOODx",
+      "decimals": 8,
+      "address": "XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg",
+      "chainId": 101,
+      "logoURI": "https://xstocks-metadata.backed.fi/logos/tokens/HOODx.png"
+    },
+    {
+      "name": "Global Dollar",
+      "symbol": "USDG",
+      "decimals": 6,
+      "address": "2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH",
+      "chainId": 101,
+      "logoURI": "https://424565.fs1.hubspotusercontent-na1.net/hubfs/424565/GDN-USDG-Token-512x512.png"
+    },
+    {
+      "name": "Onchain Yield Coin",
+      "symbol": "ONyc",
+      "decimals": 9,
+      "address": "5Y8NV33Vv7WbnLfq3zBcKSdYPrk7g2KoiQoe7M2tcxp5",
+      "chainId": 101,
+      "logoURI": "https://arweave.net/PyZzfGP-CqzaVlxTU3sb-I5uv4ZZKwnY8aCjcWn9S1A"
+    },
+    {
+      "name": "Pippin",
+      "symbol": "pippin",
+      "decimals": 6,
+      "address": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmdcvSSBg7gWD4tvfXv3PuLtAiPyDZ5Z9w4LQVeRJKL3Lz"
+    },
+    {
+      "name": "PsyopAnime",
+      "symbol": "PsyopAnime",
+      "decimals": 6,
+      "address": "2nP9yKQNSGQy851iyawDvBkzkK2R2aqKArQCKc2gpump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreiallp55sjjfnqdy2njxnyhljygk5hiltpjdfeub3vjsc7zz6tl4qy"
+    },
+    {
+      "name": "zerebro",
+      "symbol": "ZEREBRO",
+      "decimals": 6,
+      "address": "8x5VqbHA8D7NkD52uNuS5nnt3PwA8pLD34ymskeSo2Wn",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmZ1HDSibY2LdEmC1tPHK36ApGCQACJENqsbPsT2nc29AD"
+    },
+    {
+      "name": "AI Rig Complex",
+      "symbol": "arc",
+      "decimals": 6,
+      "address": "61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/QmPDJuEobBcLZihjFCvkWA8c1FiW7UzM2ctFdiffSLxf1d"
+    },
+    {
+      "name": "testicle",
+      "symbol": "testicle",
+      "decimals": 6,
+      "address": "4TyZGqRLG3VcHTGMcLBoPUmqYitMVojXinAmkL8xpump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreibgbrk7arsnth4mqreco5v3xwicfew4dju2hew3jkz6li5gnwivwa"
+    },
+    {
+      "name": "ZORA",
+      "symbol": "ZORA",
+      "decimals": 9,
+      "address": "soKqZS9pASwBNS46G388nhK7XVtPaTyReffXEd3zora",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafkreigqw7mtfgq6t6tuznl6gl2mv6qiz6ysjow5cgsr3p56wvgf2kw5sa"
+    },
+    {
+      "name": "Nietzschean Penguin",
+      "symbol": "PENGUIN",
+      "decimals": 6,
+      "address": "8Jx8AAHj86wbQgUTjGuj6GTTL5Ps3cqxKRTvpaJApump",
+      "chainId": 101,
+      "logoURI": "https://ipfs.io/ipfs/bafybeieukfwe5dz5m7d7pocyogm2sd3bzr6ajxefav7mcvpbf53yl3cn6u"
+    },
+    {
+      "name": "clawdbot",
+      "symbol": "clawd",
+      "decimals": 6,
+      "address": "Hoi9Lo8s2PP7EM9mv9bZjQ3aSB7ijyS238sTqQjbpump",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/Hoi9Lo8s2PP7EM9mv9bZjQ3aSB7ijyS238sTqQjbpump.png"
+    },
+    {
+      "name": "Capybobo",
+      "symbol": "PYBOBO",
+      "decimals": 6,
+      "address": "D6xWgRCSHoMEB5fqPwk3p6Stxirn5ytm2WwboSTTx4oE",
+      "chainId": 101,
+      "logoURI": "https://capybobo.io/images/pybobo.png"
+    },
+    {
+      "name": "Moonbirds",
+      "symbol": "BIRB",
+      "decimals": 6,
+      "address": "G7vQWurMkMMm2dU3iZpXYFTHT9Biio4F4gZCrwFpKNwG",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/G7vQWurMkMMm2dU3iZpXYFTHT9Biio4F4gZCrwFpKNwG.png"
+    },
+    {
+      "name": "OKX Wrapped BTC",
+      "symbol": "xBTC",
+      "decimals": 8,
+      "address": "CtzPWv73Sn1dMGVU3ZtLv9yWSyUAanBni19YWDaznnkn",
+      "chainId": 101,
+      "logoURI": "https://tokens.pancakeswap.finance/images/solana/CtzPWv73Sn1dMGVU3ZtLv9yWSyUAanBni19YWDaznnkn.png"
+    }
+  ],
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 65
+  }
+}

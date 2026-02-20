@@ -474,19 +474,20 @@ Fetch quote from Fonbnk. Body: country, token, purchaseMethod (buy | sell), opti
 
 ## Squid & Balances
 
-Chains and tokens come from [Squid Router](https://docs.squidrouter.com). Balances are computed via viem multicall (EVM only). Requires `SQUID_INTEGRATOR_ID` in the environment.
+Chains and tokens combine [Squid Router](https://docs.squidrouter.com) with local data: `data/chains/mainnet.chains.json`, `data/chains/testnet.chains.json`, and `data/tokens/` (Solana mainnet from `solana.json`, testnet from `testnet.tokens.json`). Mainnet includes Solana (chainId 101). Balances are computed via viem multicall (EVM only). Requires `SQUID_INTEGRATOR_ID` in the environment.
 
 ---
 
 ## GET /api/squid/chains
 
-Return supported chains (relevant fields only: chainId, networkName, chainIconURI).
+Return supported chains (Squid + data/chains). Mainnet includes Solana (chainId 101).
 
 **Query**
 
-| Parameter | Type   | Required | Description                          |
-|-----------|--------|----------|--------------------------------------|
-| testnet   | string | No       | `"1"` or `"true"` for testnet chains |
+| Parameter | Type   | Required | Description                                                           |
+|-----------|--------|----------|-----------------------------------------------------------------------|
+| testnet   | string | No       | `"1"` or `"true"` for testnet-only chains                             |
+| all       | string | No       | `"1"` or `"true"` for mainnet + testnet combined (whole lot)          |
 
 **Response 200**
 
@@ -513,13 +514,14 @@ Return supported chains (relevant fields only: chainId, networkName, chainIconUR
 
 ## GET /api/squid/tokens
 
-Return supported tokens with chain info (chainId, networkName, chainIconURI, address, symbol, decimals, name, logoURI).
+Return supported tokens (Squid + Solana mainnet from `solana.json`; testnet from `testnet.tokens.json`). Mainnet includes all Solana (chainId 101) tokens.
 
 **Query**
 
-| Parameter | Type   | Required | Description                          |
-|-----------|--------|----------|--------------------------------------|
-| testnet   | string | No       | `"1"` or `"true"` for testnet tokens  |
+| Parameter | Type   | Required | Description                                                           |
+|-----------|--------|----------|-----------------------------------------------------------------------|
+| testnet   | string | No       | `"1"` or `"true"` for testnet-only tokens                             |
+| all       | string | No       | `"1"` or `"true"` for mainnet + testnet combined (whole list)         |
 
 **Response 200**
 
@@ -670,3 +672,4 @@ Same as `/api/squid/balances` in behaviour and response shape: token balances vi
   "error": "Failed to fetch multicall balances."
 }
 ```
+
