@@ -34,4 +34,24 @@ export const env = {
   get isCoreConfigured(): boolean {
     return Boolean(env.coreBaseUrl && env.coreApiKey);
   },
+
+  /**
+   * Comma-separated allowed CORS origins.
+   * e.g. CORS="http://localhost:3000,http://localhost:4000" or CORS="http://localhost:3000,localhost:4000"
+   * Entries without a scheme (e.g. localhost:4000) are normalized to http://.
+   */
+  get cors(): string[] {
+    const raw = getEnvOptional("CORS");
+    if (!raw) return [];
+    return raw
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((origin) => {
+        if (origin.startsWith("http://") || origin.startsWith("https://")) {
+          return origin;
+        }
+        return `http://${origin}`;
+      });
+  },
 } as const;

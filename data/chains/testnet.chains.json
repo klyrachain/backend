@@ -1,0 +1,3715 @@
+[
+  {
+    "id": 5,
+    "name": "Goerli",
+    "rpcs": [
+      "https://5.rpc.thirdweb.com"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://goerli.etherscan.io",
+      "apiUrl": "https://api-goerli.etherscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 9,
+    "name": "ZKsync CLI Local Hyperchain L1",
+    "rpcs": [
+      "http://localhost:15045"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "http://localhost:15001/",
+      "apiUrl": "http://localhost:15001/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 16,
+    "name": "Songbird Testnet Coston",
+    "rpcs": [
+      "https://coston-api.flare.network/ext/C/rpc"
+    ],
+    "explorer": {
+      "name": "Coston Explorer",
+      "url": "https://coston-explorer.flare.network",
+      "apiUrl": "https://coston-explorer.flare.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 21,
+    "name": "Elastos Smart Chain Testnet",
+    "rpcs": [
+      "https://api-testnet.elastos.io/eth"
+    ],
+    "explorer": {
+      "name": "Elastos Explorer",
+      "url": "https://esc-testnet.elastos.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 31,
+    "name": "Rootstock Testnet",
+    "network": "rootstock",
+    "rpcs": [
+      "https://public-node.testnet.rsk.co"
+    ],
+    "explorer": {
+      "name": "RSK Explorer",
+      "url": "https://explorer.testnet.rootstock.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 41,
+    "name": "Telos",
+    "rpcs": [
+      "https://rpc.testnet.telos.net"
+    ],
+    "explorer": {
+      "name": "Teloscan (testnet)",
+      "url": "https://testnet.teloscan.io/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 71,
+    "name": "Conflux eSpace Testnet",
+    "network": "cfx-espace-testnet",
+    "rpcs": [
+      "https://evmtestnet.confluxrpc.com"
+    ],
+    "explorer": {
+      "name": "ConfluxScan",
+      "url": "https://evmtestnet.confluxscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 89,
+    "name": "Viction Testnet",
+    "rpcs": [
+      "https://rpc-testnet.viction.xyz"
+    ],
+    "explorer": {
+      "name": "VIC Scan",
+      "url": "https://testnet.vicscan.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 97,
+    "name": "BNB Smart Chain Testnet",
+    "rpcs": [
+      "https://data-seed-prebsc-1-s1.bnbchain.org:8545"
+    ],
+    "explorer": {
+      "name": "BscScan",
+      "url": "https://testnet.bscscan.com",
+      "apiUrl": "https://api-testnet.bscscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 114,
+    "name": "Flare Testnet Coston2",
+    "rpcs": [
+      "https://coston2-api.flare.network/ext/C/rpc"
+    ],
+    "explorer": {
+      "name": "Coston2 Explorer",
+      "url": "https://coston2-explorer.flare.network",
+      "apiUrl": "https://coston2-explorer.flare.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 133,
+    "name": "HashKey Chain Testnet",
+    "rpcs": [
+      "https://testnet.hsk.xyz"
+    ],
+    "explorer": {
+      "name": "HashKey Chain Testnet explorer",
+      "url": "https://testnet-explorer.hsk.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 153,
+    "name": "Redbelly Network Testnet",
+    "rpcs": [
+      "https://governors.testnet.redbelly.network"
+    ],
+    "explorer": {
+      "name": "Routescan",
+      "url": "https://redbelly.testnet.routescan.io",
+      "apiUrl": "https://api.routescan.io/v2/network/testnet/evm/153_2/etherscan/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 157,
+    "name": "Puppynet Shibarium",
+    "rpcs": [
+      "https://puppynet.shibrpc.com"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://puppyscan.shib.io",
+      "apiUrl": "https://puppyscan.shib.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 164,
+    "name": "Omni Omega",
+    "rpcs": [
+      "https://omega.omni.network"
+    ],
+    "explorer": {
+      "name": "Omega OmniScan",
+      "url": "https://omega.omniscan.network/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 195,
+    "name": "X1 Testnet",
+    "rpcs": [
+      "https://xlayertestrpc.okx.com"
+    ],
+    "explorer": {
+      "name": "OKLink",
+      "url": "https://www.oklink.com/xlayer-test"
+    },
+    "testnet": true
+  },
+  {
+    "id": 195,
+    "name": "X1 Testnet",
+    "rpcs": [
+      "https://xlayertestrpc.okx.com"
+    ],
+    "explorer": {
+      "name": "OKLink",
+      "url": "https://www.oklink.com/xlayer-test"
+    },
+    "testnet": true
+  },
+  {
+    "id": 216,
+    "name": "Happychain Testnet",
+    "rpcs": [
+      "https://rpc.testnet.happy.tech/http"
+    ],
+    "explorer": {
+      "name": "Happy Chain Testnet Explorer",
+      "url": "https://explorer.testnet.happy.tech"
+    },
+    "testnet": true
+  },
+  {
+    "id": 260,
+    "name": "ZKsync InMemory Node",
+    "network": "zksync-in-memory-node",
+    "rpcs": [
+      "http://localhost:8011"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 260,
+    "name": "ZKsync InMemory Node",
+    "network": "zksync-in-memory-node",
+    "rpcs": [
+      "http://localhost:8011"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 261,
+    "name": "Guru Network Testnet",
+    "rpcs": [
+      "https://rpc-test.gurunetwork.ai",
+      "https://rpc.gurunetwork.ai/archive/261"
+    ],
+    "explorer": {
+      "name": "Guruscan",
+      "url": "https://sepolia.gurunetwork.ai"
+    },
+    "testnet": true
+  },
+  {
+    "id": 270,
+    "name": "ZKsync CLI Local Node",
+    "network": "zksync-cli-local-node",
+    "rpcs": [
+      "http://localhost:3050"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 270,
+    "name": "ZKsync CLI Local Hyperchain",
+    "rpcs": [
+      "http://localhost:15100"
+    ],
+    "explorer": {
+      "name": "ZKsync explorer",
+      "url": "http://localhost:15005/",
+      "apiUrl": "http://localhost:15005/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 270,
+    "name": "ZKsync CLI Local Node",
+    "network": "zksync-cli-local-node",
+    "rpcs": [
+      "http://localhost:3050"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 272,
+    "name": "ZKsync CLI Local Custom Hyperchain",
+    "rpcs": [
+      "http://localhost:15200"
+    ],
+    "explorer": {
+      "name": "ZKsync explorer",
+      "url": "http://localhost:15005/",
+      "apiUrl": "http://localhost:15005/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 282,
+    "name": "Cronos zkEVM Testnet",
+    "rpcs": [
+      "https://testnet.zkevm.cronos.org"
+    ],
+    "explorer": {
+      "name": "Cronos zkEVM Testnet Explorer",
+      "url": "https://explorer.zkevm.cronos.org/testnet"
+    },
+    "testnet": true
+  },
+  {
+    "id": 296,
+    "name": "Hedera Testnet",
+    "network": "hedera-testnet",
+    "rpcs": [
+      "https://testnet.hashio.io/api"
+    ],
+    "explorer": {
+      "name": "Hashscan",
+      "url": "https://hashscan.io/testnet"
+    },
+    "testnet": true
+  },
+  {
+    "id": 297,
+    "name": "Hedera Previewnet",
+    "network": "hedera-previewnet",
+    "rpcs": [
+      "https://previewnet.hashio.io/api"
+    ],
+    "explorer": {
+      "name": "Hashscan",
+      "url": "https://hashscan.io/previewnet"
+    },
+    "testnet": true
+  },
+  {
+    "id": 300,
+    "name": "ZKsync Sepolia Testnet",
+    "network": "zksync-sepolia-testnet",
+    "rpcs": [
+      "https://sepolia.era.zksync.dev"
+    ],
+    "explorer": {
+      "name": "ZKsync Explorer",
+      "url": "https://sepolia.explorer.zksync.io/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 300,
+    "name": "ZKsync Sepolia Testnet",
+    "network": "zksync-sepolia-testnet",
+    "rpcs": [
+      "https://sepolia.era.zksync.dev"
+    ],
+    "explorer": {
+      "name": "ZKsync Explorer",
+      "url": "https://sepolia.explorer.zksync.io/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 338,
+    "name": "Cronos Testnet",
+    "rpcs": [
+      "https://evm-t3.cronos.org"
+    ],
+    "explorer": {
+      "name": "Cronos Explorer (Testnet)",
+      "url": "https://explorer.cronos.org/testnet"
+    },
+    "testnet": true
+  },
+  {
+    "id": 365,
+    "name": "Theta Testnet",
+    "rpcs": [
+      "https://eth-rpc-api-testnet.thetatoken.org/rpc"
+    ],
+    "explorer": {
+      "name": "Theta Explorer",
+      "url": "https://testnet-explorer.thetatoken.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 398,
+    "name": "NEAR Protocol Testnet",
+    "rpcs": [
+      "https://eth-rpc.testnet.near.org"
+    ],
+    "explorer": {
+      "name": "NEAR Explorer",
+      "url": "https://eth-explorer-testnet.near.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 420,
+    "name": "Optimism Goerli",
+    "rpcs": [
+      "https://goerli.optimism.io"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://goerli-optimism.etherscan.io",
+      "apiUrl": "https://goerli-optimism.etherscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 462,
+    "name": "Areon Network Testnet",
+    "rpcs": [
+      "https://testnet-rpc.areon.network"
+    ],
+    "explorer": {
+      "name": "Areonscan",
+      "url": "https://areonscan.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 475,
+    "name": "zkXPLA Testnet",
+    "network": "zkxpla-testnet",
+    "rpcs": [
+      "https://testnet-rpc.zkxpla.io"
+    ],
+    "explorer": {
+      "name": "zkXPLA Testnet Explorer",
+      "url": "https://testnet-explorer.zkxpla.io",
+      "apiUrl": "https://testnet-explorer.zkxpla.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 545,
+    "name": "Flow EVM Testnet",
+    "rpcs": [
+      "https://testnet.evm.nodes.onflow.org"
+    ],
+    "explorer": {
+      "name": "Flow Diver",
+      "url": "https://evm-testnet.flowscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 595,
+    "name": "Mandala TC9",
+    "network": "mandala",
+    "rpcs": [
+      "https://eth-rpc-tc9.aca-staging.network"
+    ],
+    "explorer": {
+      "name": "Mandala Blockscout",
+      "url": "https://blockscout.mandala.aca-staging.network",
+      "apiUrl": "https://blockscout.mandala.aca-staging.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 681,
+    "name": "Jasmy Chain Testnet",
+    "network": "jasmyChainTestnet",
+    "rpcs": [
+      "https://rpc_testnet.jasmychain.io"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 699,
+    "name": "Matchain Testnet",
+    "rpcs": [
+      "https://testnet-rpc.matchain.io"
+    ],
+    "explorer": {
+      "name": "Matchain Scan",
+      "url": "https://testnet.matchscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 701,
+    "name": "Koi Network",
+    "rpcs": [
+      "https://koi-rpc.darwinia.network"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://koi-scan.darwinia.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 825,
+    "name": "Daily Network Testnet",
+    "rpcs": [
+      "https://rpc.testnet.dailycrypto.net"
+    ],
+    "explorer": {
+      "name": "Daily Testnet Explorer",
+      "url": "https://explorer.testnet.dailycrypto.net"
+    },
+    "testnet": true
+  },
+  {
+    "id": 842,
+    "name": "Taraxa Testnet",
+    "rpcs": [
+      "https://rpc.testnet.taraxa.io"
+    ],
+    "explorer": {
+      "name": "Taraxa Explorer",
+      "url": "https://explorer.testnet.taraxa.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 919,
+    "name": "Mode Testnet",
+    "rpcs": [
+      "https://sepolia.mode.network"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://sepolia.explorer.mode.network",
+      "apiUrl": "https://sepolia.explorer.mode.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 943,
+    "name": "PulseChain V4",
+    "rpcs": [
+      "https://rpc.v4.testnet.pulsechain.com"
+    ],
+    "explorer": {
+      "name": "PulseScan",
+      "url": "https://scan.v4.testnet.pulsechain.com",
+      "apiUrl": "https://scan.v4.testnet.pulsechain.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 997,
+    "name": "5ireChain Thunder Testnet",
+    "rpcs": [
+      "https://rpc.testnet.5ire.network"
+    ],
+    "explorer": {
+      "name": "5ireChain Thunder Explorer",
+      "url": "https://testnet.5irescan.io/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 998,
+    "name": "Hyperliquid EVM Testnet",
+    "rpcs": [
+      "https://rpc.hyperliquid-testnet.xyz/evm"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 999,
+    "name": "Wanchain Testnet",
+    "rpcs": [
+      "https://gwan-ssl.wandevs.org:46891"
+    ],
+    "explorer": {
+      "name": "WanScanTest",
+      "url": "https://wanscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 999,
+    "name": "Zora Goerli Testnet",
+    "rpcs": [
+      "https://testnet.rpc.zora.energy"
+    ],
+    "explorer": {
+      "name": "Explorer",
+      "url": "https://testnet.explorer.zora.energy",
+      "apiUrl": "https://testnet.explorer.zora.energy/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1001,
+    "name": "Kairos Testnet",
+    "network": "kairos",
+    "rpcs": [
+      "https://public-en-kairos.node.kaia.io"
+    ],
+    "explorer": {
+      "name": "KaiaScan",
+      "url": "https://kairos.kaiascan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1001,
+    "name": "Klaytn Baobab Testnet",
+    "network": "klaytn-baobab",
+    "rpcs": [
+      "https://public-en-baobab.klaytn.net"
+    ],
+    "explorer": {
+      "name": "KlaytnScope",
+      "url": "https://baobab.klaytnscope.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1028,
+    "name": "BitTorrent Chain Testnet",
+    "network": "bittorrent-chain-testnet",
+    "rpcs": [
+      "https://testrpc.bittorrentchain.io"
+    ],
+    "explorer": {
+      "name": "Bttcscan",
+      "url": "https://testnet.bttcscan.com",
+      "apiUrl": "https://testnet.bttcscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1038,
+    "name": "Bronos Testnet",
+    "rpcs": [
+      "https://evm-testnet.bronos.org"
+    ],
+    "explorer": {
+      "name": "BronoScan",
+      "url": "https://tbroscan.bronos.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1073,
+    "name": "Shimmer Testnet",
+    "network": "shimmer-testnet",
+    "rpcs": [
+      "https://json-rpc.evm.testnet.shimmer.network"
+    ],
+    "explorer": {
+      "name": "Shimmer Network Explorer",
+      "url": "https://explorer.evm.testnet.shimmer.network",
+      "apiUrl": "https://explorer.evm.testnet.shimmer.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1075,
+    "name": "IOTA EVM Testnet",
+    "network": "iotaevm-testnet",
+    "rpcs": [
+      "https://json-rpc.evm.testnet.iotaledger.net"
+    ],
+    "explorer": {
+      "name": "Explorer",
+      "url": "https://explorer.evm.testnet.iotaledger.net",
+      "apiUrl": "https://explorer.evm.testnet.iotaledger.net/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1112,
+    "name": "WEMIX Testnet",
+    "network": "wemix-testnet",
+    "rpcs": [
+      "https://api.test.wemix.com"
+    ],
+    "explorer": {
+      "name": "wemixExplorer",
+      "url": "https://testnet.wemixscan.com",
+      "apiUrl": "https://testnet.wemixscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1114,
+    "name": "Core Testnet2",
+    "rpcs": [
+      "https://rpc.test2.btcs.network"
+    ],
+    "explorer": {
+      "name": "Core Testnet2",
+      "url": "https://scan.test2.btcs.network",
+      "apiUrl": "https://api.test2.btcs.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1115,
+    "name": "Core Testnet",
+    "rpcs": [
+      "https://rpc.test.btcs.network"
+    ],
+    "explorer": {
+      "name": "Core Testnet",
+      "url": "https://scan.test.btcs.network",
+      "apiUrl": "https://api.test.btcs.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1123,
+    "name": "B2 Testnet",
+    "rpcs": [
+      "https://testnet-rpc.bsquared.network"
+    ],
+    "explorer": {
+      "name": "blockscout",
+      "url": "https://testnet-explorer.bsquared.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1131,
+    "name": "DeFiChain EVM Testnet",
+    "network": "defichain-evm-testnet",
+    "rpcs": [
+      "https://eth.testnet.ocean.jellyfishsdk.com"
+    ],
+    "explorer": {
+      "name": "DeFiScan",
+      "url": "https://meta.defiscan.live/?network=TestNet"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1230,
+    "name": "Ultron Testnet",
+    "rpcs": [
+      "https://ultron-dev.io"
+    ],
+    "explorer": {
+      "name": "Ultron Scan",
+      "url": "https://explorer.ultron-dev.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1287,
+    "name": "Moonbase Alpha",
+    "rpcs": [
+      "https://rpc.api.moonbase.moonbeam.network"
+    ],
+    "explorer": {
+      "name": "Moonscan",
+      "url": "https://moonbase.moonscan.io",
+      "apiUrl": "https://moonbase.moonscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1301,
+    "name": "Unichain Sepolia",
+    "rpcs": [
+      "https://sepolia.unichain.org"
+    ],
+    "explorer": {
+      "name": "Uniscan",
+      "url": "https://sepolia.uniscan.xyz",
+      "apiUrl": "https://api-sepolia.uniscan.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1315,
+    "name": "Story Aeneid",
+    "network": "story-aeneid",
+    "rpcs": [
+      "https://aeneid.storyrpc.io"
+    ],
+    "explorer": {
+      "name": "Story Aeneid Explorer",
+      "url": "https://aeneid.storyscan.io",
+      "apiUrl": "https://aeneid.storyscan.io/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1328,
+    "name": "Sei Testnet",
+    "rpcs": [
+      "https://evm-rpc-testnet.sei-apis.com"
+    ],
+    "explorer": {
+      "name": "Seitrace",
+      "url": "https://seitrace.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1336,
+    "name": "Kii Testnet Oro",
+    "network": "kii-testnet-oro",
+    "rpcs": [
+      "https://json-rpc.uno.sentry.testnet.v3.kiivalidator.com"
+    ],
+    "explorer": {
+      "name": "KiiExplorer",
+      "url": "https://testnet.explorer.kiichain.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1338,
+    "name": "Elysium Testnet",
+    "rpcs": [
+      "https://elysium-test-rpc.vulcanforged.com"
+    ],
+    "explorer": {
+      "name": "Elysium testnet explorer",
+      "url": "https://elysium-explorer.vulcanforged.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1439,
+    "name": "Injective Testnet",
+    "rpcs": [
+      "https://k8s.testnet.json-rpc.injective.network"
+    ],
+    "explorer": {
+      "name": "Injective Explorer",
+      "url": "https://testnet.blockscout.injective.network",
+      "apiUrl": "https://testnet.blockscout.injective.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1442,
+    "name": "Polygon zkEVM Testnet",
+    "rpcs": [
+      "https://rpc.public.zkevm-test.net"
+    ],
+    "explorer": {
+      "name": "PolygonScan",
+      "url": "https://testnet-zkevm.polygonscan.com",
+      "apiUrl": "https://testnet-zkevm.polygonscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1453,
+    "name": "MetaChain Istanbul",
+    "rpcs": [
+      "https://istanbul-rpc.metachain.dev"
+    ],
+    "explorer": {
+      "name": "MetaExplorer",
+      "url": "https://istanbul-explorer.metachain.dev"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1513,
+    "name": "Story Testnet",
+    "rpcs": [
+      "https://testnet.storyrpc.io"
+    ],
+    "explorer": {
+      "name": "Story Testnet Explorer",
+      "url": "https://testnet.storyscan.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1516,
+    "name": "Story Odyssey",
+    "rpcs": [
+      "https://rpc.odyssey.storyrpc.io"
+    ],
+    "explorer": {
+      "name": "Story Odyssey Explorer",
+      "url": "https://odyssey.storyscan.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1663,
+    "name": "Horizen Gobi Testnet",
+    "rpcs": [
+      "https://gobi-testnet.horizenlabs.io/ethv1"
+    ],
+    "explorer": {
+      "name": "Gobi Explorer",
+      "url": "https://gobi-explorer.horizen.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1686,
+    "name": "Mint Sepolia Testnet",
+    "rpcs": [
+      "https://testnet-rpc.mintchain.io"
+    ],
+    "explorer": {
+      "name": "Mintchain Testnet explorer",
+      "url": "https://testnet-explorer.mintchain.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1891,
+    "name": "LightLink Pegasus Testnet",
+    "network": "lightlink-pegasus",
+    "rpcs": [
+      "https://replicator.pegasus.lightlink.io/rpc/v1"
+    ],
+    "explorer": {
+      "name": "LightLink Pegasus Explorer",
+      "url": "https://pegasus.lightlink.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1946,
+    "name": "Soneium Minato Testnet",
+    "rpcs": [
+      "https://rpc.minato.soneium.org"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://soneium-minato.blockscout.com",
+      "apiUrl": "https://soneium-minato.blockscout.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1993,
+    "name": "B3 Sepolia",
+    "rpcs": [
+      "https://sepolia.b3.fun/http"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://sepolia.explorer.b3.fun"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1995,
+    "name": "edeXa Testnet",
+    "rpcs": [
+      "https://rpc.testnet.edexa.network"
+    ],
+    "explorer": {
+      "name": "edeXa Testnet Explorer",
+      "url": "https://explorer.testnet.edexa.network",
+      "apiUrl": "https://explorer.testnet.edexa.network/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2017,
+    "name": "Telcoin Adiri Testnet",
+    "rpcs": [
+      "https://rpc.telcoin.network"
+    ],
+    "explorer": {
+      "name": "telscan",
+      "url": "https://telscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2021,
+    "name": "Saigon Testnet",
+    "rpcs": [
+      "https://saigon-testnet.roninchain.com/rpc"
+    ],
+    "explorer": {
+      "name": "Saigon Explorer",
+      "url": "https://saigon-app.roninchain.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2024,
+    "name": "Swan Saturn Testnet",
+    "rpcs": [
+      "https://saturn-rpc.swanchain.io"
+    ],
+    "explorer": {
+      "name": "Swan Explorer",
+      "url": "https://saturn-explorer.swanchain.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2039,
+    "name": "Aleph Zero Testnet",
+    "rpcs": [
+      "https://rpc.alephzero-testnet.gelato.digital"
+    ],
+    "explorer": {
+      "name": "Aleph Zero EVM Testnet explorer",
+      "url": "https://evm-explorer-testnet.alephzero.org",
+      "apiUrl": "https://evm-explorer-testnet.alephzero.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2201,
+    "name": "Stable Testnet",
+    "rpcs": [
+      "https://rpc.testnet.stable.xyz"
+    ],
+    "explorer": {
+      "name": "Stablescan",
+      "url": "https://testnet.stablescan.xyz",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=2201"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2221,
+    "name": "Kava EVM Testnet",
+    "network": "kava-testnet",
+    "rpcs": [
+      "https://evm.testnet.kava.io"
+    ],
+    "explorer": {
+      "name": "Kava EVM Testnet Explorer",
+      "url": "https://testnet.kavascan.com/",
+      "apiUrl": "https://testnet.kavascan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2331,
+    "name": "RSS3 VSL Sepolia Testnet",
+    "rpcs": [
+      "https://rpc.testnet.rss3.io"
+    ],
+    "explorer": {
+      "name": "RSS3 VSL Sepolia Testnet Scan",
+      "url": "https://scan.testnet.rss3.io",
+      "apiUrl": "https://scan.testnet.rss3.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2340,
+    "name": "Atleta Olympia",
+    "rpcs": [
+      "https://testnet-rpc.atleta.network:9944",
+      "https://testnet-rpc.atleta.network"
+    ],
+    "explorer": {
+      "name": "Atleta Olympia Explorer",
+      "url": "https://blockscout.atleta.network",
+      "apiUrl": "https://blockscout.atleta.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2358,
+    "name": "Kroma Sepolia",
+    "rpcs": [
+      "https://api.sepolia.kroma.network"
+    ],
+    "explorer": {
+      "name": "Kroma Sepolia Explorer",
+      "url": "https://blockscout.sepolia.kroma.network",
+      "apiUrl": "https://blockscout.sepolia.kroma.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2391,
+    "name": "TAC SPB Testnet",
+    "rpcs": [
+      "https://spb.rpc.tac.build"
+    ],
+    "explorer": {
+      "name": "TAC",
+      "url": "https://spb.explorer.tac.build",
+      "apiUrl": "https://spb.explorer.tac.build/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2442,
+    "name": "Polygon zkEVM Cardona",
+    "rpcs": [
+      "https://rpc.cardona.zkevm-rpc.com"
+    ],
+    "explorer": {
+      "name": "PolygonScan",
+      "url": "https://cardona-zkevm.polygonscan.com",
+      "apiUrl": "https://cardona-zkevm.polygonscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2625,
+    "name": "Whitechain Testnet",
+    "rpcs": [
+      "https://rpc-testnet.whitechain.io"
+    ],
+    "explorer": {
+      "name": "Whitechain Explorer",
+      "url": "https://testnet.whitechain.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2710,
+    "name": "Morph Sepolia",
+    "rpcs": [
+      "https://rpc-testnet.morphl2.io"
+    ],
+    "explorer": {
+      "name": "Morph Testnet Explorer",
+      "url": "https://explorer-testnet.morphl2.io",
+      "apiUrl": "https://explorer-api-testnet.morphl2.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2730,
+    "name": "XR Sepolia",
+    "rpcs": [
+      "https://xr-sepolia-testnet.rpc.caldera.xyz/http"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://xr-sepolia-testnet.explorer.caldera.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2810,
+    "name": "Morph Holesky",
+    "rpcs": [
+      "https://rpc-quicknode-holesky.morphl2.io"
+    ],
+    "explorer": {
+      "name": "Morph Holesky Explorer",
+      "url": "https://explorer-holesky.morphl2.io",
+      "apiUrl": "https://explorer-api-holesky.morphl2.io/api?"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3110,
+    "name": "SatoshiVM Testnet",
+    "rpcs": [
+      "https://test-rpc-node-http.svmscan.io"
+    ],
+    "explorer": {
+      "name": "blockscout",
+      "url": "https://testnet.svmscan.io",
+      "apiUrl": "https://testnet.svmscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3141,
+    "name": "Filecoin Hyperspace",
+    "rpcs": [
+      "https://api.hyperspace.node.glif.io/rpc/v1"
+    ],
+    "explorer": {
+      "name": "Filfox",
+      "url": "https://hyperspace.filfox.info/en"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3636,
+    "name": "Botanix Testnet",
+    "rpcs": [
+      "https://node.botanixlabs.dev"
+    ],
+    "explorer": {
+      "name": "Botanix Testnet Explorer",
+      "url": "https://testnet.botanixscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3939,
+    "name": "DOS Chain Testnet",
+    "rpcs": [
+      "https://test.doschain.com"
+    ],
+    "explorer": {
+      "name": "DOS Chain Testnet Explorer",
+      "url": "https://test.doscan.io",
+      "apiUrl": "https://api-test.doscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3993,
+    "name": "APEX Testnet",
+    "rpcs": [
+      "https://rpc-testnet.apexlayer.xyz"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://exp-testnet.apexlayer.xyz",
+      "apiUrl": "https://exp-testnet.apexlayer.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4002,
+    "name": "Fantom Testnet",
+    "rpcs": [
+      "https://rpc.testnet.fantom.network"
+    ],
+    "explorer": {
+      "name": "FTMScan",
+      "url": "https://testnet.ftmscan.com",
+      "apiUrl": "https://testnet.ftmscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4090,
+    "name": "Oasis Testnet",
+    "network": "oasis-testnet",
+    "rpcs": [
+      "https://rpc1.oasis.bahamutchain.com"
+    ],
+    "explorer": {
+      "name": "Ftnscan",
+      "url": "https://oasis.ftnscan.com",
+      "apiUrl": "https://oasis.ftnscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4201,
+    "name": "LUKSO Testnet",
+    "rpcs": [
+      "https://rpc.testnet.lukso.network"
+    ],
+    "explorer": {
+      "name": "LUKSO Testnet Explorer",
+      "url": "https://explorer.execution.testnet.lukso.network",
+      "apiUrl": "https://api.explorer.execution.testnet.lukso.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4202,
+    "name": "Lisk Sepolia",
+    "network": "lisk-sepolia",
+    "rpcs": [
+      "https://rpc.sepolia-api.lisk.com"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://sepolia-blockscout.lisk.com",
+      "apiUrl": "https://sepolia-blockscout.lisk.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4203,
+    "name": "Merlin Erigon Testnet",
+    "rpcs": [
+      "https://testnet-erigon-rpc.merlinchain.io"
+    ],
+    "explorer": {
+      "name": "blockscout",
+      "url": "https://testnet-erigon-scan.merlinchain.io",
+      "apiUrl": "https://testnet-erigon-scan.merlinchain.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4460,
+    "name": "Orderly Sepolia",
+    "rpcs": [
+      "https://l2-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz"
+    ],
+    "explorer": {
+      "name": "Orderly Explorer",
+      "url": "https://explorerl2new-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4690,
+    "name": "IoTeX Testnet",
+    "rpcs": [
+      "https://babel-api.testnet.iotex.io"
+    ],
+    "explorer": {
+      "name": "IoTeXScan",
+      "url": "https://testnet.iotexscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4759,
+    "name": "MEVerse Chain Testnet",
+    "rpcs": [
+      "https://rpc.meversetestnet.io"
+    ],
+    "explorer": {
+      "name": "Explorer",
+      "url": "https://testnet.meversescan.io/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4777,
+    "name": "BlackFort Exchange Network Testnet",
+    "rpcs": [
+      "https://testnet.blackfort.network/rpc"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://testnet-explorer.blackfort.network",
+      "apiUrl": "https://testnet-explorer.blackfort.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 4801,
+    "name": "World Chain Sepolia",
+    "network": "worldchain-sepolia",
+    "rpcs": [
+      "https://worldchain-sepolia.g.alchemy.com/public"
+    ],
+    "explorer": {
+      "name": "Worldscan Sepolia",
+      "url": "https://sepolia.worldscan.org",
+      "apiUrl": "https://api-sepolia.worldscan.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5001,
+    "name": "Mantle Testnet",
+    "rpcs": [
+      "https://rpc.testnet.mantle.xyz"
+    ],
+    "explorer": {
+      "name": "Mantle Testnet Explorer",
+      "url": "https://explorer.testnet.mantle.xyz",
+      "apiUrl": "https://explorer.testnet.mantle.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5003,
+    "name": "Mantle Sepolia Testnet",
+    "rpcs": [
+      "https://rpc.sepolia.mantle.xyz"
+    ],
+    "explorer": {
+      "name": "Mantle Testnet Explorer",
+      "url": "https://explorer.sepolia.mantle.xyz/",
+      "apiUrl": "https://explorer.sepolia.mantle.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5115,
+    "name": "Citrea Testnet",
+    "rpcs": [
+      "https://rpc.testnet.citrea.xyz"
+    ],
+    "explorer": {
+      "name": "Citrea Explorer",
+      "url": "https://explorer.testnet.citrea.xyz",
+      "apiUrl": "https://explorer.testnet.citrea.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5124,
+    "name": "Seismic Devnet",
+    "rpcs": [
+      "https://node-2.seismicdev.net/rpc"
+    ],
+    "explorer": {
+      "name": "Seismic Devnet Explorer",
+      "url": "https://explorer-2.seismicdev.net"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5611,
+    "name": "opBNB Testnet",
+    "rpcs": [
+      "https://opbnb-testnet-rpc.bnbchain.org"
+    ],
+    "explorer": {
+      "name": "opbnbscan",
+      "url": "https://testnet.opbnbscan.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5887,
+    "name": "MANTRA DuKong EVM Testnet",
+    "rpcs": [
+      "https://evm.dukong.mantrachain.io"
+    ],
+    "explorer": {
+      "name": "MANTRAScan",
+      "url": "https://mantrascan.io/dukong"
+    },
+    "testnet": true
+  },
+  {
+    "id": 6000,
+    "name": "BounceBit Testnet",
+    "rpcs": [
+      "https://fullnode-testnet.bouncebitapi.com"
+    ],
+    "explorer": {
+      "name": "BB Scan",
+      "url": "https://testnet.bbscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 6343,
+    "name": "MegaETH Testnet",
+    "rpcs": [
+      "https://carrot.megaeth.com/rpc"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://testnet-mega.etherscan.io",
+      "apiUrl": "https://api.etherscan.io/v2/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 7001,
+    "name": "ZetaChain Athens Testnet",
+    "rpcs": [
+      "https://zetachain-athens-evm.blockpi.network/v1/rpc/public"
+    ],
+    "explorer": {
+      "name": "ZetaScan",
+      "url": "https://testnet.zetascan.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 7234,
+    "name": "InitVerse Genesis Testnet",
+    "rpcs": [
+      "https://rpc-testnet.inichain.com"
+    ],
+    "explorer": {
+      "name": "InitVerseGenesisScan",
+      "url": "https://genesis-testnet.iniscan.com",
+      "apiUrl": "https://explorer-testnet-api.inichain.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 7672,
+    "name": "The Root Network - Porcini",
+    "rpcs": [
+      "https://porcini.rootnet.app/archive"
+    ],
+    "explorer": {
+      "name": "Rootscan",
+      "url": "https://porcini.rootscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 8082,
+    "name": "Shardeum Sphinx",
+    "rpcs": [
+      "https://sphinx.shardeum.org"
+    ],
+    "explorer": {
+      "name": "Shardeum Explorer",
+      "url": "https://explorer-sphinx.shardeum.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 8150,
+    "name": "Alpen Testnet",
+    "rpcs": [
+      "https://rpc.testnet.alpenlabs.io"
+    ],
+    "explorer": {
+      "name": "Alpen Explorer",
+      "url": "https://explorer.testnet.alpenlabs.io",
+      "apiUrl": "https://explorer.testnet.alpenlabs.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 8408,
+    "name": "ZenChain Testnet",
+    "rpcs": [
+      "https://zenchain-testnet.api.onfinality.io/public"
+    ],
+    "explorer": {
+      "name": "Zentrace",
+      "url": "https://zentrace.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 8882,
+    "name": "Opal Testnet",
+    "rpcs": [
+      "https://rpc-opal.unique.network"
+    ],
+    "explorer": {
+      "name": "Opal Subscan",
+      "url": "https://opal.subscan.io/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 9496,
+    "name": "Load Alphanet",
+    "rpcs": [
+      "https://alphanet.load.network"
+    ],
+    "explorer": {
+      "name": "Load Alphanet Explorer",
+      "url": "https://explorer.load.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 9496,
+    "name": "WeaveVM Alphanet",
+    "rpcs": [
+      "https://testnet-rpc.wvm.dev"
+    ],
+    "explorer": {
+      "name": "WeaveVM Alphanet Explorer",
+      "url": "https://explorer.wvm.dev"
+    },
+    "testnet": true
+  },
+  {
+    "id": 9746,
+    "name": "Plasma Testnet",
+    "rpcs": [
+      "https://testnet-rpc.plasma.to"
+    ],
+    "explorer": {
+      "name": "RouteScan",
+      "url": "https://testnet.plasmascan.to"
+    },
+    "testnet": true
+  },
+  {
+    "id": 9747,
+    "name": "Plasma Devnet",
+    "rpcs": [
+      "https://devnet-rpc.plasma.to"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 9990,
+    "name": "Agung Network",
+    "rpcs": [
+      "https://wss-async.agung.peaq.network"
+    ],
+    "explorer": {
+      "name": "Subscan",
+      "url": "https://agung-testnet.subscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 10081,
+    "name": "Japan Open Chain Testnet",
+    "rpcs": [
+      "https://rpc-1.testnet.japanopenchain.org:8545",
+      "https://rpc-2.testnet.japanopenchain.org:8545",
+      "https://rpc-3.testnet.japanopenchain.org"
+    ],
+    "explorer": {
+      "name": "Testnet Block Explorer",
+      "url": "https://explorer.testnet.japanopenchain.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 10143,
+    "name": "Monad Testnet",
+    "rpcs": [
+      "https://testnet-rpc.monad.xyz"
+    ],
+    "explorer": {
+      "name": "Monad Testnet explorer",
+      "url": "https://testnet.monadexplorer.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 10200,
+    "name": "Gnosis Chiado",
+    "rpcs": [
+      "https://rpc.chiadochain.net"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://blockscout.chiadochain.net",
+      "apiUrl": "https://blockscout.chiadochain.net/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 10218,
+    "name": "Tea Sepolia",
+    "rpcs": [
+      "https://tea-sepolia.g.alchemy.com/public"
+    ],
+    "explorer": {
+      "name": "Tea Sepolia Explorer",
+      "url": "https://sepolia.tea.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11011,
+    "name": "Shape Sepolia Testnet",
+    "rpcs": [
+      "https://sepolia.shape.network"
+    ],
+    "explorer": {
+      "name": "blockscout",
+      "url": "https://explorer-sepolia.shape.network/",
+      "apiUrl": "https://explorer-sepolia.shape.network/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11124,
+    "name": "Abstract Testnet",
+    "rpcs": [
+      "https://api.testnet.abs.xyz"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://sepolia.abscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11822,
+    "name": "Artela Testnet",
+    "rpcs": [
+      "https://betanet-rpc1.artela.network"
+    ],
+    "explorer": {
+      "name": "Artela",
+      "url": "https://betanet-scan.artela.network",
+      "apiUrl": "https://betanet-scan.artela.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 12325,
+    "name": "L3X Protocol Testnet",
+    "rpcs": [
+      "https://rpc-testnet.l3x.com"
+    ],
+    "explorer": {
+      "name": "L3X Testnet Explorer",
+      "url": "https://explorer-testnet.l3x.com",
+      "apiUrl": "https://explorer-testnet.l3x.com/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 13001,
+    "name": "SnaxChain Testnet",
+    "network": "snaxchain-testnet",
+    "rpcs": [
+      "https://testnet.snaxchain.io"
+    ],
+    "explorer": {
+      "name": "Snax Explorer",
+      "url": "https://testnet-explorer.snaxchain.io",
+      "apiUrl": "https://testnet-explorer.snaxchain.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 13337,
+    "name": "Beam Testnet",
+    "network": "beam",
+    "rpcs": [
+      "https://build.onbeam.com/rpc/testnet"
+    ],
+    "explorer": {
+      "name": "Beam Explorer",
+      "url": "https://subnets-test.avax.network/beam"
+    },
+    "testnet": true
+  },
+  {
+    "id": 13473,
+    "name": "Immutable zkEVM Testnet",
+    "rpcs": [
+      "https://rpc.testnet.immutable.com"
+    ],
+    "explorer": {
+      "name": "Immutable Testnet Explorer",
+      "url": "https://explorer.testnet.immutable.com/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 14800,
+    "name": "Vana Moksha Testnet",
+    "rpcs": [
+      "https://rpc.moksha.vana.org"
+    ],
+    "explorer": {
+      "name": "Vana Moksha Testnet",
+      "url": "https://moksha.vanascan.io",
+      "apiUrl": "https://moksha.vanascan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 15000,
+    "name": "Quai Network Testnet",
+    "rpcs": [
+      "https://orchard.rpc.quai.network/cyprus1"
+    ],
+    "explorer": {
+      "name": "Orchard Quaiscan",
+      "url": "https://orchard.quaiscan.io",
+      "apiUrl": "https://orchard.quaiscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 15557,
+    "name": "EOS EVM Testnet",
+    "rpcs": [
+      "https://api.testnet.evm.eosnetwork.com"
+    ],
+    "explorer": {
+      "name": "EOS EVM Testnet Explorer",
+      "url": "https://explorer.testnet.evm.eosnetwork.com",
+      "apiUrl": "https://explorer.testnet.evm.eosnetwork.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 16600,
+    "name": "0G Newton Testnet",
+    "rpcs": [
+      "https://evmrpc-testnet.0g.ai"
+    ],
+    "explorer": {
+      "name": "0G BlockChain Explorer",
+      "url": "https://chainscan-newton.0g.ai"
+    },
+    "testnet": true
+  },
+  {
+    "id": 16601,
+    "name": "0G Galileo Testnet",
+    "rpcs": [
+      "https://evmrpc-testnet.0g.ai"
+    ],
+    "explorer": {
+      "name": "0G BlockChain Explorer",
+      "url": "https://chainscan-galileo.0g.ai"
+    },
+    "testnet": true
+  },
+  {
+    "id": 16602,
+    "name": "0G Galileo Testnet",
+    "rpcs": [
+      "https://evmrpc-testnet.0g.ai"
+    ],
+    "explorer": {
+      "name": "0G BlockChain Explorer",
+      "url": "https://chainscan-galileo.0g.ai"
+    },
+    "testnet": true
+  },
+  {
+    "id": 17000,
+    "name": "Holesky",
+    "rpcs": [
+      "https://ethereum-holesky-rpc.publicnode.com"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://holesky.etherscan.io",
+      "apiUrl": "https://api-holesky.etherscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 17069,
+    "name": "Garnet Testnet",
+    "rpcs": [
+      "https://rpc.garnetchain.com"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://explorer.garnetchain.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 18233,
+    "name": "Unreal",
+    "rpcs": [
+      "https://rpc.unreal-orbit.gelato.digital"
+    ],
+    "explorer": {
+      "name": "Unreal Explorer",
+      "url": "https://unreal.blockscout.com",
+      "apiUrl": "https://unreal.blockscout.com/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 18881,
+    "name": "Ultra EVM Testnet",
+    "rpcs": [
+      "https://evm.test.ultra.eosusa.io"
+    ],
+    "explorer": {
+      "name": "Ultra EVM Testnet Explorer",
+      "url": "https://evmexplorer.testnet.ultra.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 20993,
+    "name": "Fluent Testnet",
+    "rpcs": [
+      "https://rpc.dev.gblend.xyz"
+    ],
+    "explorer": {
+      "name": "Fluent Explorer",
+      "url": "https://blockscout.dev.gblend.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 21363,
+    "name": "Lestnet",
+    "rpcs": [
+      "https://service.lestnet.org"
+    ],
+    "explorer": {
+      "name": "Lestnet Explorer",
+      "url": "https://explore.lestnet.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 23023,
+    "name": "PremiumBlock Testnet",
+    "rpcs": [
+      "https://rpc.premiumblock.org"
+    ],
+    "explorer": {
+      "name": "PremiumBlocks Explorer",
+      "url": "https://scan.premiumblock.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 23295,
+    "name": "Oasis Sapphire Testnet",
+    "network": "sapphire-testnet",
+    "rpcs": [
+      "https://testnet.sapphire.oasis.dev"
+    ],
+    "explorer": {
+      "name": "Oasis Explorer",
+      "url": "https://explorer.oasis.io/testnet/sapphire"
+    },
+    "testnet": true
+  },
+  {
+    "id": 23452,
+    "name": "DreyerX Testnet",
+    "rpcs": [
+      "http://testnet-rpc.dreyerx.com"
+    ],
+    "explorer": {
+      "name": "DreyerX Testnet Scan",
+      "url": "https://testnet-scan.dreyerx.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 25925,
+    "name": "Bitkub Testnet",
+    "network": "Bitkub Testnet",
+    "rpcs": [
+      "https://rpc-testnet.bitkubchain.io"
+    ],
+    "explorer": {
+      "name": "Bitkub Chain Testnet Explorer",
+      "url": "https://testnet.bkcscan.com",
+      "apiUrl": "https://testnet.bkcscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 28882,
+    "name": "Boba Sepolia",
+    "rpcs": [
+      "https://sepolia.boba.network"
+    ],
+    "explorer": {
+      "name": "BOBAScan",
+      "url": "https://testnet.bobascan.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 29112,
+    "name": "HYCHAIN Testnet",
+    "rpcs": [
+      "https://rpc.hychain.com/http"
+    ],
+    "explorer": {
+      "name": "HYCHAIN Explorer",
+      "url": "https://testnet-rpc.hychain.com/http"
+    },
+    "testnet": true
+  },
+  {
+    "id": 33101,
+    "name": "Zilliqa Testnet",
+    "network": "zilliqa-testnet",
+    "rpcs": [
+      "https://dev-api.zilliqa.com"
+    ],
+    "explorer": {
+      "name": "Ethernal",
+      "url": "https://evmx.testnet.zilliqa.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 33111,
+    "name": "Curtis",
+    "rpcs": [
+      "https://rpc.curtis.apechain.com"
+    ],
+    "explorer": {
+      "name": "Curtis Explorer",
+      "url": "https://explorer.curtis.apechain.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 35443,
+    "name": "Q Testnet",
+    "rpcs": [
+      "https://rpc.qtestnet.org"
+    ],
+    "explorer": {
+      "name": "Q Testnet Explorer",
+      "url": "https://explorer.qtestnet.org",
+      "apiUrl": "https://explorer.qtestnet.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 37111,
+    "name": "Lens Testnet",
+    "rpcs": [
+      "https://rpc.testnet.lens.dev"
+    ],
+    "explorer": {
+      "name": "Lens Block Explorer",
+      "url": "https://block-explorer.testnet.lens.dev",
+      "apiUrl": "https://block-explorer-api.staging.lens.dev/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 42000,
+    "name": "Helios Testnet",
+    "network": "helios-testnet",
+    "rpcs": [
+      "https://testnet1.helioschainlabs.org"
+    ],
+    "explorer": {
+      "name": "Helios Testnet Explorer",
+      "url": "https://explorer.helioschainlabs.org/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 42070,
+    "name": "WMC Testnet",
+    "rpcs": [
+      "https://rpc-testnet-base.worldmobile.net"
+    ],
+    "explorer": {
+      "name": "WMC Explorer",
+      "url": "https://explorer2-base-testnet.worldmobile.net"
+    },
+    "testnet": true
+  },
+  {
+    "id": 42421,
+    "name": "AssetChain Testnet",
+    "rpcs": [
+      "https://enugu-rpc.assetchain.org"
+    ],
+    "explorer": {
+      "name": "Asset Chain Testnet Explorer",
+      "url": "https://scan-testnet.assetchain.org",
+      "apiUrl": "https://scan-testnet.assetchain.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 43113,
+    "name": "Avalanche Fuji",
+    "rpcs": [
+      "https://api.avax-test.network/ext/bc/C/rpc"
+    ],
+    "explorer": {
+      "name": "SnowTrace",
+      "url": "https://testnet.snowtrace.io",
+      "apiUrl": "https://api-testnet.snowtrace.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 43521,
+    "name": "Formicarium",
+    "rpcs": [
+      "https://rpc.formicarium.memecore.net"
+    ],
+    "explorer": {
+      "name": "MemeCore Testnet Explorer",
+      "url": "https://formicarium.memecorescan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 43851,
+    "name": "ZKFair Testnet",
+    "network": "zkfair-testnet",
+    "rpcs": [
+      "https://testnet-rpc.zkfair.io"
+    ],
+    "explorer": {
+      "name": "zkFair Explorer",
+      "url": "https://testnet-scan.zkfair.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 44787,
+    "name": "Alfajores",
+    "rpcs": [
+      "https://alfajores-forno.celo-testnet.org"
+    ],
+    "explorer": {
+      "name": "Celo Alfajores Explorer",
+      "url": "https://celo-alfajores.blockscout.com",
+      "apiUrl": "https://celo-alfajores.blockscout.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 46688,
+    "name": "Fusion Testnet",
+    "rpcs": [
+      "https://testnet.fusionnetwork.io"
+    ],
+    "explorer": {
+      "name": "FSNscan",
+      "url": "https://testnet.fsnscan.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 48898,
+    "name": "Zircuit Garfield Testnet",
+    "rpcs": [
+      "https://garfield-testnet.zircuit.com/"
+    ],
+    "explorer": {
+      "name": "Zircuit Garfield Testnet Explorer",
+      "url": "https://explorer.garfield-testnet.zircuit.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 48899,
+    "name": "Zircuit Testnet",
+    "rpcs": [
+      "https://testnet.zircuit.com",
+      "https://zircuit1-testnet.p2pify.com",
+      "https://zircuit1-testnet.liquify.com"
+    ],
+    "explorer": {
+      "name": "Zircuit Testnet Explorer",
+      "url": "https://explorer.testnet.zircuit.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 50006,
+    "name": "Yooldo Verse Testnet",
+    "rpcs": [
+      "https://rpc.testnet.yooldo-verse.xyz"
+    ],
+    "explorer": {
+      "name": "Yooldo Verse Testnet Explorer",
+      "url": "https://explorer.testnet.yooldo-verse.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 50312,
+    "name": "Somnia Testnet",
+    "rpcs": [
+      "https://dream-rpc.somnia.network"
+    ],
+    "explorer": {
+      "name": "Somnia Testnet Explorer",
+      "url": "https://shannon-explorer.somnia.network/",
+      "apiUrl": "https://shannon-explorer.somnia.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 50341,
+    "name": "Reddio Sepolia",
+    "rpcs": [
+      "https://reddio-dev.reddio.com"
+    ],
+    "explorer": {
+      "name": "Reddioscan",
+      "url": "https://reddio-devnet.l2scan.co",
+      "apiUrl": "https://reddio-devnet.l2scan.co/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 53302,
+    "name": "Superseed Sepolia",
+    "rpcs": [
+      "https://sepolia.superseed.xyz"
+    ],
+    "explorer": {
+      "name": "Superseed Sepolia Explorer",
+      "url": "https://sepolia-explorer.superseed.xyz",
+      "apiUrl": "https://sepolia-explorer.superseed.xyz/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 53457,
+    "name": "DODOchain Testnet",
+    "rpcs": [
+      "https://dodochain-testnet.alt.technology"
+    ],
+    "explorer": {
+      "name": "DODOchain Testnet (Sepolia) Explorer",
+      "url": "https://testnet-scan.dodochain.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 54170,
+    "name": "Graphite Network Testnet",
+    "rpcs": [
+      "https://anon-entrypoint-test-1.atgraphite.com"
+    ],
+    "explorer": {
+      "name": "Graphite Testnet Spectre",
+      "url": "https://test.atgraphite.com",
+      "apiUrl": "https://api.test.atgraphite.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 55931,
+    "name": "Datahaven Testnet",
+    "rpcs": [
+      "https://services.datahaven-testnet.network/testnet"
+    ],
+    "explorer": {
+      "name": "DhScan",
+      "url": "https://testnet.dhscan.io/",
+      "apiUrl": "https://testnet.dhscan.io/api-docs"
+    },
+    "testnet": true
+  },
+  {
+    "id": 57054,
+    "name": "Sonic Blaze Testnet",
+    "rpcs": [
+      "https://rpc.blaze.soniclabs.com"
+    ],
+    "explorer": {
+      "name": "Sonic Blaze Testnet Explorer",
+      "url": "https://testnet.sonicscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 58008,
+    "name": "PGN",
+    "network": "pgn-testnet",
+    "rpcs": [
+      "https://sepolia.publicgoods.network"
+    ],
+    "explorer": {
+      "name": "PGN Testnet Explorer",
+      "url": "https://explorer.sepolia.publicgoods.network",
+      "apiUrl": "https://explorer.sepolia.publicgoods.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 59140,
+    "name": "Linea Goerli Testnet",
+    "rpcs": [
+      "https://rpc.goerli.linea.build"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://goerli.lineascan.build",
+      "apiUrl": "https://api-goerli.lineascan.build/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 59140,
+    "name": "Linea Goerli Testnet",
+    "rpcs": [
+      "https://rpc.goerli.linea.build"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://goerli.lineascan.build",
+      "apiUrl": "https://goerli.lineascan.build/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 59141,
+    "name": "Linea Sepolia Testnet",
+    "rpcs": [
+      "https://rpc.sepolia.linea.build"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://sepolia.lineascan.build",
+      "apiUrl": "https://api-sepolia.lineascan.build/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 60600,
+    "name": "POTOS Testnet",
+    "rpcs": [
+      "https://rpc-testnet.potos.hk"
+    ],
+    "explorer": {
+      "name": "POTOS Testnet explorer",
+      "url": "https://scan-testnet.potos.hk"
+    },
+    "testnet": true
+  },
+  {
+    "id": 62049,
+    "name": "Optopia Testnet",
+    "rpcs": [
+      "https://rpc-testnet.optopia.ai"
+    ],
+    "explorer": {
+      "name": "Optopia Explorer",
+      "url": "https://scan-testnet.optopia.ai"
+    },
+    "testnet": true
+  },
+  {
+    "id": 62092,
+    "name": "TikTrix Testnet",
+    "rpcs": [
+      "https://tiktrix-rpc.xyz"
+    ],
+    "explorer": {
+      "name": "TikTrix Testnet Explorer",
+      "url": "https://tiktrix.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 64165,
+    "name": "Sonic Testnet",
+    "rpcs": [
+      "https://rpc.testnet.soniclabs.com"
+    ],
+    "explorer": {
+      "name": "Sonic Testnet Explorer",
+      "url": "https://testnet.soniclabs.com/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 64240,
+    "name": "Fantom Sonic Open Testnet",
+    "network": "fantom-sonic-testnet",
+    "rpcs": [
+      "https://rpcapi.sonic.fantom.network"
+    ],
+    "explorer": {
+      "name": "Fantom Sonic Open Testnet Explorer",
+      "url": "https://public-sonic.fantom.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 66665,
+    "name": "Creator",
+    "rpcs": [
+      "https://rpc.creatorchain.io"
+    ],
+    "explorer": {
+      "name": "Explorer",
+      "url": "https://explorer.creatorchain.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 80001,
+    "name": "Polygon Mumbai",
+    "rpcs": [
+      "https://80001.rpc.thirdweb.com"
+    ],
+    "explorer": {
+      "name": "PolygonScan",
+      "url": "https://mumbai.polygonscan.com",
+      "apiUrl": "https://api-testnet.polygonscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 80002,
+    "name": "Polygon Amoy",
+    "rpcs": [
+      "https://rpc-amoy.polygon.technology"
+    ],
+    "explorer": {
+      "name": "PolygonScan",
+      "url": "https://amoy.polygonscan.com",
+      "apiUrl": "https://api.etherscan.io/v2/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 80008,
+    "name": "Polynomia Sepolia",
+    "rpcs": [
+      "https://rpc.sepolia.polynomial.fi"
+    ],
+    "explorer": {
+      "name": "Polynomial Scan",
+      "url": "https://sepolia.polynomialscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 80069,
+    "name": "Berachain Bepolia",
+    "rpcs": [
+      "https://bepolia.rpc.berachain.com"
+    ],
+    "explorer": {
+      "name": "Berascan",
+      "url": "https://bepolia.beratrail.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 80084,
+    "name": "Berachain bArtio",
+    "rpcs": [
+      "https://bartio.rpc.berachain.com"
+    ],
+    "explorer": {
+      "name": "Berachain bArtio Beratrail",
+      "url": "https://bartio.beratrail.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 80085,
+    "name": "Berachain Artio",
+    "rpcs": [
+      "https://artio.rpc.berachain.com"
+    ],
+    "explorer": {
+      "name": "Berachain",
+      "url": "https://artio.beratrail.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 84531,
+    "name": "Base Goerli",
+    "rpcs": [
+      "https://goerli.base.org"
+    ],
+    "explorer": {
+      "name": "Basescan",
+      "url": "https://goerli.basescan.org",
+      "apiUrl": "https://goerli.basescan.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 84532,
+    "name": "Base Sepolia",
+    "network": "base-sepolia",
+    "rpcs": [
+      "https://sepolia.base.org"
+    ],
+    "explorer": {
+      "name": "Basescan",
+      "url": "https://sepolia.basescan.org",
+      "apiUrl": "https://api-sepolia.basescan.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 84532,
+    "name": "Base Sepolia",
+    "network": "base-sepolia",
+    "rpcs": [
+      "https://sepolia-preconf.base.org"
+    ],
+    "explorer": {
+      "name": "Basescan",
+      "url": "https://sepolia.basescan.org",
+      "apiUrl": "https://api-sepolia.basescan.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 88882,
+    "name": "Chiliz Spicy Testnet",
+    "network": "chiliz-spicy-Testnet",
+    "rpcs": [
+      "https://spicy-rpc.chiliz.com",
+      "https://chiliz-spicy-rpc.publicnode.com"
+    ],
+    "explorer": {
+      "name": "Chiliz Explorer",
+      "url": "http://spicy-explorer.chiliz.com",
+      "apiUrl": "http://spicy-explorer.chiliz.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 88991,
+    "name": "Jibchain Testnet",
+    "rpcs": [
+      "https://rpc.testnet.jibchain.net"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://exp.testnet.jibchain.net",
+      "apiUrl": "https://exp.testnet.jibchain.net/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 91342,
+    "name": "GIWA Sepolia",
+    "network": "giwa-sepolia",
+    "rpcs": [
+      "https://sepolia-rpc.giwa.io"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://sepolia-explorer.giwa.io",
+      "apiUrl": "https://sepolia-explorer.giwa.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 91342,
+    "name": "GIWA Sepolia",
+    "network": "giwa-sepolia",
+    "rpcs": [
+      "https://sepolia-rpc-flashblocks.giwa.io"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://sepolia-explorer.giwa.io",
+      "apiUrl": "https://sepolia-explorer.giwa.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 97476,
+    "name": "Doma Testnet",
+    "rpcs": [
+      "https://rpc-testnet.doma.xyz"
+    ],
+    "explorer": {
+      "name": "Doma Testnet Explorer",
+      "url": "https://explorer-testnet.doma.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 98864,
+    "name": "Plume Devnet (Legacy)",
+    "rpcs": [
+      "https://test-rpc.plumenetwork.xyz"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://test-explorer.plumenetwork.xyz",
+      "apiUrl": "https://test-explorer.plumenetwork.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 98867,
+    "name": "Plume Testnet",
+    "rpcs": [
+      "https://testnet-rpc.plume.org"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://testnet-explorer.plume.org",
+      "apiUrl": "https://testnet-explorer.plume.org/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 101003,
+    "name": "Socotra JUNE-Chain",
+    "rpcs": [
+      "https://rpc.socotra-testnet.network/ext/bc/JUNE/rpc"
+    ],
+    "explorer": {
+      "name": "Juneo Scan",
+      "url": "https://socotra.juneoscan.io/chain/2",
+      "apiUrl": "https://socotra.juneoscan.io/chain/2/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 102031,
+    "name": "Creditcoin Testnet",
+    "rpcs": [
+      "https://rpc.cc3-testnet.creditcoin.network"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://creditcoin-testnet.blockscout.com",
+      "apiUrl": "https://creditcoin-testnet.blockscout.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 102032,
+    "name": "Creditcoin Devnet",
+    "rpcs": [
+      "https://rpc.cc3-devnet.creditcoin.network"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://creditcoin-devnet.blockscout.com",
+      "apiUrl": "https://creditcoin3-dev.subscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 105363,
+    "name": "Lumoz Testnet",
+    "rpcs": [
+      "https://testnet-rpc.lumoz.org"
+    ],
+    "testnet": true
+  },
+  {
+    "id": 120893,
+    "name": "Sova Network Sepolia",
+    "rpcs": [
+      "https://rpc.testnet.sova.io"
+    ],
+    "explorer": {
+      "name": "Sova Sepolia Explorer",
+      "url": "https://explorer.testnet.sova.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 124832,
+    "name": "Mitosis Testnet",
+    "rpcs": [
+      "https://rpc.testnet.mitosis.org"
+    ],
+    "explorer": {
+      "name": "Mitosis testnet explorer",
+      "url": "https://testnet.mitosiscan.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 127823,
+    "name": "Etherlink Shadownet Testnet",
+    "rpcs": [
+      "https://node.shadownet.etherlink.com"
+    ],
+    "explorer": {
+      "name": "Etherlink Shadownet Testnet Explorer",
+      "url": "https://shadownet.explorer.etherlink.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 128123,
+    "name": "Etherlink Testnet",
+    "rpcs": [
+      "https://node.ghostnet.etherlink.com"
+    ],
+    "explorer": {
+      "name": "Etherlink Testnet",
+      "url": "https://testnet.explorer.etherlink.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 132902,
+    "name": "Form Testnet",
+    "rpcs": [
+      "https://sepolia-rpc.form.network/http"
+    ],
+    "explorer": {
+      "name": "Form Testnet Explorer",
+      "url": "https://sepolia-explorer.form.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 167007,
+    "name": "Taiko Jolnir (Alpha-5 Testnet)",
+    "rpcs": [
+      "https://rpc.jolnir.taiko.xyz"
+    ],
+    "explorer": {
+      "name": "blockscout",
+      "url": "https://explorer.jolnir.taiko.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 167009,
+    "name": "Taiko Hekla L2",
+    "rpcs": [
+      "https://rpc.hekla.taiko.xyz"
+    ],
+    "explorer": {
+      "name": "Taikoscan",
+      "url": "https://hekla.taikoscan.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 167013,
+    "name": "Taiko Hoodi",
+    "rpcs": [
+      "https://rpc.hoodi.taiko.xyz"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://hoodi.taikoscan.io/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 181228,
+    "name": "HPP Sepolia",
+    "rpcs": [
+      "https://testnet.hpp.io"
+    ],
+    "explorer": {
+      "name": "HPP Sepolia Explorer",
+      "url": "https://sepolia-explorer.hpp.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 200024,
+    "name": "Nitrograph Testnet",
+    "rpcs": [
+      "https://rpc-testnet.nitrograph.foundation"
+    ],
+    "explorer": {
+      "name": "Nitrograph Explorer",
+      "url": "https://explorer-testnet.nitrograph.foundation"
+    },
+    "testnet": true
+  },
+  {
+    "id": 200810,
+    "name": "Bitlayer Testnet",
+    "rpcs": [
+      "https://testnet-rpc.bitlayer.org"
+    ],
+    "explorer": {
+      "name": "bitlayer testnet scan",
+      "url": "https://testnet.btrscan.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 200810,
+    "name": "Bitlayer Testnet",
+    "rpcs": [
+      "https://testnet-rpc.bitlayer.org"
+    ],
+    "explorer": {
+      "name": "Bitlayer(BTR) Scan",
+      "url": "https://testnet.btrscan.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 205205,
+    "name": "Auroria Testnet",
+    "network": "auroria",
+    "rpcs": [
+      "https://auroria.rpc.stratisevm.com"
+    ],
+    "explorer": {
+      "name": "Auroria Testnet Explorer",
+      "url": "https://auroria.explorer.stratisevm.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 314159,
+    "name": "Filecoin Calibration",
+    "rpcs": [
+      "https://api.calibration.node.glif.io/rpc/v1"
+    ],
+    "explorer": {
+      "name": "Filscan",
+      "url": "https://calibration.filscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 421613,
+    "name": "Arbitrum Goerli",
+    "rpcs": [
+      "https://goerli-rollup.arbitrum.io/rpc"
+    ],
+    "explorer": {
+      "name": "Arbiscan",
+      "url": "https://goerli.arbiscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 421614,
+    "name": "Arbitrum Sepolia",
+    "rpcs": [
+      "https://sepolia-rollup.arbitrum.io/rpc"
+    ],
+    "explorer": {
+      "name": "Arbiscan",
+      "url": "https://sepolia.arbiscan.io",
+      "apiUrl": "https://api-sepolia.arbiscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 490092,
+    "name": "Pumpfi Testnet",
+    "rpcs": [
+      "https://rpc1testnet.pumpfi.me"
+    ],
+    "explorer": {
+      "name": "Pumpfi Testnet Scan",
+      "url": "https://testnetscan.pumpfi.me"
+    },
+    "testnet": true
+  },
+  {
+    "id": 534351,
+    "name": "Scroll Sepolia",
+    "rpcs": [
+      "https://sepolia-rpc.scroll.io"
+    ],
+    "explorer": {
+      "name": "Scrollscan",
+      "url": "https://sepolia.scrollscan.com",
+      "apiUrl": "https://api-sepolia.scrollscan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 560048,
+    "name": "Hoodi",
+    "rpcs": [
+      "https://rpc.hoodi.ethpandaops.io"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://hoodi.etherscan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 631571,
+    "name": "Polter Testnet",
+    "rpcs": [
+      "https://geist-polter.g.alchemy.com/public"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://polter-testnet.explorer.alchemy.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 656476,
+    "name": "EDU Chain Testnet",
+    "rpcs": [
+      "https://rpc.open-campus-codex.gelato.digital/"
+    ],
+    "explorer": {
+      "name": "EDU Chain Testnet Explorer",
+      "url": "https://opencampus-codex.blockscout.com",
+      "apiUrl": "https://opencampus-codex.blockscout.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 666666,
+    "name": "Vision Testnet",
+    "rpcs": [
+      "https://vpioneer.infragrid.v.network/ethereum/compatible"
+    ],
+    "explorer": {
+      "name": "Vision Scan",
+      "url": "https://visionscan.org/?chain=vpioneer"
+    },
+    "testnet": true
+  },
+  {
+    "id": 695569,
+    "name": "Pyrope Testnet",
+    "rpcs": [
+      "https://rpc.pyropechain.com"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://pyrope.blockscout.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 713715,
+    "name": "Sei Devnet",
+    "rpcs": [
+      "https://evm-rpc-arctic-1.sei-apis.com"
+    ],
+    "explorer": {
+      "name": "Seitrace",
+      "url": "https://seitrace.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 743111,
+    "name": "Hemi Sepolia",
+    "network": "Hemi Sepolia",
+    "rpcs": [
+      "https://testnet.rpc.hemi.network/rpc"
+    ],
+    "explorer": {
+      "name": "Hemi Sepolia explorer",
+      "url": "https://testnet.explorer.hemi.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 751230,
+    "name": "Bear Network Chain Testnet",
+    "rpcs": [
+      "https://brnkc-test.bearnetwork.net"
+    ],
+    "explorer": {
+      "name": "BrnkTestScan",
+      "url": "https://brnktest-scan.bearnetwork.net",
+      "apiUrl": "https://brnktest-scan.bearnetwork.net/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 763373,
+    "name": "Ink Sepolia",
+    "rpcs": [
+      "https://rpc-gel-sepolia.inkonchain.com"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://explorer-sepolia.inkonchain.com/",
+      "apiUrl": "https://explorer-sepolia.inkonchain.com/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 763375,
+    "name": "Surge Testnet",
+    "rpcs": [
+      "https://l2-rpc.hoodi.surge.wtf"
+    ],
+    "explorer": {
+      "name": "Surge Testnet Blockscout",
+      "url": "https://explorer.hoodi.surge.wtf"
+    },
+    "testnet": true
+  },
+  {
+    "id": 808813,
+    "name": "BOB Sepolia",
+    "rpcs": [
+      "https://bob-sepolia.rpc.gobob.xyz"
+    ],
+    "explorer": {
+      "name": "BOB Sepolia Explorer",
+      "url": "https://bob-sepolia.explorer.gobob.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 911867,
+    "name": "Odyssey Testnet",
+    "rpcs": [
+      "https://odyssey.ithaca.xyz"
+    ],
+    "explorer": {
+      "name": "Odyssey Explorer",
+      "url": "https://odyssey-explorer.ithaca.xyz",
+      "apiUrl": "https://odyssey-explorer.ithaca.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 978658,
+    "name": "Treasure Topaz Testnet",
+    "rpcs": [
+      "https://rpc.topaz.treasure.lol"
+    ],
+    "explorer": {
+      "name": "Treasure Topaz Block Explorer",
+      "url": "https://topaz.treasurescan.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 984123,
+    "name": "Forma Sketchpad",
+    "network": "sketchpad",
+    "rpcs": [
+      "https://rpc.sketchpad-1.forma.art"
+    ],
+    "explorer": {
+      "name": "Sketchpad Explorer",
+      "url": "https://explorer.sketchpad-1.forma.art"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1337803,
+    "name": "Zhejiang",
+    "rpcs": [
+      "https://rpc.zhejiang.ethpandaops.io"
+    ],
+    "explorer": {
+      "name": "Beaconchain",
+      "url": "https://zhejiang.beaconcha.in"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1440002,
+    "name": "XRPL EVM Devnet",
+    "rpcs": [
+      "https://rpc.xrplevm.org/"
+    ],
+    "explorer": {
+      "name": "XRPLEVM Devnet Explorer",
+      "url": "https://explorer.xrplevm.org/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1449000,
+    "name": "XRPL EVM Testnet",
+    "rpcs": [
+      "https://rpc.testnet.xrplevm.org"
+    ],
+    "explorer": {
+      "name": "blockscout",
+      "url": "https://explorer.testnet.xrplevm.org",
+      "apiUrl": "https://explorer.testnet.xrplevm.org/api/v2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1612127,
+    "name": "PlayFi Albireo Testnet",
+    "network": "albireo",
+    "rpcs": [
+      "https://albireo-rpc.playfi.ai"
+    ],
+    "explorer": {
+      "name": "PlayFi Albireo Explorer",
+      "url": "https://albireo-explorer.playfi.ai"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1998991,
+    "name": "Xphere Testnet",
+    "rpcs": [
+      "http://testnet.x-phere.com"
+    ],
+    "explorer": {
+      "name": "Xphere Tamsa Explorer",
+      "url": "https://xpt.tamsa.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2019775,
+    "name": "Jovay Sepolia Testnet",
+    "rpcs": [
+      "https://api.zan.top/public/jovay-testnet"
+    ],
+    "explorer": {
+      "name": "Jovay Testnet Explorer",
+      "url": "https://sepolia-explorer.jovay.io/l2"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2651420,
+    "name": "Horizen Testnet",
+    "network": "horizen-testnet",
+    "rpcs": [
+      "https://horizen-testnet.rpc.caldera.xyz/http"
+    ],
+    "explorer": {
+      "name": "Horizen Testnet Caldera Explorer",
+      "url": "https://horizen-testnet.explorer.caldera.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3397901,
+    "name": "Funki Sepolia Sandbox",
+    "network": "funkiSepolia",
+    "rpcs": [
+      "https://funki-testnet.alt.technology"
+    ],
+    "explorer": {
+      "name": "Funki Sepolia Sandbox Explorer",
+      "url": "https://sepolia-sandbox.funkichain.com/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3441005,
+    "name": "Manta Pacific Testnet",
+    "network": "manta-testnet",
+    "rpcs": [
+      "https://manta-testnet.calderachain.xyz/http"
+    ],
+    "explorer": {
+      "name": "Manta Testnet Explorer",
+      "url": "https://pacific-explorer.testnet.manta.network",
+      "apiUrl": "https://pacific-explorer.testnet.manta.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3441006,
+    "name": "Manta Pacific Sepolia Testnet",
+    "network": "manta-sepolia",
+    "rpcs": [
+      "https://pacific-rpc.sepolia-testnet.manta.network/http"
+    ],
+    "explorer": {
+      "name": "Manta Sepolia Testnet Explorer",
+      "url": "https://pacific-explorer.sepolia-testnet.manta.network",
+      "apiUrl": "https://pacific-explorer.sepolia-testnet.manta.network/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5042002,
+    "name": "Arc Testnet",
+    "rpcs": [
+      "https://rpc.testnet.arc.network",
+      "https://rpc.quicknode.testnet.arc.network",
+      "https://rpc.blockdaemon.testnet.arc.network"
+    ],
+    "explorer": {
+      "name": "ArcScan",
+      "url": "https://testnet.arcscan.app",
+      "apiUrl": "https://testnet.arcscan.app/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5201420,
+    "name": "Electroneum Testnet",
+    "rpcs": [
+      "https://testnet-rpc.electroneum.com"
+    ],
+    "explorer": {
+      "name": "Electroneum Block Explorer",
+      "url": "https://blockexplorer.thesecurityteam.rocks"
+    },
+    "testnet": true
+  },
+  {
+    "id": 5318007,
+    "name": "Reactive Lasna Testnet",
+    "rpcs": [
+      "https://lasna-rpc.rnk.dev"
+    ],
+    "explorer": {
+      "name": "Reactscan",
+      "url": "https://lasna.reactscan.net"
+    },
+    "testnet": true
+  },
+  {
+    "id": 6038361,
+    "name": "Astar zkEVM Testnet zKyoto",
+    "network": "zKyoto",
+    "rpcs": [
+      "https://rpc.startale.com/zkyoto"
+    ],
+    "explorer": {
+      "name": "zKyoto Explorer",
+      "url": "https://zkyoto.explorer.startale.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 6912115,
+    "name": "ENI Testnet",
+    "rpcs": [
+      "https://rpc-testnet.eniac.network"
+    ],
+    "explorer": {
+      "name": "ENI Testnet Explorer",
+      "url": "https://scan-testnet.eniac.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 7080969,
+    "name": "Humanity Testnet",
+    "rpcs": [
+      "https://rpc.testnet.humanity.org"
+    ],
+    "explorer": {
+      "name": "Humanity Testnet Explorer",
+      "url": "https://humanity-testnet.explorer.alchemy.com",
+      "apiUrl": "https://humanity-testnet.explorer.alchemy.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 10241025,
+    "name": "ALIENX Hal Testnet",
+    "rpcs": [
+      "https://hal-rpc.alienxchain.io/http"
+    ],
+    "explorer": {
+      "name": "AlienX Explorer",
+      "url": "https://hal-explorer.alienxchain.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11142220,
+    "name": "Celo Sepolia Testnet",
+    "rpcs": [
+      "https://forno.celo-sepolia.celo-testnet.org"
+    ],
+    "explorer": {
+      "name": "Celo Sepolia Explorer",
+      "url": "https://celo-sepolia.blockscout.com/",
+      "apiUrl": "https://celo-sepolia.blockscout.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11155111,
+    "name": "Sepolia",
+    "rpcs": [
+      "https://11155111.rpc.thirdweb.com"
+    ],
+    "explorer": {
+      "name": "Etherscan",
+      "url": "https://sepolia.etherscan.io",
+      "apiUrl": "https://api-sepolia.etherscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11155420,
+    "name": "OP Sepolia",
+    "rpcs": [
+      "https://sepolia.optimism.io"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://optimism-sepolia.blockscout.com",
+      "apiUrl": "https://optimism-sepolia.blockscout.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11155931,
+    "name": "RISE Testnet",
+    "rpcs": [
+      "https://testnet.riselabs.xyz"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://explorer.testnet.riselabs.xyz/",
+      "apiUrl": "https://explorer.testnet.riselabs.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 12227332,
+    "name": "Neo X Testnet T4",
+    "rpcs": [
+      "https://testnet.rpc.banelabs.org/"
+    ],
+    "explorer": {
+      "name": "neox-scan",
+      "url": "https://xt4scan.ngd.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 20241133,
+    "name": "Swan Proxima Testnet",
+    "rpcs": [
+      "https://rpc-proxima.swanchain.io"
+    ],
+    "explorer": {
+      "name": "Swan Explorer",
+      "url": "https://proxima-explorer.swanchain.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 21000001,
+    "name": "Corn Testnet",
+    "rpcs": [
+      "https://21000001.rpc.thirdweb.com"
+    ],
+    "explorer": {
+      "name": "Corn Testnet Explorer",
+      "url": "https://testnet.cornscan.io",
+      "apiUrl": "https://api.routescan.io/v2/network/testnet/evm/21000001/etherscan/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 33772211,
+    "name": "Xone Chain Testnet",
+    "rpcs": [
+      "https://rpc-testnet.xone.org",
+      "https://rpc-testnet.xone.plus",
+      "https://rpc-testnet.knight.center"
+    ],
+    "explorer": {
+      "name": "Xone Testnet Explorer",
+      "url": "https://testnet.xonescan.com",
+      "apiUrl": "http://api.testnet.xonescan.com/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 37084624,
+    "name": "SKALE Nebula Testnet",
+    "rpcs": [
+      "https://testnet.skalenodes.com/v1/lanky-ill-funny-testnet"
+    ],
+    "explorer": {
+      "name": "SKALE Explorer",
+      "url": "https://lanky-ill-funny-testnet.explorer.testnet.skalenodes.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 52164803,
+    "name": "Fluence Testnet",
+    "rpcs": [
+      "https://rpc.testnet.fluence.dev"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://blockscout.testnet.fluence.dev",
+      "apiUrl": "https://blockscout.testnet.fluence.dev/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 111557560,
+    "name": "Cyber Testnet",
+    "rpcs": [
+      "https://cyber-testnet.alt.technology"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://testnet.cyberscan.co",
+      "apiUrl": "https://testnet.cyberscan.co/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 161221135,
+    "name": "Plume Testnet (Legacy)",
+    "rpcs": [
+      "https://testnet-rpc.plumenetwork.xyz/http"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://testnet-explorer.plumenetwork.xyz",
+      "apiUrl": "https://testnet-explorer.plumenetwork.xyz/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 168587773,
+    "name": "Blast Sepolia",
+    "rpcs": [
+      "https://sepolia.blast.io"
+    ],
+    "explorer": {
+      "name": "Blastscan",
+      "url": "https://sepolia.blastscan.io",
+      "apiUrl": "https://api-sepolia.blastscan.io/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 245022926,
+    "name": "Neon EVM DevNet",
+    "rpcs": [
+      "https://devnet.neonevm.org"
+    ],
+    "explorer": {
+      "name": "Neonscan",
+      "url": "https://devnet.neonscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 324705682,
+    "name": "SKALE Base Sepolia Testnet",
+    "rpcs": [
+      "https://base-sepolia-testnet.skalenodes.com/v1/base-testnet"
+    ],
+    "explorer": {
+      "name": "SKALE Explorer",
+      "url": "https://base-sepolia-testnet-explorer.skalenodes.com/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 420420421,
+    "name": "Westend Asset Hub",
+    "rpcs": [
+      "https://westend-asset-hub-eth-rpc.polkadot.io"
+    ],
+    "explorer": {
+      "name": "subscan",
+      "url": "https://westend-asset-hub-eth-explorer.parity.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 420420422,
+    "name": "Paseo PassetHub",
+    "rpcs": [
+      "https://testnet-passet-hub-eth-rpc.polkadot.io"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://blockscout-passet-hub.parity-testnet.parity.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 531050104,
+    "name": "Sophon Testnet",
+    "rpcs": [
+      "https://rpc.testnet.sophon.xyz"
+    ],
+    "explorer": {
+      "name": "Sophon Block Explorer",
+      "url": "https://explorer.testnet.sophon.xyz"
+    },
+    "testnet": true
+  },
+  {
+    "id": 974399131,
+    "name": "SKALE Calypso Testnet",
+    "rpcs": [
+      "https://testnet.skalenodes.com/v1/giant-half-dual-testnet"
+    ],
+    "explorer": {
+      "name": "SKALE Explorer",
+      "url": "https://giant-half-dual-testnet.explorer.testnet.skalenodes.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 999999999,
+    "name": "Zora Sepolia",
+    "network": "zora-sepolia",
+    "rpcs": [
+      "https://sepolia.rpc.zora.energy"
+    ],
+    "explorer": {
+      "name": "Zora Sepolia Explorer",
+      "url": "https://sepolia.explorer.zora.energy/",
+      "apiUrl": "https://sepolia.explorer.zora.energy/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1020352220,
+    "name": "SKALE Titan Testnet",
+    "rpcs": [
+      "https://testnet.skalenodes.com/v1/aware-fake-trim-testnet"
+    ],
+    "explorer": {
+      "name": "SKALE Explorer",
+      "url": "https://aware-fake-trim-testnet.explorer.testnet.skalenodes.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1187947933,
+    "name": "SKALE Base",
+    "rpcs": [
+      "https://skale-base.skalenodes.com/v1/base"
+    ],
+    "explorer": {
+      "name": "SKALE Explorer",
+      "url": "https://skale-base-explorer.skalenodes.com/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1313161555,
+    "name": "Aurora Testnet",
+    "rpcs": [
+      "https://testnet.aurora.dev"
+    ],
+    "explorer": {
+      "name": "Aurorascan",
+      "url": "https://testnet.aurorascan.dev",
+      "apiUrl": "https://testnet.aurorascan.dev/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1444673419,
+    "name": "SKALE Europa Testnet",
+    "rpcs": [
+      "https://testnet.skalenodes.com/v1/juicy-low-small-testnet"
+    ],
+    "explorer": {
+      "name": "SKALE Explorer",
+      "url": "https://juicy-low-small-testnet.explorer.testnet.skalenodes.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1523903251,
+    "name": "Haust Network Testnet",
+    "rpcs": [
+      "https://rpc-testnet.haust.app"
+    ],
+    "explorer": {
+      "name": "Haust Network Testnet Explorer",
+      "url": "https://explorer-testnet.haust.app"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1660990954,
+    "name": "Status Network Sepolia",
+    "rpcs": [
+      "https://public.sepolia.rpc.status.network"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://sepoliascan.status.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1660990954,
+    "name": "Status Network Sepolia",
+    "rpcs": [
+      "https://public.sepolia.rpc.status.network"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://sepoliascan.status.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1722641160,
+    "name": "Silicon Sepolia zkEVM",
+    "rpcs": [
+      "https://rpc-sepolia.silicon.network",
+      "https://silicon-testnet.nodeinfra.com"
+    ],
+    "explorer": {
+      "name": "SiliconSepoliaScope",
+      "url": "https://scope-sepolia.silicon.network"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1802203764,
+    "name": "Kakarot Sepolia",
+    "rpcs": [
+      "https://sepolia-rpc.kakarot.org"
+    ],
+    "explorer": {
+      "name": "Kakarot Scan",
+      "url": "https://sepolia.kakarotscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 1952959480,
+    "name": "Lumia Testnet",
+    "network": "LumiaTestnet",
+    "rpcs": [
+      "https://testnet-rpc.lumia.org"
+    ],
+    "explorer": {
+      "name": "Lumia Testnet Explorer",
+      "url": "https://testnet-explorer.lumia.org/"
+    },
+    "testnet": true
+  },
+  {
+    "id": 2494104990,
+    "name": "Tron Shasta",
+    "rpcs": [
+      "https://api.shasta.trongrid.io/jsonrpc"
+    ],
+    "explorer": {
+      "name": "Tronscan",
+      "url": "https://shasta.tronscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 3448148188,
+    "name": "Tron Nile",
+    "rpcs": [
+      "https://nile.trongrid.io/jsonrpc"
+    ],
+    "explorer": {
+      "name": "Tronscan",
+      "url": "https://nile.tronscan.org"
+    },
+    "testnet": true
+  },
+  {
+    "id": 7078815900,
+    "name": "Mekong Pectra Devnet",
+    "rpcs": [
+      "https://rpc.mekong.ethpandaops.io"
+    ],
+    "explorer": {
+      "name": "Block Explorer",
+      "url": "https://explorer.mekong.ethpandaops.io"
+    },
+    "testnet": true
+  },
+  {
+    "id": 11297108099,
+    "name": "Palm Testnet",
+    "rpcs": [
+      "https://palm-mainnet.public.blastapi.io"
+    ],
+    "explorer": {
+      "name": "Chainlens",
+      "url": "https://palm.chainlens.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 37714555429,
+    "name": "Xai Testnet",
+    "rpcs": [
+      "https://testnet-v2.xai-chain.net/rpc"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://testnet-explorer-v2.xai-chain.net"
+    },
+    "testnet": true
+  },
+  {
+    "id": 123420000220,
+    "name": "Fluence Stage",
+    "rpcs": [
+      "https://rpc.stage.fluence.dev"
+    ],
+    "explorer": {
+      "name": "Blockscout",
+      "url": "https://blockscout.stage.fluence.dev",
+      "apiUrl": "https://blockscout.stage.fluence.dev/api"
+    },
+    "testnet": true
+  },
+  {
+    "id": 123420001114,
+    "name": "Basecamp Testnet",
+    "rpcs": [
+      "https://rpc.basecamp.t.raas.gelato.cloud"
+    ],
+    "explorer": {
+      "name": "basecamp",
+      "url": "https://basecamp.cloud.blockscout.com"
+    },
+    "testnet": true
+  },
+  {
+    "id": 102,
+    "name": "Solana Testnet",
+    "rpcs": [
+      "https://api.testnet.solana.com"
+    ],
+    "explorer": {
+      "name": "Solana Explorer",
+      "url": "https://explorer.solana.com/?cluster=testnet"
+    },
+    "testnet": true
+  },
+  {
+    "id": 103,
+    "name": "Solana Devnet",
+    "rpcs": [
+      "https://api.devnet.solana.com"
+    ],
+    "explorer": {
+      "name": "Solana Explorer",
+      "url": "https://explorer.solana.com/?cluster=devnet"
+    },
+    "testnet": true
+  },
+  {
+    "id": 920637907288165,
+    "name": "Kakarot Starknet Sepolia",
+    "rpcs": [
+      "https://sepolia-rpc.kakarot.org"
+    ],
+    "explorer": {
+      "name": "Kakarot Scan",
+      "url": "https://sepolia.kakarotscan.org"
+    },
+    "testnet": true
+  }
+]

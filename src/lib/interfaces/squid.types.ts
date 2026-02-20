@@ -1,3 +1,10 @@
+/** Block explorer info for a chain. */
+export interface ChainExplorer {
+  name?: string;
+  url?: string;
+  apiUrl?: string;
+}
+
 /** Chain item returned by our chains endpoint (relevant fields only). */
 export interface ChainResponse {
   chainId: string;
@@ -7,6 +14,8 @@ export interface ChainResponse {
   rpc?: string;
   /** Multiple RPC URLs when the source provides more than one. */
   rpcs?: string[];
+  /** Block explorer (from viem registry when available). */
+  explorer?: ChainExplorer;
 }
 
 /** Token item returned by our tokens endpoint (relevant fields only). */
