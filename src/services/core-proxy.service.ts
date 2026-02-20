@@ -7,6 +7,15 @@ import { env } from "../config/env.js";
 
 const CORE_PATHS_NO_AUTH = new Set(["/api/health", "/api/ready"]);
 
+/** Fetch API response shape (avoids conflict with Express Response). */
+interface FetchResponseLike {
+  ok: boolean;
+  status: number;
+  headers: { get(name: string): string | null };
+  json(): Promise<unknown>;
+  text(): Promise<string>;
+}
+
 export interface CoreProxyOptions {
   method: "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
   path: string;
@@ -59,7 +68,7 @@ export async function callCore(options: CoreProxyOptions): Promise<CoreProxyResu
     headers["x-api-key"] = coreApiKey!;
   }
 
-  const init: RequestInit = {
+  const init: { method: string; headers: Record<string, string>; body?: string } = {
     method: options.method,
     headers,
   };
@@ -68,7 +77,7 @@ export async function callCore(options: CoreProxyOptions): Promise<CoreProxyResu
   }
 
   try {
-    const res = await fetch(url, init);
+    const res = (await fetch(url, init as RequestInit)) as FetchResponseLike;
     let body: unknown;
     const contentType = res.headers.get("content-type");
     if (contentType?.includes("application/json")) {
