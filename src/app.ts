@@ -3,7 +3,10 @@ import express, { type Express } from "express";
 import { env } from "./config/env.js";
 import routes from "./routes/index.js";
 
+
+
 const app: Express = express();
+
 
 app.use(
   cors({
