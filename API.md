@@ -1,12 +1,26 @@
 # API
 
-Base path: `/api`.
+Base path: `/api`. All requests use `Content-Type: application/json` for bodies.
+
+Use a base URL for examples (e.g. `BASE=http://localhost:3000` or your deployed host).
+
+For **Core integration architecture**, flow sequences (onramp, offramp, request & claim), and the distinction between native vs proxy endpoints, see **API-CORE-FLOW.md**.
 
 ---
 
 ## GET /api/health
 
+Liveness check for this backend (process uptime and timestamp).
+
+**Request:** No body or query parameters.
+
 **Response 200**
+
+| Field     | Type   | Description                |
+|-----------|--------|----------------------------|
+| status    | string | `"ok"` \| `"degraded"` \| `"error"` |
+| timestamp | string | ISO 8601 date-time         |
+| uptime    | number | Process uptime in seconds  |
 
 ```json
 {
@@ -16,33 +30,102 @@ Base path: `/api`.
 }
 ```
 
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/health"
+```
+
 ---
 
-## POST /api/moolre/validate/momo
+## Klyra (Core proxy)
 
-Validate mobile money account name (mobile numbers only).
+All `/api/klyra/*` routes proxy to the Core backend. The backend adds `x-api-key` from `CORE_API_KEY`; request/response bodies are forwarded as-is. See `core-api.integration.md` for Core request/response details.
 
-**Request**
-
-```json
-{
-  "receiver": "0241234567",
-  "channel": 1,
-  "currency": "GHS"
-}
-```
-
-Or with provider name instead of channel:
+**Common error response** (4xx/5xx from Core or proxy failure):
 
 ```json
 {
-  "receiver": "0241234567",
-  "provider": "MTN",
-  "currency": "GHS"
+  "success": false,
+  "error": "Error message"
 }
 ```
 
-`channel`: 1=MTN, 6=Vodafone, 7=AirtelTigo. `currency` optional, default GHS.
+| Method | Path | Description |
+|--------|------|-------------|
+| GET    | /api/klyra/health | Core liveness |
+| GET    | /api/klyra/ready | Core readiness |
+| POST   | /api/klyra/quotes | POST body → Core `/api/v1/quotes` |
+| POST   | /api/klyra/orders | POST body → Core `/webhook/order` |
+| POST   | /api/klyra/paystack/payments/initialize | Paystack init |
+| GET    | /api/klyra/paystack/transactions/verify/:reference | Verify Paystack payment by reference |
+| POST   | /api/klyra/paystack/payouts/request | Payout request |
+| POST   | /api/klyra/paystack/payouts/execute | Payout execute |
+| GET    | /api/klyra/offramp/calldata | Query: `transaction_id` |
+| POST   | /api/klyra/offramp/confirm | POST body → Core |
+| GET    | /api/klyra/transactions/verify-by-hash | Query: `chain`, `tx_hash` |
+| GET    | /api/klyra/transactions/:id | Transaction by ID |
+| GET    | /api/klyra/transactions/:id/balance-snapshots | Balance snapshots |
+| GET    | /api/klyra/transactions/:id/pnl | PnL for transaction |
+| GET    | /api/klyra/chains | Core chains |
+| GET    | /api/klyra/tokens | Core tokens (query forwarded) |
+| GET    | /api/klyra/countries | Core countries |
+| POST   | /api/klyra/requests | Create request |
+| GET    | /api/klyra/requests/by-link/:linkId | Request by pay-link id |
+| GET    | /api/klyra/requests/calldata | Query: `transaction_id` (send instructions) |
+| POST   | /api/klyra/requests/confirm-crypto | Confirm request payment (body: `transaction_id`, `tx_hash`) |
+| GET    | /api/klyra/requests | Core requests (query forwarded) |
+| GET    | /api/klyra/requests/:id | Request by ID |
+| GET    | /api/klyra/claims/by-code/:code | Claim by code |
+| POST   | /api/klyra/claims/verify-otp | Verify OTP |
+| POST   | /api/klyra/claims/claim | Submit claim |
+
+**curl examples**
+
+```bash
+# Core health
+curl -s "${BASE:-http://localhost:3000}/api/klyra/health"
+
+# Quotes (body from Core API spec)
+curl -s -X POST "${BASE:-http://localhost:3000}/api/klyra/quotes" \
+  -H "Content-Type: application/json" \
+  -d '{"action":"ONRAMP","inputAmount":"100","inputCurrency":"GHS","outputCurrency":"USDC","chain":"base","inputSide":"from"}'
+
+# Transaction by ID
+curl -s "${BASE:-http://localhost:3000}/api/klyra/transactions/TRANSACTION_UUID"
+
+# Paystack verify (after user pays)
+curl -s "${BASE:-http://localhost:3000}/api/klyra/paystack/transactions/verify/PAYSTACK_REFERENCE"
+
+# Request by pay link / calldata / confirm
+curl -s "${BASE:-http://localhost:3000}/api/klyra/requests/by-link/LINK_ID"
+curl -s "${BASE:-http://localhost:3000}/api/klyra/requests/calldata?transaction_id=TRANSACTION_ID"
+curl -s -X POST "${BASE:-http://localhost:3000}/api/klyra/requests/confirm-crypto" \
+  -H "Content-Type: application/json" -d '{"transaction_id":"...","tx_hash":"0x..."}'
+
+# Chains / tokens (query params forwarded to Core)
+curl -s "${BASE:-http://localhost:3000}/api/klyra/chains"
+curl -s "${BASE:-http://localhost:3000}/api/klyra/tokens?chainId=8453"
+```
+
+---
+
+## Moolre
+
+### POST /api/moolre/validate/momo
+
+Validate mobile money account (mobile numbers only).
+
+**Request body**
+
+| Field    | Type   | Required | Description |
+|----------|--------|----------|-------------|
+| receiver | string | Yes      | Mobile number (e.g. `0241234567`) |
+| channel  | number | No*      | 1=MTN, 6=Vodafone, 7=AirtelTigo |
+| provider | string | No*      | e.g. `"MTN"` (alternative to channel) |
+| currency | string | No       | Default `GHS` |
+
+\* One of `channel` or `provider` is required.
 
 **Response 200**
 
@@ -71,23 +154,27 @@ Or with provider name instead of channel:
 }
 ```
 
+**curl**
+
+```bash
+curl -s -X POST "${BASE:-http://localhost:3000}/api/moolre/validate/momo" \
+  -H "Content-Type: application/json" \
+  -d '{"receiver": "0241234567", "channel": 1, "currency": "GHS"}'
+```
+
 ---
 
-## POST /api/moolre/validate/bank
+### POST /api/moolre/validate/bank
 
 Validate bank account name.
 
-**Request**
+**Request body**
 
-```json
-{
-  "receiver": "1234567890",
-  "sublistId": "300303",
-  "currency": "GHS"
-}
-```
-
-`sublistId` is the bank code from GET /api/moolre/banks. `currency` optional, default GHS.
+| Field     | Type   | Required | Description |
+|-----------|--------|----------|-------------|
+| receiver  | string | Yes      | Account number |
+| sublistId | string | Yes      | Bank code from GET /api/moolre/banks |
+| currency  | string | No       | Default `GHS` |
 
 **Response 200**
 
@@ -116,22 +203,28 @@ Validate bank account name.
 }
 ```
 
----
+**curl**
 
-## POST /api/moolre/sms
-
-**Request**
-
-```json
-{
-  "recipient": "0241234567",
-  "message": "Your verification code is 123456",
-  "senderId": "MyApp",
-  "ref": "optional-ref"
-}
+```bash
+curl -s -X POST "${BASE:-http://localhost:3000}/api/moolre/validate/bank" \
+  -H "Content-Type: application/json" \
+  -d '{"receiver": "1234567890", "sublistId": "300303", "currency": "GHS"}'
 ```
 
-`senderId` and `ref` optional. `ref` defaults to generated UUID.
+---
+
+### POST /api/moolre/sms
+
+Send SMS.
+
+**Request body**
+
+| Field    | Type   | Required | Description |
+|----------|--------|----------|-------------|
+| recipient | string | Yes | Phone number |
+| message   | string | Yes | SMS body |
+| senderId  | string | No  | Sender ID (e.g. `MyApp`) |
+| ref       | string | No  | Optional reference (default: generated UUID) |
 
 **Response 200**
 
@@ -166,11 +259,19 @@ Validate bank account name.
 }
 ```
 
+**curl**
+
+```bash
+curl -s -X POST "${BASE:-http://localhost:3000}/api/moolre/sms" \
+  -H "Content-Type: application/json" \
+  -d '{"recipient": "0241234567", "message": "Your verification code is 123456"}'
+```
+
 ---
 
-## GET /api/moolre/banks
+### GET /api/moolre/banks
 
-Query: `?country=gha` or `?country=nga`. Default gha.
+List banks (for bank validation). Query: `?country=gha` or `?country=nga`. Default `gha`.
 
 **Response 200**
 
@@ -193,13 +294,24 @@ Query: `?country=gha` or `?country=nga`. Default gha.
 }
 ```
 
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/moolre/banks"
+curl -s "${BASE:-http://localhost:3000}/api/moolre/banks?country=nga"
+```
+
 ---
 
-## GET /api/ens/name/:address
+## ENS
 
-Resolve a wallet address to ENS name (and avatar when available). Tries mainnet ENS, Base basename, then ENSData API.
+### GET /api/ens/name/:address
 
-**Response 200**
+Resolve wallet address to ENS name (and avatar). Tries mainnet ENS, Base basename, then ENSData API.
+
+**Request:** Path parameter `address` — Ethereum address.
+
+**Response 200 (resolved)**
 
 ```json
 {
@@ -209,7 +321,7 @@ Resolve a wallet address to ENS name (and avatar when available). Tries mainnet 
 }
 ```
 
-When no name is found:
+**Response 200 (not found)**
 
 ```json
 {
@@ -227,7 +339,7 @@ When no name is found:
   "error": "Address is required."
 }
 ```
-
+or
 ```json
 {
   "success": false,
@@ -244,13 +356,26 @@ When no name is found:
 }
 ```
 
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/ens/name/0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+```
+
 ---
 
-## GET /api/ens/address
+### GET /api/ens/address
 
-Resolve an ENS name (or Basename) to wallet address (and avatar when available). Query: `?ens-name=vitalik.eth` or `?ensName=vitalik.eth`. Supports .eth, .base, and multi-chain format (e.g. `vitalik.eth:btc`).
+Resolve ENS name or Basename to wallet address. Query: `?ens-name=vitalik.eth` or `?ensName=vitalik.eth`. Supports .eth, .base, and multi-chain (e.g. `vitalik.eth:btc`).
 
-**Response 200**
+**Query**
+
+| Parameter | Type   | Required | Description |
+|-----------|--------|----------|-------------|
+| ens-name  | string | Yes*     | ENS or Basename |
+| ensName   | string | Yes*     | Alias for ens-name |
+
+**Response 200 (resolved)**
 
 ```json
 {
@@ -260,7 +385,7 @@ Resolve an ENS name (or Basename) to wallet address (and avatar when available).
 }
 ```
 
-When no address is found:
+**Response 200 (not found)**
 
 ```json
 {
@@ -288,32 +413,29 @@ When no address is found:
 }
 ```
 
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/ens/address?ens-name=vitalik.eth"
+```
+
 ---
 
-## POST /api/rates/fiat
+## Rates
 
-Fiat-to-fiat conversion via ExchangeRate-API. Body: from, to (currency codes), optional amount. Without amount returns 1:1 rate; with amount returns conversion for that amount.
+### POST /api/rates/fiat
 
-**Request**
+Fiat-to-fiat conversion (ExchangeRate-API). Without `amount` returns 1:1 rate; with `amount` returns conversion for that amount.
 
-```json
-{
-  "from": "USD",
-  "to": "GHS"
-}
-```
+**Request body**
 
-With amount:
+| Field  | Type   | Required | Description |
+|--------|--------|----------|-------------|
+| from   | string | Yes      | Source currency code (e.g. `USD`) |
+| to     | string | Yes      | Target currency code (e.g. `GHS`) |
+| amount | number | No       | Amount to convert |
 
-```json
-{
-  "from": "USD",
-  "to": "GHS",
-  "amount": 100
-}
-```
-
-**Response 200**
+**Response 200 (rate only)**
 
 ```json
 {
@@ -327,7 +449,7 @@ With amount:
 }
 ```
 
-With amount:
+**Response 200 (with amount)**
 
 ```json
 {
@@ -361,47 +483,38 @@ With amount:
 }
 ```
 
+**curl**
+
+```bash
+curl -s -X POST "${BASE:-http://localhost:3000}/api/rates/fiat" \
+  -H "Content-Type: application/json" \
+  -d '{"from": "USD", "to": "GHS"}'
+curl -s -X POST "${BASE:-http://localhost:3000}/api/rates/fiat" \
+  -H "Content-Type: application/json" \
+  -d '{"from": "USD", "to": "GHS", "amount": 100}'
+```
+
 ---
 
-## POST /api/rates/fonbnk
+### POST /api/rates/fonbnk
 
-Fetch quote from Fonbnk. Body: country, token, purchaseMethod (buy | sell), optional amount, optional amountIn ("fiat" | "crypto", default "fiat"). amountIn "crypto" = pass crypto amount and get fiat equivalent (both buy and sell). Quotes update every 30 seconds; poll as needed.
+Fonbnk quote. Quotes update every 30 seconds; poll as needed.
 
-**Request (buy, amount in fiat: how much crypto for 100 GHS?)**
+**Request body**
 
-```json
-{
-  "country": "GH",
-  "token": "USDC",
-  "purchaseMethod": "buy",
-  "amount": 100
-}
-```
+| Field          | Type   | Required | Description |
+|----------------|--------|----------|-------------|
+| country        | string | Yes      | Country code (e.g. `GH`) |
+| token          | string | Yes      | Token (e.g. `USDC`, `BASE_USDC`) |
+| purchaseMethod | string | Yes      | `"buy"` \| `"sell"` |
+| amount         | number | Yes      | Fiat or crypto amount |
+| amountIn       | string | No       | `"fiat"` \| `"crypto"` (default `"fiat"`) |
 
-**Request (buy, amount in crypto: how much fiat to pay for 10 USDC?)**
+- **Buy, amount in fiat:** `amount` = fiat, response `total` = crypto received.
+- **Buy, amount in crypto:** `amountIn: "crypto"`, `amount` = crypto, response `total` = fiat equivalent.
+- **Sell:** `amount` = crypto, response `total` = fiat.
 
-```json
-{
-  "country": "GH",
-  "token": "BASE_USDC",
-  "purchaseMethod": "buy",
-  "amount": 10,
-  "amountIn": "crypto"
-}
-```
-
-**Request (sell: how much fiat for 10 USDC?)**
-
-```json
-{
-  "country": "GH",
-  "token": "BASE_USDC",
-  "purchaseMethod": "sell",
-  "amount": 10
-}
-```
-
-**Response 200 (amountIn fiat: amount = fiat input, total = crypto received)**
+**Response 200 (buy, amount in fiat)**
 
 ```json
 {
@@ -422,7 +535,7 @@ Fetch quote from Fonbnk. Body: country, token, purchaseMethod (buy | sell), opti
 }
 ```
 
-**Response 200 (amountIn crypto: amount = crypto input, total = fiat equivalent)**
+**Response 200 (buy, amount in crypto)**
 
 ```json
 {
@@ -470,26 +583,45 @@ Fetch quote from Fonbnk. Body: country, token, purchaseMethod (buy | sell), opti
 }
 ```
 
+**curl**
+
+```bash
+curl -s -X POST "${BASE:-http://localhost:3000}/api/rates/fonbnk" \
+  -H "Content-Type: application/json" \
+  -d '{"country": "GH", "token": "USDC", "purchaseMethod": "buy", "amount": 100}'
+```
+
 ---
 
 ## Squid & Balances
 
-Chains and tokens combine [Squid Router](https://docs.squidrouter.com) with local data: `data/chains/mainnet.chains.json`, `data/chains/testnet.chains.json`, and `data/tokens/` (Solana mainnet from `solana.json`, testnet from `testnet.tokens.json`). Mainnet includes Solana (chainId 101). Balances are computed via viem multicall (EVM only). Requires `SQUID_INTEGRATOR_ID` in the environment.
+Chains and tokens combine [Squid Router](https://docs.squidrouter.com) with local data: `data/chains/mainnet.chains.json`, `data/chains/testnet.chains.json`, and `data/tokens/` (mainnet includes Solana chainId 101; testnet from `testnet.tokens.json`). Balances use viem multicall (EVM only). Requires `SQUID_INTEGRATOR_ID` in the environment.
 
 ---
 
-## GET /api/squid/chains
+### GET /api/squid/chains
 
-Return supported chains (Squid + data/chains). Mainnet includes Solana (chainId 101).
+Supported chains (Squid + data/chains). Mainnet includes Solana (chainId 101).
 
 **Query**
 
-| Parameter | Type   | Required | Description                                                           |
-|-----------|--------|----------|-----------------------------------------------------------------------|
-| testnet   | string | No       | `"1"` or `"true"` for testnet-only chains                             |
-| all       | string | No       | `"1"` or `"true"` for mainnet + testnet combined (whole lot)          |
+| Parameter | Type   | Required | Description |
+|-----------|--------|----------|-------------|
+| testnet   | string | No       | `"1"` or `"true"` for testnet-only |
+| all       | string | No       | `"1"` or `"true"` for mainnet + testnet combined |
 
 **Response 200**
+
+Array of chain objects. Each item:
+
+| Field         | Type   | Description |
+|---------------|--------|-------------|
+| chainId       | string | Chain ID    |
+| networkName   | string | Display name |
+| chainIconURI  | string | Icon URL (optional) |
+| rpc           | string | Single RPC URL (optional) |
+| rpcs          | string[] | Multiple RPC URLs (optional) |
+| explorer      | object | `name`, `url`, `apiUrl` (optional) |
 
 ```json
 [
@@ -510,20 +642,44 @@ Return supported chains (Squid + data/chains). Mainnet includes Solana (chainId 
 }
 ```
 
+(Or other fetch/configuration error message.)
+
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/squid/chains"
+curl -s "${BASE:-http://localhost:3000}/api/squid/chains?testnet=true"
+curl -s "${BASE:-http://localhost:3000}/api/squid/chains?all=true"
+```
+
 ---
 
-## GET /api/squid/tokens
+### GET /api/squid/tokens
 
-Return supported tokens (Squid + Solana mainnet from `solana.json`; testnet from `testnet.tokens.json`). Mainnet includes all Solana (chainId 101) tokens.
+Supported tokens (Squid + Solana mainnet + testnet from `testnet.tokens.json`). Mainnet includes Solana (chainId 101) tokens.
 
 **Query**
 
-| Parameter | Type   | Required | Description                                                           |
-|-----------|--------|----------|-----------------------------------------------------------------------|
-| testnet   | string | No       | `"1"` or `"true"` for testnet-only tokens                             |
-| all       | string | No       | `"1"` or `"true"` for mainnet + testnet combined (whole list)         |
+| Parameter | Type   | Required | Description |
+|-----------|--------|----------|-------------|
+| testnet   | string | No       | `"1"` or `"true"` for testnet-only |
+| all       | string | No       | `"1"` or `"true"` for mainnet + testnet combined |
 
 **Response 200**
+
+Array of token objects. Each item:
+
+| Field        | Type   | Description |
+|--------------|--------|-------------|
+| chainId      | string | Chain ID    |
+| networkName  | string | Chain display name |
+| chainIconURI | string | Chain icon URL (optional) |
+| address      | string | Token contract address |
+| symbol       | string | Token symbol |
+| decimals     | number | Token decimals |
+| name         | string | Token name (optional) |
+| logoURI      | string | Token logo URL (optional) |
+| rpc / rpcs   | string \| string[] | Chain RPC (optional) |
 
 ```json
 [
@@ -549,29 +705,52 @@ Return supported tokens (Squid + Solana mainnet from `solana.json`; testnet from
 }
 ```
 
+(Or other fetch/configuration error message.)
+
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/squid/tokens"
+curl -s "${BASE:-http://localhost:3000}/api/squid/tokens?testnet=true"
+curl -s "${BASE:-http://localhost:3000}/api/squid/tokens?all=true"
+```
+
 ---
 
-## GET /api/squid/balances
+### GET /api/squid/balances
 
-Return token balances for a wallet (Squid-backed chains/tokens, viem multicall). Sorted by balance (highest first). Each item includes chain and token metadata (networkName, chainIconURI, tokenSymbol, tokenLogoURI, etc.).
+Token balances for a wallet (Squid-backed chains/tokens, viem multicall). Sorted by balance (highest first). Response includes `x-squid-network: testnet` or `mainnet` when applicable.
 
 **Query**
 
-| Parameter    | Type   | Required | Description                                           |
-|--------------|--------|----------|-------------------------------------------------------|
-| address      | string | Yes      | Wallet address (e.g. `0x...`)                         |
-| chainId      | string | No       | Limit to one chain                                    |
-| tokenAddress | string | No       | Limit to one token across chains                      |
-| testnet      | string | No       | `"1"` or `"true"` for testnet                         |
-
-**Examples**
-
-- Full wallet: `GET /api/squid/balances?address=0x...`
-- One chain: `GET /api/squid/balances?address=0x...&chainId=1`
-- One token (all chains): `GET /api/squid/balances?address=0x...&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`
-- One token, one chain: `GET /api/squid/balances?address=0x...&chainId=1&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`
+| Parameter    | Type   | Required | Description |
+|-------------|--------|----------|-------------|
+| address     | string | Yes      | Wallet address (e.g. `0x...`) |
+| chainId     | string | No       | Limit to one chain |
+| tokenAddress| string | No       | Limit to one token across chains |
+| testnet     | string | No       | `"1"` or `"true"` for testnet |
 
 **Response 200**
+
+| Field          | Type   | Description |
+|----------------|--------|-------------|
+| success        | boolean | `true` |
+| data           | array  | Balance items (see below) |
+
+Each balance item:
+
+| Field          | Type   | Description |
+|----------------|--------|-------------|
+| chainId        | string | Chain ID |
+| networkName    | string | Chain display name |
+| chainIconURI   | string | Chain icon URL (optional) |
+| tokenAddress   | string | Token contract address |
+| tokenSymbol    | string | Token symbol |
+| tokenDecimals  | number | Token decimals |
+| tokenName      | string | Token name (optional) |
+| tokenLogoURI   | string | Token logo URL (optional) |
+| balance        | string | Human-readable balance |
+| balanceRaw     | string | Raw units (e.g. wei/smallest unit) |
 
 ```json
 {
@@ -611,49 +790,33 @@ Return token balances for a wallet (Squid-backed chains/tokens, viem multicall).
 }
 ```
 
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/squid/balances?address=0x9f08eFb0767Bf180B8b8094FaaEF9DAB5a0755e1"
+curl -s "${BASE:-http://localhost:3000}/api/squid/balances?address=0x9f08eFb0767Bf180B8b8094FaaEF9DAB5a0755e1&testnet=true"
+curl -s "${BASE:-http://localhost:3000}/api/squid/balances?address=0x...&chainId=8453"
+curl -s "${BASE:-http://localhost:3000}/api/squid/balances?address=0x...&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+```
+
 ---
 
-## GET /api/balances/multicall
+### GET /api/balances/multicall
 
-Same as `/api/squid/balances` in behaviour and response shape: token balances via viem multicall, sorted by balance (highest first), with chain and token metadata.
+Same behavior and response shape as `/api/squid/balances`: token balances via viem multicall, sorted by balance (highest first), with chain and token metadata.
 
 **Query**
 
-| Parameter    | Type   | Required | Description                                           |
-|--------------|--------|----------|-------------------------------------------------------|
-| address      | string | Yes      | Wallet address (e.g. `0x...`)                         |
-| chainId      | string | No       | Limit to one chain                                    |
-| tokenAddress | string | No       | Limit to one token across chains                      |
-| testnet      | string | No       | `"1"` or `"true"` for testnet                         |
-
-**Examples**
-
-- Full wallet: `GET /api/balances/multicall?address=0x...`
-- One chain: `GET /api/balances/multicall?address=0x...&chainId=1`
-- One token (all chains): `GET /api/balances/multicall?address=0x...&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`
-- One token, one chain: `GET /api/balances/multicall?address=0x...&chainId=1&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`
+| Parameter    | Type   | Required | Description |
+|-------------|--------|----------|-------------|
+| address     | string | Yes      | Wallet address (e.g. `0x...`) |
+| chainId     | string | No       | Limit to one chain |
+| tokenAddress| string | No       | Limit to one token across chains |
+| testnet     | string | No       | `"1"` or `"true"` for testnet |
 
 **Response 200**
 
-```json
-{
-  "success": true,
-  "data": [
-    {
-      "chainId": "1",
-      "networkName": "Ethereum",
-      "chainIconURI": "https://...",
-      "tokenAddress": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      "tokenSymbol": "USDC",
-      "tokenDecimals": 6,
-      "tokenName": "USD Coin",
-      "tokenLogoURI": "https://...",
-      "balance": "100.5",
-      "balanceRaw": "100500000"
-    }
-  ]
-}
-```
+Same as GET /api/squid/balances: `{ "success": true, "data": [ ... ] }` with same balance item shape.
 
 **Response 400**
 
@@ -673,3 +836,10 @@ Same as `/api/squid/balances` in behaviour and response shape: token balances vi
 }
 ```
 
+**curl**
+
+```bash
+curl -s "${BASE:-http://localhost:3000}/api/balances/multicall?address=0x9f08eFb0767Bf180B8b8094FaaEF9DAB5a0755e1"
+curl -s "${BASE:-http://localhost:3000}/api/balances/multicall?address=0x...&testnet=true"
+curl -s "${BASE:-http://localhost:3000}/api/balances/multicall?address=0x...&chainId=1&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+```

@@ -37,6 +37,11 @@ export async function postPaystackInitialize(req: Request, res: Response): Promi
   await proxy(req, res, { method: "POST", path: "/api/paystack/payments/initialize", bodyFromReq: true });
 }
 
+export async function getPaystackVerify(req: Request, res: Response): Promise<void> {
+  const reference = req.params.reference ?? "";
+  await proxy(req, res, { method: "GET", path: `/api/paystack/transactions/verify/${reference}` });
+}
+
 export async function getOfframpCalldata(req: Request, res: Response): Promise<void> {
   const transactionId = req.query.transaction_id as string;
   await proxy(req, res, {
@@ -61,6 +66,15 @@ export async function postPayoutsExecute(req: Request, res: Response): Promise<v
 export async function getTransactionById(req: Request, res: Response): Promise<void> {
   const id = req.params.id;
   await proxy(req, res, { method: "GET", path: `/api/transactions/${id}` });
+}
+
+export async function getTransactionsVerifyByHash(req: Request, res: Response): Promise<void> {
+  const query = req.query as Record<string, string>;
+  await proxy(req, res, {
+    method: "GET",
+    path: "/api/transactions/verify-by-hash",
+    query: Object.keys(query).length ? query : undefined,
+  });
 }
 
 export async function getTransactionBalanceSnapshots(req: Request, res: Response): Promise<void> {
@@ -89,9 +103,31 @@ export async function getRequests(req: Request, res: Response): Promise<void> {
   await proxy(req, res, { method: "GET", path: "/api/requests", query: req.query as Record<string, string> });
 }
 
+export async function postRequests(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "POST", path: "/api/requests", bodyFromReq: true });
+}
+
 export async function getRequestById(req: Request, res: Response): Promise<void> {
   const id = req.params.id;
   await proxy(req, res, { method: "GET", path: `/api/requests/${id}` });
+}
+
+export async function getRequestByLink(req: Request, res: Response): Promise<void> {
+  const linkId = req.params.linkId ?? "";
+  await proxy(req, res, { method: "GET", path: `/api/requests/by-link/${linkId}` });
+}
+
+export async function getRequestsCalldata(req: Request, res: Response): Promise<void> {
+  const transactionId = req.query.transaction_id as string;
+  await proxy(req, res, {
+    method: "GET",
+    path: "/api/requests/calldata",
+    query: transactionId ? { transaction_id: transactionId } : undefined,
+  });
+}
+
+export async function postRequestsConfirmCrypto(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "POST", path: "/api/requests/confirm-crypto", bodyFromReq: true });
 }
 
 export async function getClaimsByCode(req: Request, res: Response): Promise<void> {
