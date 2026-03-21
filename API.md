@@ -1,10 +1,252 @@
-# API
+# Klyra Backend API Report
 
+<<<<<<< HEAD
 Base path: `/api`. All requests use `Content-Type: application/json` for bodies.
 
 Use a base URL for examples (e.g. `BASE=http://localhost:3000` or your deployed host).
 
 For **Core integration architecture**, flow sequences (onramp, offramp, request & claim), and the distinction between native vs proxy endpoints, see **API-CORE-FLOW.md**.
+=======
+Reference for **frontend integration**, **developer API usage**, and **third-party consumers**.  
+Base URL: your backend origin (e.g. `https://api.example.com`). All API routes are under `/api`.
+
+---
+
+## Overview
+
+| Item | Details |
+|------|--------|
+| **Base path** | `/api` |
+| **Content-Type** | `application/json` (request and response) |
+| **CORS** | Configurable via `CORS` env (comma-separated origins). If set, only those origins allowed. |
+| **Allowed methods** | GET, POST, PUT, PATCH, DELETE, OPTIONS |
+| **Allowed request headers** | `Content-Type`, `Authorization`, `x-api-key` |
+
+### Tokens and authentication
+
+- **This backend** does **not** require API keys or bearer tokens from the client for any of its own endpoints (health, moolre, ens, rates, squid, balances). Call them without auth.
+- **Klyra Core** (under `/api/klyra/*`) is a **server-side proxy**. The backend forwards requests to the Core service and injects `x-api-key` from `CORE_API_KEY`; clients do **not** send or see this key. Pass the same request body/query you would to Core; the backend adds auth.
+- If you run middleware later that expects `Authorization` or `x-api-key`, you can send them; they are allowed by CORS. Currently no route in this app validates them.
+
+### Error response shape
+
+Most endpoints use a common error shape:
+
+```json
+{
+  "success": false,
+  "error": "Human-readable message"
+}
+```
+
+HTTP status codes: `400` (validation), `404` (not found), `500` (server error), `502` (upstream failure), `503` (service unavailable / not configured).
+
+---
+
+## Quick reference – all endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | App root: API name + endpoint list |
+| GET | `/api` | Same as root, endpoint list |
+| GET | `/api/health` | Backend health (status, uptime) |
+| GET | `/api/klyra/health` | Core health (proxied) |
+| GET | `/api/klyra/ready` | Core ready (proxied) |
+| POST | `/api/klyra/quotes` | Get quote (proxied) |
+| POST | `/api/klyra/orders` | Submit order webhook (proxied) |
+| POST | `/api/klyra/paystack/payments/initialize` | Paystack init (proxied) |
+| POST | `/api/klyra/paystack/payouts/request` | Payout request (proxied) |
+| POST | `/api/klyra/paystack/payouts/execute` | Payout execute (proxied) |
+| GET | `/api/klyra/offramp/calldata` | Offramp calldata (proxied) |
+| POST | `/api/klyra/offramp/confirm` | Offramp confirm (proxied) |
+| GET | `/api/klyra/transactions/:id` | Transaction by id (proxied) |
+| GET | `/api/klyra/transactions/:id/balance-snapshots` | Balance snapshots (proxied) |
+| GET | `/api/klyra/transactions/:id/pnl` | Transaction PnL (proxied) |
+| GET | `/api/klyra/chains` | Supported chains (proxied) |
+| GET | `/api/klyra/tokens` | Supported tokens (proxied) |
+| GET | `/api/klyra/countries` | Countries (proxied) |
+| GET | `/api/klyra/requests` | Requests list (proxied) |
+| GET | `/api/klyra/requests/:id` | Request by id (proxied) |
+| GET | `/api/klyra/claims/by-code/:code` | Claim by code (proxied) |
+| POST | `/api/klyra/claims/verify-otp` | Verify OTP (proxied) |
+| POST | `/api/klyra/claims/claim` | Claim (proxied) |
+| POST | `/api/moolre/validate/momo` | Validate mobile money |
+| POST | `/api/moolre/validate/bank` | Validate bank account |
+| POST | `/api/moolre/sms` | Send SMS |
+| GET | `/api/moolre/banks` | List banks (by country) |
+| GET | `/api/ens/name/:address` | Resolve address → ENS name |
+| GET | `/api/ens/address` | Resolve ENS name → address |
+| POST | `/api/rates/fiat` | Fiat-to-fiat quote |
+| POST | `/api/rates/fonbnk` | Fonbnk buy/sell quote |
+| GET | `/api/squid/chains` | Squid + local chains |
+| GET | `/api/squid/tokens` | Squid + local tokens |
+| GET | `/api/squid/balances` | Token balances (Squid + multicall) |
+| GET | `/api/balances/multicall` | Token balances (multicall) |
+
+---
+
+## Klyra (Core proxy)
+
+All `/api/klyra/*` routes proxy to the **Core backend**. The backend uses `CORE_BASE_URL` and `CORE_API_KEY`; it does not expose them. If Core is not configured, Klyra proxy responses return `503` with `"Core backend is not configured"`.
+
+**Request:** Send the same HTTP method, path suffix, query, and body you would to Core. Query and body are forwarded as-is (for POST, body is JSON).
+
+**Response:** Status and JSON body from Core are returned. On proxy failure (e.g. network), status `502` and `{ "success": false, "error": "Core request failed: ..." }`.
+
+### GET /api/klyra/health
+
+No query or body. Returns Core health.
+
+### GET /api/klyra/ready
+
+No query or body. Returns Core ready status.
+
+### POST /api/klyra/quotes
+
+**Body (JSON):** Quote request.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| action | string | Yes | `"ONRAMP"` \| `"OFFRAMP"` \| `"SWAP"` |
+| inputAmount | string | Yes | Input amount (decimal string) |
+| inputCurrency | string | Yes | Input currency/token |
+| outputCurrency | string | Yes | Output currency/token |
+| chain | string | Yes | Chain id or identifier |
+| inputSide | string | No | `"from"` \| `"to"` |
+
+**Returns:** Core quote response (e.g. `quoteId`, `exchangeRate`, `input`, `output`, `fees`, `expiresAt`).
+
+### POST /api/klyra/orders
+
+**Body (JSON):** Order webhook payload.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| action | string | `"buy"` \| `"sell"` \| `"request"` \| `"claim"` |
+| fromIdentifier / toIdentifier | string \| null | Identity (address, email, number) |
+| fromType / toType | string \| null | `"ADDRESS"` \| `"EMAIL"` \| `"NUMBER"` |
+| fromUserId / toUserId | string \| null | User ids |
+| f_amount, t_amount | number | From/to amounts |
+| f_price, t_price | number | From/to prices |
+| f_chain, t_chain | string | From/to chain |
+| f_token, t_token | string | From/to token |
+| f_provider, t_provider | string | e.g. `"NONE"`, `"SQUID"`, `"PAYSTACK"`, `"KLYRA"` |
+| providerSessionId, requestId, quoteId, providerPrice | string \| number \| null | Optional |
+
+**Returns:** Core order response.
+
+### POST /api/klyra/paystack/payments/initialize
+
+**Body (JSON):** Paystack initialize.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| email | string | Yes | Payer email |
+| amount | number | Yes | Amount |
+| currency | string | Yes | Currency code |
+| transaction_id | string | No | Klyra transaction id |
+| callback_url | string | No | Callback URL |
+
+**Returns:** Core Paystack init response.
+
+### POST /api/klyra/paystack/payouts/request
+
+**Body (JSON):** `{ "transaction_id": string }`.
+
+**Returns:** Core payout request response.
+
+### POST /api/klyra/paystack/payouts/execute
+
+**Body (JSON):** Payout execute payload.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| code | string | Payout code |
+| amount | number | Amount |
+| currency | string | Currency |
+| recipient_type | string | Recipient type |
+| name | string | Recipient name |
+| account_number | string | Optional |
+| bank_code | string | Optional |
+
+**Returns:** Core payout execute response.
+
+### GET /api/klyra/offramp/calldata
+
+**Query:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| transaction_id | string | No | Transaction id (if required by Core) |
+
+**Returns:** Core offramp calldata.
+
+### POST /api/klyra/offramp/confirm
+
+**Body (JSON):** `{ "transaction_id": string, "tx_hash": string }`.
+
+**Returns:** Core offramp confirm response.
+
+### GET /api/klyra/transactions/:id
+
+**Path:** `id` = transaction id.
+
+**Returns:** Core transaction object (e.g. `id`, `status`, `type`, `cryptoSendTxHash`).
+
+### GET /api/klyra/transactions/:id/balance-snapshots
+
+**Path:** `id` = transaction id.
+
+**Returns:** Core balance snapshots for that transaction.
+
+### GET /api/klyra/transactions/:id/pnl
+
+**Path:** `id` = transaction id.
+
+**Returns:** Core PnL for that transaction.
+
+### GET /api/klyra/chains
+
+No body. Optional query params forwarded to Core (e.g. filters).
+
+**Returns:** Core chains list.
+
+### GET /api/klyra/tokens
+
+**Query:** All query params forwarded to Core (e.g. chain, network).
+
+**Returns:** Core tokens list.
+
+### GET /api/klyra/countries
+
+No query or body. **Returns:** Core countries list.
+
+### GET /api/klyra/requests
+
+**Query:** Params forwarded to Core (e.g. pagination, filters).
+
+**Returns:** Core requests list.
+
+### GET /api/klyra/requests/:id
+
+**Path:** `id` = request id. **Returns:** Core request by id.
+
+### GET /api/klyra/claims/by-code/:code
+
+**Path:** `code` = claim code. **Returns:** Core claim by code.
+
+### POST /api/klyra/claims/verify-otp
+
+**Body (JSON):** `{ "claim_id"?: string, "code"?: string, "otp": string }`.
+
+**Returns:** Core verify-otp response.
+
+### POST /api/klyra/claims/claim
+
+**Body (JSON):** `{ "code": string, "payout_type": "crypto" | "fiat", "payout_target": string }`.
+
+**Returns:** Core claim response.
+>>>>>>> d5ee62c16eb4709b4626d5e3b667daccbcbc4d72
 
 ---
 
@@ -836,10 +1078,20 @@ Same as GET /api/squid/balances: `{ "success": true, "data": [ ... ] }` with sam
 }
 ```
 
-**curl**
+---
 
-```bash
-curl -s "${BASE:-http://localhost:3000}/api/balances/multicall?address=0x9f08eFb0767Bf180B8b8094FaaEF9DAB5a0755e1"
-curl -s "${BASE:-http://localhost:3000}/api/balances/multicall?address=0x...&testnet=true"
-curl -s "${BASE:-http://localhost:3000}/api/balances/multicall?address=0x...&chainId=1&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-```
+## Environment and configuration (for deployers)
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `PORT` | Yes | Server port (1–65535). |
+| `CORS` | No | Comma-separated allowed origins. Empty = allow all. |
+| `CORE_BASE_URL` | For Klyra | Core API base URL (no trailing slash). |
+| `CORE_API_KEY` | For Klyra | API key sent as `x-api-key` to Core. |
+| `SQUID_INTEGRATOR_ID` | For Squid/balances | Squid Router integrator id (chains, tokens, balances). |
+| `EXCHANGERATE_API_KEY` | For /api/rates/fiat | ExchangeRate-API key. |
+| Moolre credentials | For Moolre | Set per Moolre docs (validate, SMS, banks). |
+| Fonbnk | For /api/rates/fonbnk | Configured in fonbnk service. |
+
+If Core is not set, all `/api/klyra/*` return 503. If Squid is not set, `/api/squid/*` and balance endpoints return 503 or 502. Other endpoints may return 500 when their upstream (Moolre, ExchangeRate, Fonbnk) is missing or fails.
+
