@@ -5,25 +5,44 @@ import {
   fetchTokens,
   fetchTokensAll,
   fetchBalancesFromSquid,
+  filterChainsByChainId,
+  filterTokensByQuery,
 } from "../services/squid.service.js";
+
+function readChainIdQuery(request: Request): string | undefined {
+  const q = request.query.chainId;
+  return typeof q === "string" && q.trim() ? q.trim() : undefined;
+}
+
+function readTokenAddressQuery(request: Request): string | undefined {
+  const a = request.query.address;
+  const t = request.query.tokenAddress;
+  if (typeof a === "string" && a.trim()) return a.trim();
+  if (typeof t === "string" && t.trim()) return t.trim();
+  return undefined;
+}
 
 /**
  * GET /api/squid/chains
  * Query: testnet (optional, "1" or "true" for testnet only).
  *        all (optional, "1" or "true") = mainnet + testnet combined (Squid + data/chains).
+ *        chainId (optional) = return only the chain with this id (string match).
  */
 export async function getChains(request: Request, response: Response): Promise<void> {
   try {
+    const chainId = readChainIdQuery(request);
     const all = request.query.all === "1" || request.query.all === "true";
     if (all) {
-      const chains = await fetchChainsAll();
+      let chains = await fetchChainsAll();
+      chains = filterChainsByChainId(chains, chainId);
       response.setHeader("x-squid-network", "all");
       response.json(chains);
       return;
     }
     const testnet =
       request.query.testnet === "1" || request.query.testnet === "true";
-    const chains = await fetchChains(testnet);
+    let chains = await fetchChains(testnet);
+    chains = filterChainsByChainId(chains, chainId);
     response.setHeader("x-squid-network", testnet ? "testnet" : "mainnet");
     response.json(chains);
   } catch (error) {
@@ -40,19 +59,25 @@ export async function getChains(request: Request, response: Response): Promise<v
  * GET /api/squid/tokens
  * Query: testnet (optional, "1" or "true" for testnet only).
  *        all (optional, "1" or "true") = mainnet + testnet combined (Squid + Solana + data/tokens).
+ *        chainId (optional) = only tokens on this chain.
+ *        address or tokenAddress (optional) = only this token contract (case-insensitive match).
  */
 export async function getTokens(request: Request, response: Response): Promise<void> {
   try {
+    const chainId = readChainIdQuery(request);
+    const address = readTokenAddressQuery(request);
     const all = request.query.all === "1" || request.query.all === "true";
     if (all) {
-      const tokens = await fetchTokensAll();
+      let tokens = await fetchTokensAll();
+      tokens = filterTokensByQuery(tokens, { chainId, address });
       response.setHeader("x-squid-network", "all");
       response.json(tokens);
       return;
     }
     const testnet =
       request.query.testnet === "1" || request.query.testnet === "true";
-    const tokens = await fetchTokens(testnet);
+    let tokens = await fetchTokens(testnet);
+    tokens = filterTokensByQuery(tokens, { chainId, address });
     response.setHeader("x-squid-network", testnet ? "testnet" : "mainnet");
     response.json(tokens);
   } catch (error) {

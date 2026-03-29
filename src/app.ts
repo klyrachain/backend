@@ -27,7 +27,7 @@ app.use(express.json());
 app.get("/", (_req, res) => {
   res.json({
     success: true,
-    message: "Klyra API",
+    message: "Morapay API",
     docs: "See API.md for full documentation.",
     endpoints: {
       health: "/api/health",

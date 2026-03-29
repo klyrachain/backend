@@ -11,6 +11,12 @@ import type {
   ChainResponse,
   TokenResponse,
 } from "../lib/interfaces/squid.types.js";
+import {
+  SOLANA_CHAIN_ICON_FALLBACK,
+  fetchChainsFromCore,
+  fetchTokensFromCore,
+  isSquidRateLimitError,
+} from "./core-chains-tokens-fallback.service.js";
 
 function getTokensDir(): string {
   return join(process.cwd(), "data", "tokens");
@@ -60,6 +66,8 @@ const ERC20_BALANCE_ABI = [
 ] as const;
 
 const MULTICALL3_ADDRESS = "0xcA11bde05977b3631167028862bE2a173976CA11" as const;
+
+export { SOLANA_CHAIN_ICON_FALLBACK } from "./core-chains-tokens-fallback.service.js";
 
 function getIntegratorId(): string {
   const value =
@@ -118,6 +126,33 @@ type ChainsJson = SquidChainRaw[] | { chains?: SquidChainRaw[]; data?: SquidChai
 /** Squid API may return an array or an object with tokens/data. */
 type TokensJson = SquidTokenRaw[] | { tokens?: SquidTokenRaw[]; data?: SquidTokenRaw[] };
 
+/** In-memory cache so checkout + modal + balances do not hammer Squid HTTP (RATE_LIMIT). */
+const SQUID_HTTP_CACHE_MS = 15 * 60 * 1000;
+type SquidHttpCacheEntry<T> = { storedAt: number; data: T };
+const squidChainsHttpCache = new Map<string, SquidHttpCacheEntry<ChainResponse[]>>();
+const squidTokensHttpCache = new Map<string, SquidHttpCacheEntry<TokenResponse[]>>();
+
+function readSquidHttpCache<T>(
+  map: Map<string, SquidHttpCacheEntry<T>>,
+  key: string
+): T | null {
+  const row = map.get(key);
+  if (!row) return null;
+  if (Date.now() - row.storedAt > SQUID_HTTP_CACHE_MS) {
+    map.delete(key);
+    return null;
+  }
+  return row.data;
+}
+
+function writeSquidHttpCache<T>(
+  map: Map<string, SquidHttpCacheEntry<T>>,
+  key: string,
+  data: T
+): void {
+  map.set(key, { storedAt: Date.now(), data });
+}
+
 function mergeRpcUrls(...sources: (string[] | undefined)[]): string[] {
   const seen = new Set<string>();
   for (const arr of sources) {
@@ -130,6 +165,10 @@ function mergeRpcUrls(...sources: (string[] | undefined)[]): string[] {
 }
 
 export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
+  const chainsCacheKey = testnet ? "chains-testnet" : "chains-mainnet";
+  const chainsCached = readSquidHttpCache(squidChainsHttpCache, chainsCacheKey);
+  if (chainsCached) return chainsCached;
+
   if (testnet) {
     const registry = getTestnetRegistry();
     const mapped: ChainResponse[] = registry.map((c) => {
@@ -144,6 +183,7 @@ export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
       };
     });
     mapped.sort((a, b) => parseInt(a.chainId, 10) - parseInt(b.chainId, 10));
+    writeSquidHttpCache(squidChainsHttpCache, chainsCacheKey, mapped);
     return mapped;
   }
 
@@ -158,6 +198,13 @@ export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
 
   if (!response.ok) {
     const responseText = await response.text();
+    if (isSquidRateLimitError(responseText) || response.status === 429) {
+      const fromCore = await fetchChainsFromCore();
+      if (fromCore !== null && fromCore.length > 0) {
+        writeSquidHttpCache(squidChainsHttpCache, chainsCacheKey, fromCore);
+        return fromCore;
+      }
+    }
     throw new Error(`Squid chains API error: ${responseText || response.status}`);
   }
 
@@ -196,6 +243,12 @@ export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
       };
     });
 
+  for (const c of mapped) {
+    if (c.chainId === "101" && (c.chainIconURI == null || c.chainIconURI === "")) {
+      c.chainIconURI = SOLANA_CHAIN_ICON_FALLBACK;
+    }
+  }
+
   const mappedIds = new Set(mapped.map((c) => c.chainId));
   for (const c of mainnetRegistry) {
     const chainId = String(c.id);
@@ -205,7 +258,7 @@ export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
     mapped.push({
       chainId,
       networkName: c.name,
-      chainIconURI: undefined,
+      chainIconURI: chainId === "101" ? SOLANA_CHAIN_ICON_FALLBACK : undefined,
       ...(rpc && { rpc }),
       ...(rpcs && { rpcs }),
       ...(c.explorer && { explorer: c.explorer }),
@@ -219,6 +272,7 @@ export async function fetchChains(testnet: boolean): Promise<ChainResponse[]> {
     if (!Number.isNaN(idA) && !Number.isNaN(idB)) return idA - idB;
     return a.chainId.localeCompare(b.chainId, undefined, { numeric: true });
   });
+  writeSquidHttpCache(squidChainsHttpCache, chainsCacheKey, mapped);
   return mapped;
 }
 
@@ -232,6 +286,10 @@ export async function fetchChainsAll(): Promise<ChainResponse[]> {
 }
 
 export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
+  const tokensCacheKey = testnet ? "tokens-testnet" : "tokens-mainnet";
+  const tokensCached = readSquidHttpCache(squidTokensHttpCache, tokensCacheKey);
+  if (tokensCached) return tokensCached;
+
   const integratorId = getIntegratorId();
   const baseUrl = getSquidBaseUrl(testnet);
 
@@ -275,6 +333,7 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
       if (a.chainId !== b.chainId) return a.chainId.localeCompare(b.chainId, undefined, { numeric: true });
       return a.symbol.localeCompare(b.symbol, undefined, { sensitivity: "base" });
     });
+    writeSquidHttpCache(squidTokensHttpCache, tokensCacheKey, testnetMapped);
     return testnetMapped;
   }
 
@@ -287,6 +346,13 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
 
   if (!tokensResponse.ok) {
     const responseText = await tokensResponse.text();
+    if (isSquidRateLimitError(responseText) || tokensResponse.status === 429) {
+      const fromCore = await fetchTokensFromCore();
+      if (fromCore !== null && fromCore.length > 0) {
+        writeSquidHttpCache(squidTokensHttpCache, tokensCacheKey, fromCore);
+        return fromCore;
+      }
+    }
     throw new Error(`Squid tokens API error: ${responseText || tokensResponse.status}`);
   }
 
@@ -304,6 +370,13 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
     })) as FetchResponse;
     if (!chainsResponse.ok) {
       const responseText = await chainsResponse.text();
+      if (isSquidRateLimitError(responseText) || chainsResponse.status === 429) {
+        const fromCore = await fetchTokensFromCore();
+        if (fromCore !== null && fromCore.length > 0) {
+          writeSquidHttpCache(squidTokensHttpCache, tokensCacheKey, fromCore);
+          return fromCore;
+        }
+      }
       throw new Error(`Squid chains API error: ${responseText || chainsResponse.status}`);
     }
     const chainsData = (await chainsResponse.json()) as ChainsJson;
@@ -343,6 +416,9 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
         else if (c.rpcs.length > 1) chainIdToRpcs.set(chainId, c.rpcs);
       }
     }
+    if (!chainIdToIconUri.has("101")) {
+      chainIdToIconUri.set("101", SOLANA_CHAIN_ICON_FALLBACK);
+    }
   }
 
   const mapped = rawTokens
@@ -381,7 +457,7 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
     mapped.push({
       chainId: solanaChainId,
       networkName: chainIdToNetworkName.get(solanaChainId) ?? "Solana",
-      chainIconURI: undefined,
+      chainIconURI: chainIdToIconUri.get(solanaChainId) ?? SOLANA_CHAIN_ICON_FALLBACK,
       address: String(t.address),
       symbol: t.symbol ?? "—",
       decimals: Number(t.decimals) ?? 18,
@@ -392,12 +468,19 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
     });
   }
 
+  for (const row of mapped) {
+    if (row.chainId === "101" && (row.chainIconURI == null || row.chainIconURI === "")) {
+      row.chainIconURI = SOLANA_CHAIN_ICON_FALLBACK;
+    }
+  }
+
   mapped.sort((a, b) => {
     const idCompare = parseInt(a.chainId, 10) - parseInt(b.chainId, 10);
     if (!Number.isNaN(idCompare) && idCompare !== 0) return idCompare;
     if (a.chainId !== b.chainId) return a.chainId.localeCompare(b.chainId, undefined, { numeric: true });
     return a.symbol.localeCompare(b.symbol, undefined, { sensitivity: "base" });
   });
+  writeSquidHttpCache(squidTokensHttpCache, tokensCacheKey, mapped);
   return mapped;
 }
 
@@ -408,6 +491,34 @@ export async function fetchTokensAll(): Promise<TokenResponse[]> {
     fetchTokens(true),
   ]);
   return [...mainnet, ...testnet];
+}
+
+/** Filter cached chain list by exact chainId (string match). */
+export function filterChainsByChainId(
+  chains: ChainResponse[],
+  chainId: string | undefined
+): ChainResponse[] {
+  const id = chainId?.trim();
+  if (!id) return chains;
+  return chains.filter((c) => String(c.chainId) === id);
+}
+
+/** Filter cached token list by chainId and/or token contract address. */
+export function filterTokensByQuery(
+  tokens: TokenResponse[],
+  opts: { chainId?: string; address?: string }
+): TokenResponse[] {
+  let out = tokens;
+  const cid = opts.chainId?.trim();
+  if (cid) {
+    out = out.filter((t) => String(t.chainId) === cid);
+  }
+  const addr = opts.address?.trim();
+  if (addr) {
+    const norm = addr.toLowerCase();
+    out = out.filter((t) => t.address.toLowerCase() === norm);
+  }
+  return out;
 }
 
 export async function fetchBalancesMulticall(

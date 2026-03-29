@@ -1,5 +1,5 @@
 /**
- * Types for Klyra/Core proxy integration.
+ * Types for Morapay Core proxy integration (/api/klyra).
  * Aligned with KLYRA-INTEGRATION.md, core-api.integration.md, quote-api.md.
  */
 

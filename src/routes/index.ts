@@ -12,7 +12,7 @@ const router: IRouter = Router();
 router.get("/", (_req, res) => {
   res.json({
     success: true,
-    message: "Klyra API",
+    message: "Morapay API",
     endpoints: {
       health: "/api/health",
       klyra: "/api/klyra (Core proxy: quotes, orders, paystack, offramp, transactions, chains, tokens, countries, requests, claims)",
