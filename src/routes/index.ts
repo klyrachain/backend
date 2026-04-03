@@ -1,4 +1,5 @@
 import { type IRouter, Router } from "express";
+import type { FastifyInstance } from "fastify";
 import balancesRoutes from "./balances.routes.js";
 import ensRoutes from "./ens.routes.js";
 import healthRoutes from "./health.routes.js";
@@ -34,3 +35,7 @@ router.use("/squid", squidRoutes);
 router.use("/balances", balancesRoutes);
 
 export default router;
+
+export async function registerExpressRoutes(app: FastifyInstance): Promise<void> {
+  app.use("/api", router);
+}

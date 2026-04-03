@@ -92,7 +92,8 @@ export async function getTokens(request: Request, response: Response): Promise<v
 
 /**
  * GET /api/squid/balances
- * Query: address (required), chainId (optional), tokenAddress (optional), testnet (optional, "1" or "true").
+ * Query: address (required), chainId/tokenAddress/networkIds/tokenAddresses/testnet (all optional).
+ * Behavior: wallet-wide by default, returns merged non-duplicate balances from Squid + multicall.
  */
 export async function getBalances(request: Request, response: Response): Promise<void> {
   try {
@@ -113,10 +114,26 @@ export async function getBalances(request: Request, response: Response): Promise
         : undefined;
     const testnet =
       request.query.testnet === "1" || request.query.testnet === "true";
+    const networkIds =
+      typeof request.query.networkIds === "string"
+        ? request.query.networkIds
+            .split(",")
+            .map((value) => Number.parseInt(value.trim(), 10))
+            .filter((id) => Number.isFinite(id))
+        : [];
+    const tokenAddresses =
+      typeof request.query.tokenAddresses === "string"
+        ? request.query.tokenAddresses
+            .split(",")
+            .map((value) => value.trim())
+            .filter((value) => value.length > 0)
+        : [];
 
     const balances = await fetchBalancesFromSquid(address, {
       chainId: chainId || undefined,
       tokenAddress: tokenAddress || undefined,
+      networkIds: networkIds.length > 0 ? networkIds : undefined,
+      tokenAddresses: tokenAddresses.length > 0 ? tokenAddresses : undefined,
       testnet,
     });
 
