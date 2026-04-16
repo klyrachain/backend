@@ -6,6 +6,10 @@ import {
   getHealth,
   getOfframpCalldata,
   getPaystackVerify,
+  getPublicGasPolicy,
+  getPublicPaymentLinkById,
+  getPublicPaymentLinkBySlug,
+  getPublicWrappedWallet,
   getReady,
   getRequestById,
   getRequestByLink,
@@ -16,24 +20,40 @@ import {
   getTransactionPnl,
   getTransactionsVerifyByHash,
   getTokens,
+  postAppTransferIntent,
   postClaimsClaim,
   postClaimsVerifyOtp,
   postOfframpConfirm,
   postOrder,
+  postPaymentLinkDispatch,
   postPayoutsExecute,
   postPaystackInitialize,
   postPayoutsRequest,
+  postPublicGasUsage,
+  postQuoteSwap,
   postQuotes,
+  postQuotesCheckout,
   postRequests,
   postRequestsConfirmCrypto,
 } from "../controllers/klyra.controller.js";
+import { relayPeerRampToCore } from "../controllers/klyra-relay.controller.js";
 
 const router: IRouter = Router();
 
 router.get("/health", getHealth);
 router.get("/ready", getReady);
 
+router.post("/v1/quotes/checkout", postQuotesCheckout);
 router.post("/quotes", postQuotes);
+router.post("/quote/swap", postQuoteSwap);
+router.post("/payment-link-dispatch", postPaymentLinkDispatch);
+router.post("/app-transfer/intent", postAppTransferIntent);
+
+router.get("/public/payment-links/by-id/:id", getPublicPaymentLinkById);
+router.get("/public/payment-links/:slug", getPublicPaymentLinkBySlug);
+router.post("/public/gas-usage", postPublicGasUsage);
+router.get("/public/gas-policy", getPublicGasPolicy);
+router.get("/public/wrapped/wallet", getPublicWrappedWallet);
 
 router.post("/orders", postOrder);
 
@@ -64,5 +84,9 @@ router.get("/requests/:id", getRequestById);
 router.get("/claims/by-code/:code", getClaimsByCode);
 router.post("/claims/verify-otp", postClaimsVerifyOtp);
 router.post("/claims/claim", postClaimsClaim);
+
+router.use("/relay", (req, res) => {
+  void relayPeerRampToCore(req, res);
+});
 
 export default router;

@@ -22,6 +22,8 @@ export interface CoreProxyOptions {
   body?: unknown;
   query?: Record<string, string>;
   useApiKey?: boolean;
+  /** Merged after defaults (e.g. X-Gas-Report-Token for public gas reporting). */
+  extraHeaders?: Record<string, string>;
 }
 
 export interface CoreProxyResult {
@@ -63,6 +65,7 @@ export async function callCore(options: CoreProxyOptions): Promise<CoreProxyResu
 
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
+    ...(options.extraHeaders ?? {}),
   };
   if (useApiKey) {
     headers["x-api-key"] = coreApiKey!;

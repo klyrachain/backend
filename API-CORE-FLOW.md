@@ -16,10 +16,10 @@
                      └── Proxy:  /api/klyra/*  →  Core (with x-api-key; key never sent to frontend)
 ```
 
-- **This backend** = single entry point for the frontend. It:
+- **This backend** = single integration entry point for **web BFFs, mobile, and partners**. It:
   - Serves **native** endpoints (chains, tokens, balances, ENS, rates, Moolre, health).
-  - **Proxies** Core flows (quotes, orders, Paystack, offramp, transactions, requests, claims) under `/api/klyra/*`.
-- **Core** = live system (pricing engine, liquidity, Paystack, request/claim). Never called directly by the frontend; only by this backend with `x-api-key`.
+  - **Proxies** Core flows (quotes, orders, Paystack, offramp, transactions, requests, claims, checkout/public helpers) under `/api/klyra/*`, plus an allowlisted **`/api/klyra/relay/*`** for trusted server-to-server callers (e.g. Next.js route handlers).
+- **Core** = live system (pricing engine, liquidity, Paystack, request/claim). Browsers and third parties should **not** call Core with a platform key; they call **this backend**, which attaches `x-api-key` to Core.
 - The **E2E test files** (`integrations/core-test.ts`, `integrations/core-test-2.ts`) call Core directly for CLI testing; they are the **reference implementation** of how Core works. In production, the **frontend** performs the same logical steps by calling **this backend**; this backend forwards to Core.
 
 ---
@@ -158,7 +158,16 @@ All of these are forwarded to Core with `x-api-key`. Request/response bodies are
 | GET    | /api/klyra/health | /api/health | Liveness. |
 | GET    | /api/klyra/ready | /api/ready | Readiness (DB + Redis). |
 | POST   | /api/klyra/quotes | /api/v1/quotes | Single quote (ONRAMP / OFFRAMP / SWAP). |
+| POST   | /api/klyra/v1/quotes/checkout | /api/v1/quotes/checkout | Multi-row checkout quote. |
+| POST   | /api/klyra/quote/swap | /api/quote/swap | Legacy swap quote (when not using v1 quotes). |
 | POST   | /api/klyra/orders | /webhook/order | Create order/transaction (buy / sell / request / claim). |
+| POST   | /api/klyra/payment-link-dispatch | /api/payment-link-dispatch | Commerce payment-link dispatch. |
+| POST   | /api/klyra/app-transfer/intent | /api/app-transfer/intent | In-app transfer intent. |
+| GET    | /api/klyra/public/payment-links/:slug | /api/public/payment-links/:slug | Public payment link by slug (query `wallet` optional). |
+| GET    | /api/klyra/public/payment-links/by-id/:id | /api/public/payment-links/by-id/:id | Public payment link by id. |
+| POST   | /api/klyra/public/gas-usage | /api/public/gas-usage | Gas usage report (header `X-Gas-Report-Token` required). |
+| GET    | /api/klyra/public/gas-policy | /api/public/gas-policy | Gas policy for checkout (query `paymentLinkId`). |
+| GET    | /api/klyra/public/wrapped/wallet | /api/public/wrapped/wallet | Wrapped wallet summary (query `wallet`, `period`). |
 | POST   | /api/klyra/paystack/payments/initialize | /api/paystack/payments/initialize | Get Paystack payment URL. |
 | GET    | /api/klyra/paystack/transactions/verify/:reference | /api/paystack/transactions/verify/:reference | Verify Paystack payment by reference (after user pays). |
 | POST   | /api/klyra/paystack/payouts/request | /api/paystack/payouts/request | Request payout (get code). |
@@ -181,6 +190,10 @@ All of these are forwarded to Core with `x-api-key`. Request/response bodies are
 | GET    | /api/klyra/claims/by-code/:code | /api/claims/by-code/:code | Claim by code (recipient flow). |
 | POST   | /api/klyra/claims/verify-otp | /api/claims/verify-otp | Verify OTP for claim. |
 | POST   | /api/klyra/claims/claim | /api/claims/claim | Complete claim (crypto or fiat payout). |
+
+### 4.1 Relay — `GET|POST /api/klyra/relay/*` (server-to-server)
+
+For trusted BFFs (e.g. Next.js route handlers) that need many Core paths under one mount: everything after `/api/klyra/relay/` is forwarded to Core as `/api/<same path>`, with `x-api-key`. Allowed paths are **allowlisted** in `src/lib/peer-ramp-relay-allowlist.ts` (keep in sync with `peer-ramp-frontend`’s `server-core-proxy.ts`). Do **not** expose this relay to browsers without your own auth in front.
 
 ---
 

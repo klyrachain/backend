@@ -16,7 +16,8 @@ router.get("/", (_req, res) => {
     message: "Morapay API",
     endpoints: {
       health: "/api/health",
-      klyra: "/api/klyra (Core proxy: quotes, orders, paystack, offramp, transactions, chains, tokens, countries, requests, claims)",
+      klyra:
+        "/api/klyra (Core proxy + relay): quotes, checkout/swap quotes, orders, paystack, offramp, transactions, public payment-links/gas/wrapped, payment-link-dispatch, app-transfer, chains, tokens, countries, requests, claims, relay/* for app BFF",
       moolre: "/api/moolre",
       ens: "/api/ens",
       rates: "/api/rates",

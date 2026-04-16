@@ -95,8 +95,8 @@ export async function getTokens(req: Request, res: Response): Promise<void> {
   await proxy(req, res, { method: "GET", path: "/api/tokens", query: req.query as Record<string, string> });
 }
 
-export async function getCountries(_req: Request, res: Response): Promise<void> {
-  await proxy(_req, res, { method: "GET", path: "/api/countries" });
+export async function getCountries(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "GET", path: "/api/countries" });
 }
 
 export async function getRequests(req: Request, res: Response): Promise<void> {
@@ -141,4 +141,65 @@ export async function postClaimsVerifyOtp(req: Request, res: Response): Promise<
 
 export async function postClaimsClaim(req: Request, res: Response): Promise<void> {
   await proxy(req, res, { method: "POST", path: "/api/claims/claim", bodyFromReq: true });
+}
+
+export async function postQuotesCheckout(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "POST", path: "/api/v1/quotes/checkout", bodyFromReq: true });
+}
+
+export async function postQuoteSwap(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "POST", path: "/api/quote/swap", bodyFromReq: true });
+}
+
+export async function postPaymentLinkDispatch(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "POST", path: "/api/payment-link-dispatch", bodyFromReq: true });
+}
+
+export async function postAppTransferIntent(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "POST", path: "/api/app-transfer/intent", bodyFromReq: true });
+}
+
+export async function getPublicPaymentLinkBySlug(req: Request, res: Response): Promise<void> {
+  const slug = req.params.slug ?? "";
+  await proxy(req, res, {
+    method: "GET",
+    path: `/api/public/payment-links/${encodeURIComponent(slug)}`,
+    query: req.query as Record<string, string>,
+  });
+}
+
+export async function getPublicPaymentLinkById(req: Request, res: Response): Promise<void> {
+  const id = req.params.id ?? "";
+  await proxy(req, res, {
+    method: "GET",
+    path: `/api/public/payment-links/by-id/${encodeURIComponent(id)}`,
+    query: req.query as Record<string, string>,
+  });
+}
+
+export async function postPublicGasUsage(req: Request, res: Response): Promise<void> {
+  const token = req.get("x-gas-report-token")?.trim();
+  if (!token) {
+    res.status(401).json({ success: false, error: "Missing X-Gas-Report-Token." });
+    return;
+  }
+  const result = await callCore({
+    method: "POST",
+    path: "/api/public/gas-usage",
+    body: req.body,
+    extraHeaders: { "X-Gas-Report-Token": token },
+  });
+  res.status(result.status).json(result.body);
+}
+
+export async function getPublicGasPolicy(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, { method: "GET", path: "/api/public/gas-policy", query: req.query as Record<string, string> });
+}
+
+export async function getPublicWrappedWallet(req: Request, res: Response): Promise<void> {
+  await proxy(req, res, {
+    method: "GET",
+    path: "/api/public/wrapped/wallet",
+    query: req.query as Record<string, string>,
+  });
 }
