@@ -25,6 +25,37 @@ await app.register(fastifyCors, {
 });
 
 await app.register(fastifyExpress);
+
+/** Express runs before Fastify routes; handle GET / here so browsers always see JSON. */
+app.use((req, res, next) => {
+  const path = (req.url ?? "").split("?")[0] ?? "";
+  if (req.method === "GET" && path === "/") {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.end(
+      JSON.stringify({
+        success: true,
+        service: "morapay-api",
+        message: "Morapay integration API (proxies Core, native chains/rates/ENS, etc.).",
+        hint: "Most traffic uses /api/*. This root is unauthenticated.",
+        endpoints: {
+          self: "/api",
+          health: "/api/health",
+          klyra: "/api/klyra",
+          moolre: "/api/moolre",
+          ens: "/api/ens",
+          rates: "/api/rates",
+          squid: "/api/squid",
+          balances: "/api/balances/multicall",
+        },
+        docs: "See backend/API.md and backend/API-CORE-FLOW.md",
+      })
+    );
+    return;
+  }
+  next();
+});
+
 app.use(express.json());
 
 app.addHook("onRequest", async (request) => {
@@ -54,23 +85,6 @@ app.setErrorHandler((error, request, reply) => {
   if (!reply.sent) {
     void reply.status(500).send({ success: false, error: "Internal server error." });
   }
-});
-
-app.get("/", async () => {
-  return {
-    success: true,
-    message: "Morapay API",
-    docs: "See API.md for full documentation.",
-    endpoints: {
-      health: "/api/health",
-      klyra: "/api/klyra (Core proxy)",
-      moolre: "/api/moolre",
-      ens: "/api/ens",
-      rates: "/api/rates",
-      squid: "/api/squid/chains, /api/squid/tokens, /api/squid/balances",
-      balances: "/api/balances/multicall",
-    },
-  };
 });
 
 await registerExpressRoutes(app);
