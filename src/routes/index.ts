@@ -1,4 +1,5 @@
 import { type IRouter, Router } from "express";
+import type { FastifyInstance } from "fastify";
 import balancesRoutes from "./balances.routes.js";
 import ensRoutes from "./ens.routes.js";
 import healthRoutes from "./health.routes.js";
@@ -12,10 +13,11 @@ const router: IRouter = Router();
 router.get("/", (_req, res) => {
   res.json({
     success: true,
-    message: "Klyra API",
+    message: "Morapay API",
     endpoints: {
       health: "/api/health",
-      klyra: "/api/klyra (Core proxy: quotes, orders, paystack, offramp, transactions, chains, tokens, countries, requests, claims)",
+      klyra:
+        "/api/klyra (Core proxy + relay): quotes, checkout/swap quotes, orders, paystack, offramp, transactions, public payment-links/gas/wrapped, payment-link-dispatch, app-transfer, chains, tokens, countries, requests, claims, relay/* for app BFF",
       moolre: "/api/moolre",
       ens: "/api/ens",
       rates: "/api/rates",
@@ -34,3 +36,7 @@ router.use("/squid", squidRoutes);
 router.use("/balances", balancesRoutes);
 
 export default router;
+
+export async function registerExpressRoutes(app: FastifyInstance): Promise<void> {
+  app.use("/api", router);
+}
