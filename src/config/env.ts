@@ -1,21 +1,18 @@
 import "dotenv/config";
 
-function getEnv(key: string): string {
-  const value = process.env[key];
-  if (value === undefined || value === "") {
-    throw new Error(`Missing required environment variable: ${key}`);
-  }
-  return value;
-}
-
 function getEnvOptional(key: string): string | undefined {
   const value = process.env[key];
   return value === "" ? undefined : value;
 }
 
 export const env = {
+  /**
+   * HTTP listen port. Most hosts (Railway, Render, Fly, Heroku) set `PORT` automatically.
+   * Default 4001 matches local `.env`; if `PORT` is unset in production, set it in the host dashboard
+   * or the process will listen on 4001 while the router may expect another port — prefer always setting `PORT`.
+   */
   get port(): number {
-    const raw = getEnv("PORT");
+    const raw = process.env.PORT?.trim() || "4001";
     const port = parseInt(raw, 10);
     if (Number.isNaN(port) || port < 1 || port > 65535) {
       throw new Error(`Invalid PORT: "${raw}". Must be a number between 1 and 65535.`);

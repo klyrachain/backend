@@ -6,6 +6,7 @@ import { env } from "./config/env.js";
 import { registerExpressRoutes } from "./routes/index.js";
 
 const app: FastifyInstance = Fastify({
+  trustProxy: true,
   logger: {
     level: process.env.LOG_LEVEL ?? "info",
   },
