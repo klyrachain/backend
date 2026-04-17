@@ -1,6 +1,9 @@
-import type { Request, Response } from "express";
+import type { FastifyReply, FastifyRequest } from "fastify";
+import { getRequestHeader } from "../lib/fastify-http.js";
 import { isCoreRelayAllowed, isCoreRelayPublicGet } from "../lib/peer-ramp-relay-allowlist.js";
 import { callCore } from "../services/core-proxy.service.js";
+
+const RELAY_PREFIX = "/api/klyra/relay";
 
 function relayQueryRecord(search: string): Record<string, string> | undefined {
   if (!search) return undefined;
@@ -13,26 +16,42 @@ function relayQueryRecord(search: string): Record<string, string> | undefined {
 }
 
 /**
+ * Path + query after `/api/klyra/relay` (same segments Core expects under `/api/*`).
+ */
+function relayPathFromRequest(request: FastifyRequest): { pathOnly: string; queryString: string } {
+  const full = request.url.startsWith("/") ? request.url : `/${request.url}`;
+  const qidx = full.indexOf("?");
+  const pathWithQuery = qidx === -1 ? full : full.slice(0, qidx);
+  const queryString = qidx === -1 ? "" : full.slice(qidx + 1);
+
+  let pathOnly = pathWithQuery;
+  if (pathOnly.startsWith(RELAY_PREFIX)) {
+    pathOnly = pathOnly.slice(RELAY_PREFIX.length).replace(/^\/+/, "");
+  } else {
+    pathOnly = pathOnly.replace(/^\/+/, "");
+  }
+
+  return { pathOnly, queryString };
+}
+
+/**
  * Server-to-server relay (e.g. Next.js BFF → here → Core). Path is everything after `/api/klyra/relay/`.
  */
-export async function relayPeerRampToCore(req: Request, res: Response): Promise<void> {
-  const rawUrl = (req.url || "/").startsWith("/") ? req.url || "/" : `/${req.url || ""}`;
-  const qidx = rawUrl.indexOf("?");
-  const pathOnly = (qidx === -1 ? rawUrl : rawUrl.slice(0, qidx)).replace(/^\/+/, "");
-  const queryString = qidx === -1 ? "" : rawUrl.slice(qidx + 1);
+export async function relayPeerRampToCore(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  const { pathOnly, queryString } = relayPathFromRequest(req);
   const parts = pathOnly.split("/").filter(Boolean);
   const method = (req.method || "GET").toUpperCase();
 
   const publicGet = method === "GET" && isCoreRelayPublicGet(parts);
   if (!publicGet && !isCoreRelayAllowed(method, parts)) {
-    res.status(403).json({ success: false, error: "Path not allowed", code: "FORBIDDEN" });
+    void reply.status(403).send({ success: false, error: "Path not allowed", code: "FORBIDDEN" });
     return;
   }
 
   if (method === "POST" && pathOnly === "public/gas-usage") {
-    const token = req.get("x-gas-report-token")?.trim();
+    const token = getRequestHeader(req, "x-gas-report-token")?.trim();
     if (!token) {
-      res.status(401).json({ success: false, error: "Missing X-Gas-Report-Token." });
+      void reply.status(401).send({ success: false, error: "Missing X-Gas-Report-Token." });
       return;
     }
   }
@@ -44,7 +63,7 @@ export async function relayPeerRampToCore(req: Request, res: Response): Promise<
 
   const extraHeaders: Record<string, string> | undefined =
     method === "POST" && pathOnly === "public/gas-usage"
-      ? { "X-Gas-Report-Token": req.get("x-gas-report-token")!.trim() }
+      ? { "X-Gas-Report-Token": getRequestHeader(req, "x-gas-report-token")!.trim() }
       : undefined;
 
   const result = await callCore({
@@ -54,5 +73,5 @@ export async function relayPeerRampToCore(req: Request, res: Response): Promise<
     body,
     extraHeaders,
   });
-  res.status(result.status).json(result.body);
+  void reply.status(result.status).send(result.body);
 }

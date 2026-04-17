@@ -1,4 +1,4 @@
-import type { Request, Response } from "express";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import {
   fetchChains,
   fetchChainsAll,
@@ -9,46 +9,50 @@ import {
   filterTokensByQuery,
 } from "../services/squid.service.js";
 
-function readChainIdQuery(request: Request): string | undefined {
-  const q = request.query.chainId;
-  return typeof q === "string" && q.trim() ? q.trim() : undefined;
+function readChainIdQuery(request: FastifyRequest): string | undefined {
+  const q = request.query as Record<string, unknown>;
+  const v = q.chainId;
+  return typeof v === "string" && v.trim() ? v.trim() : undefined;
 }
 
-function readTokenAddressQuery(request: Request): string | undefined {
-  const a = request.query.address;
-  const t = request.query.tokenAddress;
+function readTokenAddressQuery(request: FastifyRequest): string | undefined {
+  const q = request.query as Record<string, unknown>;
+  const a = q.address;
+  const t = q.tokenAddress;
   if (typeof a === "string" && a.trim()) return a.trim();
   if (typeof t === "string" && t.trim()) return t.trim();
   return undefined;
 }
 
+function queryBool(q: Record<string, unknown>, key: string): boolean {
+  const v = q[key];
+  return v === "1" || v === "true";
+}
+
 /**
  * GET /api/squid/chains
- * Query: testnet (optional, "1" or "true" for testnet only).
- *        all (optional, "1" or "true") = mainnet + testnet combined (Squid + data/chains).
- *        chainId (optional) = return only the chain with this id (string match).
  */
-export async function getChains(request: Request, response: Response): Promise<void> {
+export async function getChains(request: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
+    const q = request.query as Record<string, unknown>;
     const chainId = readChainIdQuery(request);
-    const all = request.query.all === "1" || request.query.all === "true";
+    const all = queryBool(q, "all");
     if (all) {
       let chains = await fetchChainsAll();
       chains = filterChainsByChainId(chains, chainId);
-      response.setHeader("x-squid-network", "all");
-      response.json(chains);
+      void reply.header("x-squid-network", "all");
+      void reply.send(chains);
       return;
     }
-    const testnet =
-      request.query.testnet === "1" || request.query.testnet === "true";
+    const testnet = queryBool(q, "testnet");
     let chains = await fetchChains(testnet);
     chains = filterChainsByChainId(chains, chainId);
-    response.setHeader("x-squid-network", testnet ? "testnet" : "mainnet");
-    response.json(chains);
+    void reply.header("x-squid-network", testnet ? "testnet" : "mainnet");
+    void reply.send(chains);
   } catch (error) {
     console.error("[Squid] chains error", error);
     const message = error instanceof Error ? error.message : "Failed to fetch chains.";
-    response.status(503).json({
+    void reply.status(503).send({
       success: false,
       error: message,
     });
@@ -57,33 +61,29 @@ export async function getChains(request: Request, response: Response): Promise<v
 
 /**
  * GET /api/squid/tokens
- * Query: testnet (optional, "1" or "true" for testnet only).
- *        all (optional, "1" or "true") = mainnet + testnet combined (Squid + Solana + data/tokens).
- *        chainId (optional) = only tokens on this chain.
- *        address or tokenAddress (optional) = only this token contract (case-insensitive match).
  */
-export async function getTokens(request: Request, response: Response): Promise<void> {
+export async function getTokens(request: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
+    const q = request.query as Record<string, unknown>;
     const chainId = readChainIdQuery(request);
     const address = readTokenAddressQuery(request);
-    const all = request.query.all === "1" || request.query.all === "true";
+    const all = queryBool(q, "all");
     if (all) {
       let tokens = await fetchTokensAll();
       tokens = filterTokensByQuery(tokens, { chainId, address });
-      response.setHeader("x-squid-network", "all");
-      response.json(tokens);
+      void reply.header("x-squid-network", "all");
+      void reply.send(tokens);
       return;
     }
-    const testnet =
-      request.query.testnet === "1" || request.query.testnet === "true";
+    const testnet = queryBool(q, "testnet");
     let tokens = await fetchTokens(testnet);
     tokens = filterTokensByQuery(tokens, { chainId, address });
-    response.setHeader("x-squid-network", testnet ? "testnet" : "mainnet");
-    response.json(tokens);
+    void reply.header("x-squid-network", testnet ? "testnet" : "mainnet");
+    void reply.send(tokens);
   } catch (error) {
     console.error("[Squid] tokens error", error);
     const message = error instanceof Error ? error.message : "Failed to fetch tokens.";
-    response.status(503).json({
+    void reply.status(503).send({
       success: false,
       error: message,
     });
@@ -92,38 +92,33 @@ export async function getTokens(request: Request, response: Response): Promise<v
 
 /**
  * GET /api/squid/balances
- * Query: address (required), chainId/tokenAddress/networkIds/tokenAddresses/testnet (all optional).
- * Behavior: wallet-wide by default, returns merged non-duplicate balances from Squid + multicall.
  */
-export async function getBalances(request: Request, response: Response): Promise<void> {
+export async function getBalances(request: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const address = typeof request.query.address === "string" ? request.query.address.trim() : "";
+    const q = request.query as Record<string, unknown>;
+    const address = typeof q.address === "string" ? q.address.trim() : "";
     if (!address) {
-      response.status(400).json({
+      void reply.status(400).send({
         success: false,
         error: "address is required (wallet address).",
       });
       return;
     }
 
-    const chainId =
-      typeof request.query.chainId === "string" ? request.query.chainId.trim() : undefined;
+    const chainId = typeof q.chainId === "string" ? q.chainId.trim() : undefined;
     const tokenAddress =
-      typeof request.query.tokenAddress === "string"
-        ? request.query.tokenAddress.trim()
-        : undefined;
-    const testnet =
-      request.query.testnet === "1" || request.query.testnet === "true";
+      typeof q.tokenAddress === "string" ? q.tokenAddress.trim() : undefined;
+    const testnet = queryBool(q, "testnet");
     const networkIds =
-      typeof request.query.networkIds === "string"
-        ? request.query.networkIds
+      typeof q.networkIds === "string"
+        ? q.networkIds
             .split(",")
             .map((value) => Number.parseInt(value.trim(), 10))
             .filter((id) => Number.isFinite(id))
         : [];
     const tokenAddresses =
-      typeof request.query.tokenAddresses === "string"
-        ? request.query.tokenAddresses
+      typeof q.tokenAddresses === "string"
+        ? q.tokenAddresses
             .split(",")
             .map((value) => value.trim())
             .filter((value) => value.length > 0)
@@ -137,12 +132,12 @@ export async function getBalances(request: Request, response: Response): Promise
       testnet,
     });
 
-    response.setHeader("x-squid-network", testnet ? "testnet" : "mainnet");
-    response.json({ success: true, data: balances });
+    void reply.header("x-squid-network", testnet ? "testnet" : "mainnet");
+    void reply.send({ success: true, data: balances });
   } catch (error) {
     console.error("[Squid] balances error", error);
     const message = error instanceof Error ? error.message : "Failed to fetch balances.";
-    response.status(502).json({
+    void reply.status(502).send({
       success: false,
       error: message,
     });
