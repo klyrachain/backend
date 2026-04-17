@@ -1,4 +1,4 @@
-import type { Request, Response } from "express";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import type { MoolreCountry } from "../lib/interfaces/moolre.types.js";
 import { getBanks, sendSms, validateAccount } from "../services/moolre.service.js";
 
@@ -32,16 +32,16 @@ function normalizeString(value: unknown): string | undefined {
   return typeof value === "string" ? value.trim() : undefined;
 }
 
-export async function validateMomo(req: Request, res: Response): Promise<void> {
+export async function validateMomo(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const body = req.body ?? {};
+    const body = (req.body as Record<string, unknown>) ?? {};
     const receiver = normalizeString(body.receiver);
     const channel = parseChannel(body.channel);
-    const provider = normalizeProvider(body.provider);
+    const provider = normalizeProvider(body.provider as string | undefined);
     const currency = normalizeString(body.currency) ?? "GHS";
 
     if (!receiver) {
-      res.status(400).json({ success: false, error: "receiver (mobile number) is required." });
+      void reply.status(400).send({ success: false, error: "receiver (mobile number) is required." });
       return;
     }
 
@@ -49,7 +49,7 @@ export async function validateMomo(req: Request, res: Response): Promise<void> {
       channel ?? (provider ? MOMO_PROVIDER_CHANNEL[provider] : undefined);
 
     if (!resolvedChannel || !MOMO_CHANNELS.includes(resolvedChannel)) {
-      res.status(400).json({
+      void reply.status(400).send({
         success: false,
         error:
           "channel (1=MTN, 6=Vodafone, 7=AirtelTigo) or provider (MTN, VODAFONE, AIRTELTIGO) is required.",
@@ -63,7 +63,7 @@ export async function validateMomo(req: Request, res: Response): Promise<void> {
       currency,
     });
 
-    res.json({
+    void reply.send({
       success: result.status === 1,
       accountName: result.data ?? null,
     });
@@ -71,29 +71,29 @@ export async function validateMomo(req: Request, res: Response): Promise<void> {
     console.error("[Moolre] validate momo error", err);
     const msg = err instanceof Error ? err.message : "MoMo validation failed.";
     if (msg.includes("Missing Moolre credentials")) {
-      res.status(500).json({
+      void reply.status(500).send({
         success: false,
         error: "Server configuration error: Moolre credentials not configured.",
       });
       return;
     }
-    res.status(500).json({ success: false, error: msg });
+    void reply.status(500).send({ success: false, error: msg });
   }
 }
 
-export async function validateBank(req: Request, res: Response): Promise<void> {
+export async function validateBank(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const body = req.body ?? {};
+    const body = (req.body as Record<string, unknown>) ?? {};
     const receiver = normalizeString(body.receiver);
     const sublistId = normalizeString(body.sublistId ?? body.bankCode);
     const currency = normalizeString(body.currency) ?? "GHS";
 
     if (!receiver) {
-      res.status(400).json({ success: false, error: "receiver (bank account number) is required." });
+      void reply.status(400).send({ success: false, error: "receiver (bank account number) is required." });
       return;
     }
     if (!sublistId) {
-      res.status(400).json({ success: false, error: "sublistId (bank code) is required. Use GET /api/moolre/banks to list codes." });
+      void reply.status(400).send({ success: false, error: "sublistId (bank code) is required. Use GET /api/moolre/banks to list codes." });
       return;
     }
 
@@ -104,7 +104,7 @@ export async function validateBank(req: Request, res: Response): Promise<void> {
       sublistId,
     });
 
-    res.json({
+    void reply.send({
       success: result.status === 1,
       accountName: result.data ?? null,
     });
@@ -112,26 +112,26 @@ export async function validateBank(req: Request, res: Response): Promise<void> {
     console.error("[Moolre] validate bank error", err);
     const msg = err instanceof Error ? err.message : "Bank validation failed.";
     if (msg.includes("Missing Moolre credentials")) {
-      res.status(500).json({
+      void reply.status(500).send({
         success: false,
         error: "Server configuration error: Moolre credentials not configured.",
       });
       return;
     }
-    res.status(500).json({ success: false, error: msg });
+    void reply.status(500).send({ success: false, error: msg });
   }
 }
 
-export async function sendSmsRoute(req: Request, res: Response): Promise<void> {
+export async function sendSmsRoute(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const body = req.body ?? {};
+    const body = (req.body as Record<string, unknown>) ?? {};
     const recipient = normalizeString(body.recipient);
     const message = body.message;
     const senderId = normalizeString(body.senderId);
     const ref = normalizeString(body.ref);
 
     if (!recipient || !message) {
-      res.status(400).json({
+      void reply.status(400).send({
         success: false,
         error: "Recipient and message are required.",
       });
@@ -140,29 +140,30 @@ export async function sendSmsRoute(req: Request, res: Response): Promise<void> {
 
     const result = await sendSms({
       senderId: senderId ?? undefined,
-      messages: [{ recipient, message, ref: ref ?? undefined }],
+      messages: [{ recipient, message: message as string, ref: ref ?? undefined }],
     });
 
-    res.json({ success: result.status === 1, data: result });
+    void reply.send({ success: result.status === 1, data: result });
   } catch (err) {
     console.error("[Moolre] SMS error", err);
-    res.status(500).json({
+    void reply.status(500).send({
       success: false,
       error: "SMS dispatch failed. Please try again later.",
     });
   }
 }
 
-export async function listBanks(req: Request, res: Response): Promise<void> {
+export async function listBanks(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const raw = (req.query.country as string)?.toLowerCase() ?? "gha";
+    const q = req.query as Record<string, unknown>;
+    const raw = (typeof q.country === "string" ? q.country : "").toLowerCase() ?? "gha";
     const country: MoolreCountry = raw === "nga" ? "nga" : "gha";
 
     const result = await getBanks(country);
-    res.json({ success: result.status === 1 || result.status === "1", data: result.data });
+    void reply.send({ success: result.status === 1 || result.status === "1", data: result.data });
   } catch (err) {
     console.error("[Moolre] getBanks error", err);
-    res.status(500).json({
+    void reply.status(500).send({
       success: false,
       error: err instanceof Error ? err.message : "Failed to fetch banks.",
     });

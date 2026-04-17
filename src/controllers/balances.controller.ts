@@ -1,34 +1,28 @@
-import type { Request, Response } from "express";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import { fetchBalancesMulticall } from "../services/squid.service.js";
 
 /**
  * GET /api/balances/multicall
- * Query: address (required), chainId (optional), tokenAddress (optional), testnet (optional, "1" or "true").
- * Returns token balances via viem multicall, sorted by balance (highest first).
  */
 export async function getMulticallBalances(
-  request: Request,
-  response: Response
+  request: FastifyRequest,
+  reply: FastifyReply
 ): Promise<void> {
   try {
-    const walletAddress =
-      typeof request.query.address === "string" ? request.query.address.trim() : "";
+    const q = request.query as Record<string, unknown>;
+    const walletAddress = typeof q.address === "string" ? q.address.trim() : "";
     if (!walletAddress) {
-      response.status(400).json({
+      void reply.status(400).send({
         success: false,
         error: "address is required (wallet address).",
       });
       return;
     }
 
-    const chainId =
-      typeof request.query.chainId === "string" ? request.query.chainId.trim() : undefined;
+    const chainId = typeof q.chainId === "string" ? q.chainId.trim() : undefined;
     const tokenAddress =
-      typeof request.query.tokenAddress === "string"
-        ? request.query.tokenAddress.trim()
-        : undefined;
-    const testnet =
-      request.query.testnet === "1" || request.query.testnet === "true";
+      typeof q.tokenAddress === "string" ? q.tokenAddress.trim() : undefined;
+    const testnet = q.testnet === "1" || q.testnet === "true";
 
     const balances = await fetchBalancesMulticall(walletAddress, {
       chainId: chainId || undefined,
@@ -36,12 +30,12 @@ export async function getMulticallBalances(
       testnet,
     });
 
-    response.json({ success: true, data: balances });
+    void reply.send({ success: true, data: balances });
   } catch (error) {
     console.error("[Balances] multicall error", error);
     const message =
       error instanceof Error ? error.message : "Failed to fetch multicall balances.";
-    response.status(502).json({
+    void reply.status(502).send({
       success: false,
       error: message,
     });

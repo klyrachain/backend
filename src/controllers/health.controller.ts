@@ -1,7 +1,7 @@
-import type { Request, Response } from "express";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import { getHealth } from "../services/health.service.js";
 
-export function health(_req: Request, res: Response): void {
+export function health(_req: FastifyRequest, reply: FastifyReply): void {
   const data = getHealth();
-  res.status(200).json(data);
+  void reply.status(200).send(data);
 }

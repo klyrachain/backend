@@ -1,16 +1,16 @@
-import type { Request, Response } from "express";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import { getFiatQuote } from "../services/exchangerate.service.js";
 import { getFonbnkQuote } from "../services/fonbnk.service.js";
 
-export async function fiatQuote(req: Request, res: Response): Promise<void> {
+export async function fiatQuote(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const body = req.body ?? {};
+    const body = (req.body as Record<string, unknown>) ?? {};
     const from = typeof body.from === "string" ? body.from.trim() : "";
     const to = typeof body.to === "string" ? body.to.trim() : "";
     const amount = body.amount != null ? Number(body.amount) : undefined;
 
     if (!from || !to) {
-      res.status(400).json({
+      void reply.status(400).send({
         success: false,
         error: "from and to currency codes are required (e.g. USD, GHS).",
       });
@@ -18,19 +18,19 @@ export async function fiatQuote(req: Request, res: Response): Promise<void> {
     }
 
     const result = await getFiatQuote({ from, to, amount });
-    res.json({ success: true, data: result });
+    void reply.send({ success: true, data: result });
   } catch (error) {
     console.error("[Rates] fiat quote error", error);
-    res.status(500).json({
+    void reply.status(500).send({
       success: false,
       error: error instanceof Error ? error.message : "Fiat quote failed.",
     });
   }
 }
 
-export async function fonbnkQuote(req: Request, res: Response): Promise<void> {
+export async function fonbnkQuote(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const body = req.body ?? {};
+    const body = (req.body as Record<string, unknown>) ?? {};
     const country = typeof body.country === "string" ? body.country.trim() : "";
     const token = typeof body.token === "string" ? body.token.trim() : "";
     const purchaseMethod = body.purchaseMethod === "sell" ? "sell" : "buy";
@@ -38,14 +38,14 @@ export async function fonbnkQuote(req: Request, res: Response): Promise<void> {
     const amountIn = body.amountIn === "crypto" ? "crypto" : "fiat";
 
     if (!country) {
-      res.status(400).json({
+      void reply.status(400).send({
         success: false,
         error: "country is required (e.g. GH for Ghana).",
       });
       return;
     }
     if (!token) {
-      res.status(400).json({
+      void reply.status(400).send({
         success: false,
         error: "token is required (e.g. USDC or BASE_USDC).",
       });
@@ -61,17 +61,17 @@ export async function fonbnkQuote(req: Request, res: Response): Promise<void> {
     });
 
     if (!result) {
-      res.status(404).json({
+      void reply.status(404).send({
         success: false,
         error: "No quote returned from Fonbnk for this request.",
       });
       return;
     }
 
-    res.json({ success: true, data: result });
+    void reply.send({ success: true, data: result });
   } catch (error) {
     console.error("[Rates] fonbnk quote error", error);
-    res.status(500).json({
+    void reply.status(500).send({
       success: false,
       error: error instanceof Error ? error.message : "Fonbnk quote failed.",
     });

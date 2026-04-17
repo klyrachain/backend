@@ -1,30 +1,30 @@
-import type { Request, Response } from "express";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import { getAddressForEnsName, getEnsNameForAddress, isEthAddress } from "../services/ens.service.js";
 
 /**
  * GET /name/:address — resolve wallet address to ENS name (and avatar when available).
  */
-export async function getNameByAddress(req: Request, res: Response): Promise<void> {
+export async function getNameByAddress(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const address = (req.params.address ?? "").trim();
+    const address = ((req.params as { address?: string }).address ?? "").trim();
     if (!address) {
-      res.status(400).json({ success: false, error: "Address is required." });
+      void reply.status(400).send({ success: false, error: "Address is required." });
       return;
     }
     if (!isEthAddress(address)) {
-      res.status(400).json({ success: false, error: "Invalid Ethereum address." });
+      void reply.status(400).send({ success: false, error: "Invalid Ethereum address." });
       return;
     }
 
     const result = await getEnsNameForAddress(address);
-    res.json({
+    void reply.send({
       success: true,
       ensName: result.ensName,
       avatar: result.avatar ?? null,
     });
   } catch (err) {
     console.error("[ENS] getEnsName error", err);
-    res.status(500).json({
+    void reply.status(500).send({
       success: false,
       error: err instanceof Error ? err.message : "Failed to resolve ENS name.",
     });
@@ -34,23 +34,25 @@ export async function getNameByAddress(req: Request, res: Response): Promise<voi
 /**
  * GET /address?ens-name=... — resolve ENS name to wallet address (and avatar when available).
  */
-export async function getAddressByEnsName(req: Request, res: Response): Promise<void> {
+export async function getAddressByEnsName(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   try {
-    const ensName = (req.query["ens-name"] ?? req.query.ensName ?? "").toString().trim();
+    const q = req.query as Record<string, unknown>;
+    const ensName = String(q["ens-name"] ?? q.ensName ?? "")
+      .trim();
     if (!ensName) {
-      res.status(400).json({ success: false, error: "ens-name query is required." });
+      void reply.status(400).send({ success: false, error: "ens-name query is required." });
       return;
     }
 
     const result = await getAddressForEnsName(ensName);
-    res.json({
+    void reply.send({
       success: true,
       address: result.address,
       avatar: result.avatar ?? null,
     });
   } catch (err) {
     console.error("[ENS] getAddress error", err);
-    res.status(500).json({
+    void reply.status(500).send({
       success: false,
       error: err instanceof Error ? err.message : "Failed to resolve address.",
     });
