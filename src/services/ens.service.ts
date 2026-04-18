@@ -69,7 +69,9 @@ async function resolveAddressViaAPI(address: string): Promise<string | null> {
     const data = (await res.json()) as { name?: string; ensName?: string; domain?: string };
     const name = data?.name ?? data?.ensName ?? data?.domain ?? null;
     if (name) return name;
-  } catch {}
+  } catch {
+    /* Primary ENS API failed; try alpha.ensnode below. */
+  }
   try {
     const res = (await fetch(`https://api.alpha.ensnode.io/address/${encodeURIComponent(address)}`, {
       headers: { Accept: "application/json" },
