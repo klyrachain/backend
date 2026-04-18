@@ -147,12 +147,17 @@ function getRpcUrlForChain(chain: ChainResponse): string | undefined {
 /** All RPC URLs for a chain (single + multiple + fallback), used to try in order for balances. */
 function getRpcUrlsForChain(chain: ChainResponse): string[] {
   const fallback = getRpcForChainId(chain.chainId);
-  if (chain.rpc) return [chain.rpc, ...(fallback && fallback !== chain.rpc ? [fallback] : [])];
-  if (chain.rpcs && chain.rpcs.length > 0) {
-    const withFallback = fallback && !chain.rpcs.includes(fallback) ? [...chain.rpcs, fallback] : chain.rpcs;
-    return withFallback;
+  const ordered: string[] = [];
+  const push = (u: string | undefined) => {
+    if (u && !ordered.includes(u)) ordered.push(u);
+  };
+  push(getRpcUrlForChain(chain));
+  if (chain.rpc) push(chain.rpc);
+  if (chain.rpcs?.length) {
+    for (const u of chain.rpcs) push(u);
   }
-  return fallback ? [fallback] : [];
+  push(fallback);
+  return ordered;
 }
 
 interface SquidChainRaw {
@@ -503,7 +508,10 @@ export async function fetchTokens(testnet: boolean): Promise<TokenResponse[]> {
           chainIconURI: undefined,
           address: String(t.address),
           symbol: t.symbol ?? "—",
-          decimals: Number(t.decimals) ?? 18,
+          decimals: (() => {
+            const d = Number(t.decimals);
+            return Number.isFinite(d) ? d : 18;
+          })(),
           name: t.name,
           logoURI: t.logoURI,
           ...(chainIdToRpc.get(cid) && { rpc: chainIdToRpc.get(cid) }),
