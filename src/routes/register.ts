@@ -10,6 +10,7 @@ import {
   getPaystackVerify,
   getPublicGasPolicy,
   getPublicPaymentLinkById,
+  getPublicGasCheckoutPaymentLink,
   getPublicPaymentLinkBySlug,
   getPublicWrappedWallet,
   getReady,
@@ -79,6 +80,7 @@ export async function registerRoutes(app: FastifyInstance): Promise<void> {
       k.post("/app-transfer/intent", postAppTransferIntent);
 
       k.get("/public/payment-links/by-id/:id", getPublicPaymentLinkById);
+      k.get("/public/payment-links/gas-checkout/:publicCode", getPublicGasCheckoutPaymentLink);
       k.get("/public/payment-links/:slug", getPublicPaymentLinkBySlug);
       k.post("/public/gas-usage", postPublicGasUsage);
       k.get("/public/gas-policy", getPublicGasPolicy);

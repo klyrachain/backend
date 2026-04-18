@@ -179,6 +179,15 @@ export async function getPublicPaymentLinkBySlug(req: FastifyRequest, reply: Fas
   });
 }
 
+export async function getPublicGasCheckoutPaymentLink(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  const publicCode = (req.params as { publicCode?: string }).publicCode ?? "";
+  await proxy(req, reply, {
+    method: "GET",
+    path: `/api/public/payment-links/gas-checkout/${encodeURIComponent(publicCode)}`,
+    query: queryRecord(req),
+  });
+}
+
 export async function getPublicPaymentLinkById(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const id = (req.params as { id?: string }).id ?? "";
   await proxy(req, reply, {

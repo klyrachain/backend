@@ -61,6 +61,15 @@ export function isCoreRelayAllowed(method: string, parts: string[]): boolean {
   }
   if (m === "GET" && j === "paystack/mobile/providers") return true;
 
+  if (
+    m === "GET" &&
+    parts[0] === "public" &&
+    parts[1] === "payment-links" &&
+    parts[2] === "gas-checkout" &&
+    parts.length === 4
+  ) {
+    return true;
+  }
   if (m === "GET" && parts[0] === "public" && parts[1] === "payment-links" && parts[2] === "by-id" && parts.length === 4) {
     return true;
   }
