@@ -1,14 +1,10 @@
 # Klyra Backend API Report
 
-<<<<<<< HEAD
-Base path: `/api`. All requests use `Content-Type: application/json` for bodies.
+Reference for **frontend integration**, **developer API usage**, and **third-party consumers**.
 
-Use a base URL for examples (e.g. `BASE=http://localhost:3000` or your deployed host).
+Base path: `/api`. All API routes are under this prefix. Use `Content-Type: application/json` for JSON bodies. Example base: `BASE=http://localhost:3000` or your deployed backend origin (e.g. `https://api.example.com`).
 
 For **Core integration architecture**, flow sequences (onramp, offramp, request & claim), and the distinction between native vs proxy endpoints, see **API-CORE-FLOW.md**.
-=======
-Reference for **frontend integration**, **developer API usage**, and **third-party consumers**.  
-Base URL: your backend origin (e.g. `https://api.example.com`). All API routes are under `/api`.
 
 ---
 
@@ -246,7 +242,6 @@ No query or body. **Returns:** Core countries list.
 **Body (JSON):** `{ "code": string, "payout_type": "crypto" | "fiat", "payout_target": string }`.
 
 **Returns:** Core claim response.
->>>>>>> d5ee62c16eb4709b4626d5e3b667daccbcbc4d72
 
 ---
 
