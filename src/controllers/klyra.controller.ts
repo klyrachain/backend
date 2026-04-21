@@ -141,9 +141,27 @@ export async function postRequestsConfirmCrypto(req: FastifyRequest, reply: Fast
   await proxy(req, reply, { method: "POST", path: "/api/requests/confirm-crypto", bodyFromReq: true });
 }
 
+export async function getClaimsByLink(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  const claimLinkId = (req.params as { claimLinkId?: string }).claimLinkId ?? "";
+  await proxy(req, reply, { method: "GET", path: `/api/claims/by-link/${encodeURIComponent(claimLinkId)}` });
+}
+
 export async function getClaimsByCode(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const code = (req.params as { code: string }).code;
   await proxy(req, reply, { method: "GET", path: `/api/claims/by-code/${code}` });
+}
+
+export async function getClaimsUnlocked(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  const token = (req.params as { token?: string }).token ?? "";
+  await proxy(req, reply, { method: "GET", path: `/api/claims/unlocked/${encodeURIComponent(token)}` });
+}
+
+export async function postClaimsVerifyRecipient(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  await proxy(req, reply, { method: "POST", path: "/api/claims/verify-recipient", bodyFromReq: true });
+}
+
+export async function postClaimsVerifyClaimCode(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  await proxy(req, reply, { method: "POST", path: "/api/claims/verify-claim-code", bodyFromReq: true });
 }
 
 export async function postClaimsVerifyOtp(req: FastifyRequest, reply: FastifyReply): Promise<void> {
@@ -152,6 +170,10 @@ export async function postClaimsVerifyOtp(req: FastifyRequest, reply: FastifyRep
 
 export async function postClaimsClaim(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   await proxy(req, reply, { method: "POST", path: "/api/claims/claim", bodyFromReq: true });
+}
+
+export async function postClaimsSettlementSelection(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  await proxy(req, reply, { method: "POST", path: "/api/claims/settlement-selection", bodyFromReq: true });
 }
 
 export async function postQuotesCheckout(req: FastifyRequest, reply: FastifyReply): Promise<void> {
@@ -168,6 +190,10 @@ export async function postPaymentLinkDispatch(req: FastifyRequest, reply: Fastif
 
 export async function postAppTransferIntent(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   await proxy(req, reply, { method: "POST", path: "/api/app-transfer/intent", bodyFromReq: true });
+}
+
+export async function postAppTransferCustodialNotify(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+  await proxy(req, reply, { method: "POST", path: "/api/app-transfer/custodial-notify", bodyFromReq: true });
 }
 
 export async function getPublicPaymentLinkBySlug(req: FastifyRequest, reply: FastifyReply): Promise<void> {

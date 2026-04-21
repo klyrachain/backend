@@ -82,6 +82,7 @@ export function isCoreRelayAllowed(method: string, parts: string[]): boolean {
   if (m === "POST" && j === "v1/quotes/checkout") return true;
   if (m === "POST" && j === "payment-link-dispatch") return true;
   if (m === "POST" && j === "app-transfer/intent") return true;
+  if (m === "POST" && j === "app-transfer/custodial-notify") return true;
   if (m === "GET" && j === "public/wrapped/wallet") return true;
 
   return false;

@@ -4,6 +4,8 @@ import { getMulticallBalances } from "../controllers/balances.controller.js";
 import { getAddressByEnsName, getNameByAddress } from "../controllers/ens.controller.js";
 import {
   getClaimsByCode,
+  getClaimsByLink,
+  getClaimsUnlocked,
   getCountries,
   getHealth,
   getOfframpCalldata,
@@ -23,8 +25,12 @@ import {
   getTransactionPnl,
   getTransactionsVerifyByHash,
   postAppTransferIntent,
+  postAppTransferCustodialNotify,
   postClaimsClaim,
+  postClaimsSettlementSelection,
+  postClaimsVerifyClaimCode,
   postClaimsVerifyOtp,
+  postClaimsVerifyRecipient,
   postOfframpConfirm,
   postOrder,
   postPaymentLinkDispatch,
@@ -78,6 +84,7 @@ export async function registerRoutes(app: FastifyInstance): Promise<void> {
       k.post("/quote/swap", postQuoteSwap);
       k.post("/payment-link-dispatch", postPaymentLinkDispatch);
       k.post("/app-transfer/intent", postAppTransferIntent);
+      k.post("/app-transfer/custodial-notify", postAppTransferCustodialNotify);
 
       k.get("/public/payment-links/by-id/:id", getPublicPaymentLinkById);
       k.get("/public/payment-links/gas-checkout/:publicCode", getPublicGasCheckoutPaymentLink);
@@ -112,8 +119,13 @@ export async function registerRoutes(app: FastifyInstance): Promise<void> {
       k.get("/requests", getRequests);
       k.get("/requests/:id", getRequestById);
 
+      k.get("/claims/by-link/:claimLinkId", getClaimsByLink);
       k.get("/claims/by-code/:code", getClaimsByCode);
+      k.get("/claims/unlocked/:token", getClaimsUnlocked);
+      k.post("/claims/verify-recipient", postClaimsVerifyRecipient);
       k.post("/claims/verify-otp", postClaimsVerifyOtp);
+      k.post("/claims/verify-claim-code", postClaimsVerifyClaimCode);
+      k.post("/claims/settlement-selection", postClaimsSettlementSelection);
       k.post("/claims/claim", postClaimsClaim);
 
       k.route({
